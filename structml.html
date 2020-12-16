@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>K23a Project: dict_t Struct Reference</title>
+<title>K23a Project: ml Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,35 +62,32 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Data Fields</a> &#124;
-<a href="#related">Related Functions</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">dict_t Struct Reference<div class="ingroups"><a class="el" href="group__htab.html">htab_t</a> &raquo; <a class="el" href="group__dict.html">Dict</a></div></div>  </div>
+<div class="title">ml Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:aadba92b2d9e15e312d9e8ca3f8a97408"><td class="memItemLeft" align="right" valign="top"><a id="aadba92b2d9e15e312d9e8ca3f8a97408"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>max_load_factor</b></td></tr>
-<tr class="separator:aadba92b2d9e15e312d9e8ca3f8a97408"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a070f5b4d9931d27a376bf8b1688c5942"><td class="memItemLeft" align="right" valign="top"><a id="a070f5b4d9931d27a376bf8b1688c5942"></a>
-size_t(*&#160;</td><td class="memItemRight" valign="bottom"><b>key_sz</b> )(keyp key)</td></tr>
-<tr class="separator:a070f5b4d9931d27a376bf8b1688c5942"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80be727b1cd99bdd005bb16f4f2b15b6"><td class="memItemLeft" align="right" valign="top"><a id="a80be727b1cd99bdd005bb16f4f2b15b6"></a>
-<a class="el" href="group__htab.html#gac0cb518811d32006d78e617452a0a602">htab_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>htab</b></td></tr>
-<tr class="separator:a80be727b1cd99bdd005bb16f4f2b15b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="related"></a>
-Related Functions</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p>(Note that these are not member functions.) </p>
-</td></tr>
-<tr class="memitem:gacd9495834210416f2dae6f818f29ef03"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdict__t.html">dictp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__dict.html#gacd9495834210416f2dae6f818f29ef03">dict_update</a> (<a class="el" href="structdict__t.html">dictp</a> dict, keyp key, valp default_val, void(*mutator_f)(valp))</td></tr>
-<tr class="memdesc:gacd9495834210416f2dae6f818f29ef03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update a key from the hash table. If key has a value associated with it, we run mutator_f on it. Otherwise, add the pair (key, default_val).  <a href="group__dict.html#gacd9495834210416f2dae6f818f29ef03">More...</a><br /></td></tr>
-<tr class="separator:gacd9495834210416f2dae6f818f29ef03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0da09fd903428f3ac351b46625f01263"><td class="memItemLeft" align="right" valign="top"><a id="a0da09fd903428f3ac351b46625f01263"></a>
+<a class="el" href="structdict__t.html">dictp</a>&#160;</td><td class="memItemRight" valign="bottom"><b>bow_dict</b></td></tr>
+<tr class="separator:a0da09fd903428f3ac351b46625f01263"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab095da1a13ba481372339d3a96e4dfdb"><td class="memItemLeft" align="right" valign="top"><a id="ab095da1a13ba481372339d3a96e4dfdb"></a>
+<a class="el" href="structdict__t.html">dictp</a>&#160;</td><td class="memItemRight" valign="bottom"><b>stop_words</b></td></tr>
+<tr class="separator:ab095da1a13ba481372339d3a96e4dfdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b98d05c24c3a25b9b8647bf55448611"><td class="memItemLeft" align="right" valign="top"><a id="a8b98d05c24c3a25b9b8647bf55448611"></a>
+<a class="el" href="structdict__t.html">setp</a>&#160;</td><td class="memItemRight" valign="bottom"><b>json_set</b></td></tr>
+<tr class="separator:a8b98d05c24c3a25b9b8647bf55448611"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa18a15d60d7d9ffe2538a3f7d7b1d33f"><td class="memItemLeft" align="right" valign="top"><a id="aa18a15d60d7d9ffe2538a3f7d7b1d33f"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><b>sw_file</b></td></tr>
+<tr class="separator:aa18a15d60d7d9ffe2538a3f7d7b1d33f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a691a96f9661acc04fac615d1b6cbf74c"><td class="memItemLeft" align="right" valign="top"><a id="a691a96f9661acc04fac615d1b6cbf74c"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>json_ht_load</b></td></tr>
+<tr class="separator:a691a96f9661acc04fac615d1b6cbf74c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>include/hash.h</li>
+<li>src/ml.c</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

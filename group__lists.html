@@ -78,9 +78,9 @@ Macros</h2></td></tr>
 <tr class="memitem:gacd1e0a778d730e22bcd910d8ff86f336"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lists.html#gacd1e0a778d730e22bcd910d8ff86f336">LISTOF</a>(TYPE)</td></tr>
 <tr class="memdesc:gacd1e0a778d730e22bcd910d8ff86f336"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro to easily create list types.  <a href="group__lists.html#gacd1e0a778d730e22bcd910d8ff86f336">More...</a><br /></td></tr>
 <tr class="separator:gacd1e0a778d730e22bcd910d8ff86f336"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga098322c7195a5341ddfabc87cda3a380"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lists.html#ga098322c7195a5341ddfabc87cda3a380">LLFOREACH</a>(VAR,  LIST)</td></tr>
-<tr class="memdesc:ga098322c7195a5341ddfabc87cda3a380"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements foreach functionality for lists.  <a href="group__lists.html#ga098322c7195a5341ddfabc87cda3a380">More...</a><br /></td></tr>
-<tr class="separator:ga098322c7195a5341ddfabc87cda3a380"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9e5af49abed9587852c20ae9e254346d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lists.html#ga9e5af49abed9587852c20ae9e254346d">LL_FOREACH</a>(VAR,  LIST)</td></tr>
+<tr class="memdesc:ga9e5af49abed9587852c20ae9e254346d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements foreach functionality for lists.  <a href="group__lists.html#ga9e5af49abed9587852c20ae9e254346d">More...</a><br /></td></tr>
+<tr class="separator:ga9e5af49abed9587852c20ae9e254346d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -172,14 +172,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ll_iterate</b> (void 
 
 </div>
 </div>
-<a id="ga098322c7195a5341ddfabc87cda3a380"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga098322c7195a5341ddfabc87cda3a380">&#9670;&nbsp;</a></span>LLFOREACH</h2>
+<a id="ga9e5af49abed9587852c20ae9e254346d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9e5af49abed9587852c20ae9e254346d">&#9670;&nbsp;</a></span>LL_FOREACH</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define LLFOREACH</td>
+          <td class="memname">#define LL_FOREACH</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">VAR, </td>
@@ -211,7 +211,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ll_iterate</b> (void 
 example:</h3>
 <div class="fragment"><div class="line">list *Ls = function_that_produces_list(...);</div>
 <div class="line"> </div>
-<div class="line"><a class="code" href="group__lists.html#ga098322c7195a5341ddfabc87cda3a380">LLFOREACH</a>(L, Ls){</div>
+<div class="line"><a class="code" href="group__lists.html#ga9e5af49abed9587852c20ae9e254346d">LL_FOREACH</a>(L, Ls){</div>
 <div class="line">    action(L);</div>
 <div class="line">}</div>
 </div><!-- fragment --> 
@@ -921,8 +921,8 @@ example</h3>
 <div class="ttc" id="agroup__lists_html_gacd1e0a778d730e22bcd910d8ff86f336"><div class="ttname"><a href="group__lists.html#gacd1e0a778d730e22bcd910d8ff86f336">LISTOF</a></div><div class="ttdeci">#define LISTOF(TYPE)</div><div class="ttdoc">Macro to easily create list types.</div><div class="ttdef"><b>Definition:</b> lists.h:30</div></div>
 <div class="ttc" id="agroup__lists_html_ga0e15cf570d245863260decbd829aeb55"><div class="ttname"><a href="group__lists.html#ga0e15cf570d245863260decbd829aeb55">llcmpr</a></div><div class="ttdeci">int(* llcmpr)(void *node_a, void *node_b)</div><div class="ttdoc">Comparator function type for ll_sort.</div><div class="ttdef"><b>Definition:</b> lists.h:98</div></div>
 <div class="ttc" id="agroup__lists_html_gac1a71596ed4594b91673f86c9649487c"><div class="ttname"><a href="group__lists.html#gac1a71596ed4594b91673f86c9649487c">ll_reverse</a></div><div class="ttdeci">void ll_reverse(void *lp)</div><div class="ttdoc">Reverses the list pointed to by lp in place.</div><div class="ttdef"><b>Definition:</b> lists.c:110</div></div>
-<div class="ttc" id="agroup__lists_html_ga098322c7195a5341ddfabc87cda3a380"><div class="ttname"><a href="group__lists.html#ga098322c7195a5341ddfabc87cda3a380">LLFOREACH</a></div><div class="ttdeci">#define LLFOREACH(VAR, LIST)</div><div class="ttdoc">Implements foreach functionality for lists.</div><div class="ttdef"><b>Definition:</b> lists.h:53</div></div>
 <div class="ttc" id="agroup__lists_html_ga54a056fa2b33c6de039fd57c984343ad"><div class="ttname"><a href="group__lists.html#ga54a056fa2b33c6de039fd57c984343ad">ll_sort</a></div><div class="ttdeci">void ll_sort(void *l, llcmpr c)</div><div class="ttdoc">Sorts the input list in place using merge sort.</div><div class="ttdef"><b>Definition:</b> lists.c:167</div></div>
+<div class="ttc" id="agroup__lists_html_ga9e5af49abed9587852c20ae9e254346d"><div class="ttname"><a href="group__lists.html#ga9e5af49abed9587852c20ae9e254346d">LL_FOREACH</a></div><div class="ttdeci">#define LL_FOREACH(VAR, LIST)</div><div class="ttdoc">Implements foreach functionality for lists.</div><div class="ttdef"><b>Definition:</b> lists.h:53</div></div>
 <div class="ttc" id="agroup__lists_html_ga46adee4a5d5d6936ce64f9811fb8b751"><div class="ttname"><a href="group__lists.html#ga46adee4a5d5d6936ce64f9811fb8b751">ll_sort_merge</a></div><div class="ttdeci">void * ll_sort_merge(void *list_a, void *list_b, llcmpr c)</div><div class="ttdoc">The merging part of the merge sort algorithm.</div><div class="ttdef"><b>Definition:</b> lists.c:148</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

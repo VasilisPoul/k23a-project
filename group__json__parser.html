@@ -102,15 +102,21 @@ Functions</h2></td></tr>
 <tr class="memitem:ga69ca9a9fd0cfab7bf5f3528842a80524"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__json__parser.html#ga69ca9a9fd0cfab7bf5f3528842a80524">json_type_to_str</a> (<a class="el" href="group__json__parser.html#gac75c61993722a9b8aaa44704072ec06c">json_type</a> type)</td></tr>
 <tr class="memdesc:ga69ca9a9fd0cfab7bf5f3528842a80524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a json_type to a string representation.  <a href="group__json__parser.html#ga69ca9a9fd0cfab7bf5f3528842a80524">More...</a><br /></td></tr>
 <tr class="separator:ga69ca9a9fd0cfab7bf5f3528842a80524"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6904e9b90fa5f0cff0eec8d0fb9963c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structJSON__ENTITY.html">JSON_ENTITY</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__json__parser.html#ga6904e9b90fa5f0cff0eec8d0fb9963c7">json_parse_value</a> (StringList *tokens, StringList **rest)</td></tr>
-<tr class="memdesc:ga6904e9b90fa5f0cff0eec8d0fb9963c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a json value from a list of tokens.  <a href="group__json__parser.html#ga6904e9b90fa5f0cff0eec8d0fb9963c7">More...</a><br /></td></tr>
-<tr class="separator:ga6904e9b90fa5f0cff0eec8d0fb9963c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6d26bf16e1e1e7a57dbd7800fc9affe4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structJSON__ENTITY.html">JSON_ENTITY</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__json__parser.html#ga6d26bf16e1e1e7a57dbd7800fc9affe4">json_parse_value</a> (<a class="el" href="structtokenizer__s.html">tokenizer_t</a> *tok)</td></tr>
+<tr class="memdesc:ga6d26bf16e1e1e7a57dbd7800fc9affe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a json value from a list of tokens.  <a href="group__json__parser.html#ga6d26bf16e1e1e7a57dbd7800fc9affe4">More...</a><br /></td></tr>
+<tr class="separator:ga6d26bf16e1e1e7a57dbd7800fc9affe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7aa84f8ae4d5ab9d7a15c9587708d13a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__json__parser.html#ga7aa84f8ae4d5ab9d7a15c9587708d13a">json_print_value</a> (<a class="el" href="structJSON__ENTITY.html">JSON_ENTITY</a> *jsonEntity)</td></tr>
 <tr class="memdesc:ga7aa84f8ae4d5ab9d7a15c9587708d13a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a json value.  <a href="group__json__parser.html#ga7aa84f8ae4d5ab9d7a15c9587708d13a">More...</a><br /></td></tr>
 <tr class="separator:ga7aa84f8ae4d5ab9d7a15c9587708d13a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab16ace3a764c674fc447581d251fce82"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structJSON__ENTITY.html">JSON_ENTITY</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__json__parser.html#gab16ace3a764c674fc447581d251fce82">json_parse_from_tokens</a> (StringList *tokens)</td></tr>
 <tr class="memdesc:gab16ace3a764c674fc447581d251fce82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a list of tokens that represents a json file.  <a href="group__json__parser.html#gab16ace3a764c674fc447581d251fce82">More...</a><br /></td></tr>
 <tr class="separator:gab16ace3a764c674fc447581d251fce82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga84843da547d2f37fd988403f5dbbc8e3"><td class="memItemLeft" align="right" valign="top"><a id="ga84843da547d2f37fd988403f5dbbc8e3"></a>
+<a class="el" href="structJSON__ENTITY.html">JSON_ENTITY</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>json_parse_file</b> (char *path)</td></tr>
+<tr class="separator:ga84843da547d2f37fd988403f5dbbc8e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga49e6ac2772ae1e31ceba40aa20c1663d"><td class="memItemLeft" align="right" valign="top"><a id="ga49e6ac2772ae1e31ceba40aa20c1663d"></a>
+<a class="el" href="structJSON__ENTITY.html">JSON_ENTITY</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>json_parse_string</b> (char *str)</td></tr>
+<tr class="separator:ga49e6ac2772ae1e31ceba40aa20c1663d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf0faeb2b50fb0b4464ecaafd6a297721"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__json__parser.html#gaf0faeb2b50fb0b4464ecaafd6a297721">json_to_double</a> (<a class="el" href="structJSON__ENTITY.html">JSON_ENTITY</a> *jsonEntity)</td></tr>
 <tr class="memdesc:gaf0faeb2b50fb0b4464ecaafd6a297721"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a <a class="el" href="structJSON__ENTITY.html" title="The representation used for json values.">JSON_ENTITY</a> encapsulated double to a C double.  <a href="group__json__parser.html#gaf0faeb2b50fb0b4464ecaafd6a297721">More...</a><br /></td></tr>
 <tr class="separator:gaf0faeb2b50fb0b4464ecaafd6a297721"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -120,9 +126,6 @@ Functions</h2></td></tr>
 <tr class="memitem:ga097353e0168ae741ef6a6b55e64c2b0e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__json__parser.html#ga097353e0168ae741ef6a6b55e64c2b0e">json_to_bool</a> (<a class="el" href="structJSON__ENTITY.html">JSON_ENTITY</a> *jsonEntity)</td></tr>
 <tr class="memdesc:ga097353e0168ae741ef6a6b55e64c2b0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a <a class="el" href="structJSON__ENTITY.html" title="The representation used for json values.">JSON_ENTITY</a> encapsulated bool to a C bool.  <a href="group__json__parser.html#ga097353e0168ae741ef6a6b55e64c2b0e">More...</a><br /></td></tr>
 <tr class="separator:ga097353e0168ae741ef6a6b55e64c2b0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga755938d0c4721340a1d26060028c244e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structJSON__ENTITY.html">JSON_ENTITY</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__json__parser.html#ga755938d0c4721340a1d26060028c244e">json_to_entity</a> (char *json)</td></tr>
-<tr class="memdesc:ga755938d0c4721340a1d26060028c244e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a json string to <a class="el" href="structJSON__ENTITY.html" title="The representation used for json values.">JSON_ENTITY</a>.  <a href="group__json__parser.html#ga755938d0c4721340a1d26060028c244e">More...</a><br /></td></tr>
-<tr class="separator:ga755938d0c4721340a1d26060028c244e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadde879562ee8e258bedc292efd784f59"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__json__parser.html#gadde879562ee8e258bedc292efd784f59">json_get_arr_length</a> (<a class="el" href="structJSON__ENTITY.html">JSON_ENTITY</a> *jsonEntity)</td></tr>
 <tr class="memdesc:gadde879562ee8e258bedc292efd784f59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the length of a JSON_ARRAY.  <a href="group__json__parser.html#gadde879562ee8e258bedc292efd784f59">More...</a><br /></td></tr>
 <tr class="separator:gadde879562ee8e258bedc292efd784f59"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,7 +152,7 @@ Example usage</h3>
 <div class="line">            <span class="stringliteral">&quot;{\&quot;foo\&quot; : 5, \&quot;bar\&quot; : false, \&quot;baz\&quot; : [true]}&quot;</span>, &amp;rest_str);</div>
 <div class="line">    <span class="comment">// rest_str should point to the null terminator of the input string</span></div>
 <div class="line">    <span class="comment">// tokens should contain a list of all the tokens in the input string</span></div>
-<div class="line">    <a class="code" href="structJSON__ENTITY.html">JSON_ENTITY</a> *ent = <a class="code" href="group__json__parser.html#ga6904e9b90fa5f0cff0eec8d0fb9963c7">json_parse_value</a>(tokens, &amp;rest_toks);</div>
+<div class="line">    <a class="code" href="structJSON__ENTITY.html">JSON_ENTITY</a> *ent = <a class="code" href="group__json__parser.html#ga6d26bf16e1e1e7a57dbd7800fc9affe4">json_parse_value</a>(tokens, &amp;rest_toks);</div>
 <div class="line">    <span class="comment">// rest_toks should point to NULL</span></div>
 <div class="line">    <span class="comment">// ent should be a JSON_OBJ with 3 keys</span></div>
 <div class="line"> </div>
@@ -367,8 +370,8 @@ Example usage</h3>
 
 </div>
 </div>
-<a id="ga6904e9b90fa5f0cff0eec8d0fb9963c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6904e9b90fa5f0cff0eec8d0fb9963c7">&#9670;&nbsp;</a></span>json_parse_value()</h2>
+<a id="ga6d26bf16e1e1e7a57dbd7800fc9affe4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6d26bf16e1e1e7a57dbd7800fc9affe4">&#9670;&nbsp;</a></span>json_parse_value()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -376,19 +379,9 @@ Example usage</h3>
         <tr>
           <td class="memname"><a class="el" href="structJSON__ENTITY.html">JSON_ENTITY</a>* json_parse_value </td>
           <td>(</td>
-          <td class="paramtype">StringList *&#160;</td>
-          <td class="paramname"><em>tokens</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="structtokenizer__s.html">tokenizer_t</a> *&#160;</td>
+          <td class="paramname"><em>tok</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">StringList **&#160;</td>
-          <td class="paramname"><em>rest</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -498,41 +491,6 @@ Example usage</h3>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the number stored in the entity </dd></dl>
-
-</div>
-</div>
-<a id="ga755938d0c4721340a1d26060028c244e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga755938d0c4721340a1d26060028c244e">&#9670;&nbsp;</a></span>json_to_entity()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structJSON__ENTITY.html">JSON_ENTITY</a> * json_to_entity </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>json</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">related</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Converts a json string to <a class="el" href="structJSON__ENTITY.html" title="The representation used for json values.">JSON_ENTITY</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">json</td><td>: A json string </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>the parsed <a class="el" href="structJSON__ENTITY.html" title="The representation used for json values.">JSON_ENTITY</a> </dd></dl>
 
 </div>
 </div>
@@ -650,10 +608,10 @@ Example usage</h3>
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="astructJSON__ENTITY_html"><div class="ttname"><a href="structJSON__ENTITY.html">JSON_ENTITY</a></div><div class="ttdoc">The representation used for json values.</div><div class="ttdef"><b>Definition:</b> json_parser.h:64</div></div>
-<div class="ttc" id="agroup__json__parser_html_gaadbc9f878c7ef03bfb7f33c78306adc7"><div class="ttname"><a href="group__json__parser.html#gaadbc9f878c7ef03bfb7f33c78306adc7">JSON_ENTITY::json_get</a></div><div class="ttdeci">JSON_ENTITY * json_get(JSON_ENTITY *jsonEntity,...)</div><div class="ttdoc">Get a member of the json value.</div><div class="ttdef"><b>Definition:</b> json_parser.c:315</div></div>
-<div class="ttc" id="agroup__json__parser_html_gabf9a5fa8724b85a413aa30e96d7d45d8"><div class="ttname"><a href="group__json__parser.html#gabf9a5fa8724b85a413aa30e96d7d45d8">json_tokenize_str</a></div><div class="ttdeci">StringList * json_tokenize_str(char *input, char **rest)</div><div class="ttdoc">Splits an input string to tokens.</div><div class="ttdef"><b>Definition:</b> json_parser.c:140</div></div>
-<div class="ttc" id="agroup__json__parser_html_ga6904e9b90fa5f0cff0eec8d0fb9963c7"><div class="ttname"><a href="group__json__parser.html#ga6904e9b90fa5f0cff0eec8d0fb9963c7">json_parse_value</a></div><div class="ttdeci">JSON_ENTITY * json_parse_value(StringList *tokens, StringList **rest)</div><div class="ttdoc">Parses a json value from a list of tokens.</div><div class="ttdef"><b>Definition:</b> json_parser.c:493</div></div>
+<div class="ttc" id="astructJSON__ENTITY_html"><div class="ttname"><a href="structJSON__ENTITY.html">JSON_ENTITY</a></div><div class="ttdoc">The representation used for json values.</div><div class="ttdef"><b>Definition:</b> json_parser.h:68</div></div>
+<div class="ttc" id="agroup__json__parser_html_gaadbc9f878c7ef03bfb7f33c78306adc7"><div class="ttname"><a href="group__json__parser.html#gaadbc9f878c7ef03bfb7f33c78306adc7">JSON_ENTITY::json_get</a></div><div class="ttdeci">JSON_ENTITY * json_get(JSON_ENTITY *jsonEntity,...)</div><div class="ttdoc">Get a member of the json value.</div><div class="ttdef"><b>Definition:</b> json_parser.c:143</div></div>
+<div class="ttc" id="agroup__json__parser_html_gabf9a5fa8724b85a413aa30e96d7d45d8"><div class="ttname"><a href="group__json__parser.html#gabf9a5fa8724b85a413aa30e96d7d45d8">json_tokenize_str</a></div><div class="ttdeci">StringList * json_tokenize_str(char *input, char **rest)</div><div class="ttdoc">Splits an input string to tokens.</div></div>
+<div class="ttc" id="agroup__json__parser_html_ga6d26bf16e1e1e7a57dbd7800fc9affe4"><div class="ttname"><a href="group__json__parser.html#ga6d26bf16e1e1e7a57dbd7800fc9affe4">json_parse_value</a></div><div class="ttdeci">JSON_ENTITY * json_parse_value(tokenizer_t *tok)</div><div class="ttdoc">Parses a json value from a list of tokens.</div><div class="ttdef"><b>Definition:</b> json_parser.c:287</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

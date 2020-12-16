@@ -72,7 +72,7 @@ $(function() {
 <p>Data structure that relates a spec to other specs that refer to the same item.  
  <a href="structSTS.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="spec__to__specs_8h_source.html">spec_to_specs.h</a>&gt;</code></p>
+<p><code>#include &lt;spec_to_specs.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
@@ -94,6 +94,9 @@ Related Functions</h2></td></tr>
 <tr class="memitem:ac77facbba1eb9d8af6fdd19aa1486273"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSTS.html#ac77facbba1eb9d8af6fdd19aa1486273">sts_merge</a> (<a class="el" href="structSTS.html">STS</a> *sts, char *id1, char *id2)</td></tr>
 <tr class="memdesc:ac77facbba1eb9d8af6fdd19aa1486273"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks two spec ids as similar, unifying their similar sets.  <a href="structSTS.html#ac77facbba1eb9d8af6fdd19aa1486273">More...</a><br /></td></tr>
 <tr class="separator:ac77facbba1eb9d8af6fdd19aa1486273"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a631d07a6858dba65dac0b2ed195225c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSTS.html#a631d07a6858dba65dac0b2ed195225c0">sts_diff</a> (<a class="el" href="structSTS.html">STS</a> *sts, char *id1, char *id2)</td></tr>
+<tr class="memdesc:a631d07a6858dba65dac0b2ed195225c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks two spec ids as similar, unifying their similar sets.  <a href="structSTS.html#a631d07a6858dba65dac0b2ed195225c0">More...</a><br /></td></tr>
+<tr class="separator:a631d07a6858dba65dac0b2ed195225c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c0998148ced66e0c21e140f97a53e90"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSpecEntry__s.html">SpecEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSTS.html#a9c0998148ced66e0c21e140f97a53e90">sts_get</a> (<a class="el" href="structSTS.html">STS</a> *sts, char *id)</td></tr>
 <tr class="memdesc:a9c0998148ced66e0c21e140f97a53e90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the SpecEntry of a specific id.  <a href="structSTS.html#a9c0998148ced66e0c21e140f97a53e90">More...</a><br /></td></tr>
 <tr class="separator:a9c0998148ced66e0c21e140f97a53e90"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -286,6 +289,58 @@ Related Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a631d07a6858dba65dac0b2ed195225c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a631d07a6858dba65dac0b2ed195225c0">&#9670;&nbsp;</a></span>sts_diff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sts_diff </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structSTS.html">STS</a> *&#160;</td>
+          <td class="paramname"><em>sts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>id1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>id2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">related</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Marks two spec ids as similar, unifying their similar sets. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">sts</td><td>: the sts structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">id1</td><td>: first id to be checked for differences </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">id2</td><td>: second id to be checked for differences </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a9c0998148ced66e0c21e140f97a53e90"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9c0998148ced66e0c21e140f97a53e90">&#9670;&nbsp;</a></span>sts_get()</h2>
 
@@ -385,7 +440,7 @@ Related Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>include/<a class="el" href="spec__to__specs_8h_source.html">spec_to_specs.h</a></li>
+<li>include/spec_to_specs.h</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

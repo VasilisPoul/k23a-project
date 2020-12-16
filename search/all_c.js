@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['val_5fsz_98',['val_sz',['../structhtab__s.html#a8c2ab395e0c6aaf721a63c49a5352ece',1,'htab_s']]]
+  ['tokenizer_5fs_101',['tokenizer_s',['../structtokenizer__s.html',1,'']]],
+  ['type_102',['type',['../structJSON__ENTITY.html#a6a4d3c009212318e6ee59a0927fc9feb',1,'JSON_ENTITY']]]
 ];
