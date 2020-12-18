@@ -18,5 +18,6 @@ var searchData=
   ['ll_5ftail_81',['ll_tail',['../group__lists.html#ga74ef7ff272bf4f813b99023a53a3499f',1,'ll_tail(void *l):&#160;lists.c'],['../group__lists.html#ga74ef7ff272bf4f813b99023a53a3499f',1,'ll_tail(void *l):&#160;lists.c']]],
   ['llcmpr_82',['llcmpr',['../group__lists.html#ga0e15cf570d245863260decbd829aeb55',1,'lists.h']]],
   ['llfree_5ff_83',['llfree_f',['../group__lists.html#ga3cb1065a53077defb98cafa7f1518fe1',1,'lists.h']]],
-  ['llpred_84',['llpred',['../group__lists.html#gab1082c7d8d35a4c931c6dbebbcc24ba8',1,'lists.h']]]
+  ['llpred_84',['llpred',['../group__lists.html#gab1082c7d8d35a4c931c6dbebbcc24ba8',1,'lists.h']]],
+  ['logreg_85',['LogReg',['../structLogReg.html',1,'']]]
 ];
