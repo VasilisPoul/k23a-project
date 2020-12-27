@@ -1,7 +1,7 @@
 var searchData=
 [
   ['data_5',['data',['../structJSON__ENTITY.html#ac6c54d3ed430328e7b6daaca0cbae1cd',1,'JSON_ENTITY']]],
-  ['dict_6',['Dict',['../group__dict.html',1,'']]],
+  ['dict_6',['dict',['../structSTS.html#ab4afe8c9c5df2c42c102dee492efddce',1,'STS::dict()'],['../group__dict.html',1,'(Global Namespace)']]],
   ['dict_5fconf_5fcmp_7',['DICT_CONF_CMP',['../group__dict.html#gga5880a0bf1ccbafae7904fe9799ce8dd9a1c30ce70d14544faa4c916e6a3e214d2',1,'hash.h']]],
   ['dict_5fconf_5fdone_8',['DICT_CONF_DONE',['../group__dict.html#gga5880a0bf1ccbafae7904fe9799ce8dd9a920c2ccf2c63818c477dc08e1c244d12',1,'hash.h']]],
   ['dict_5fconf_5fhash_5ffunc_9',['DICT_CONF_HASH_FUNC',['../group__dict.html#gga5880a0bf1ccbafae7904fe9799ce8dd9a59a53790a13597293854c00e9258f933',1,'hash.h']]],
