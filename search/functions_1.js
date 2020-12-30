@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['init_5fsimilar_5fmatches_140',['init_similar_matches',['../structSTS.html#aeb754b8830591b176a50af0e16c48a75',1,'STS']]]
+  ['init_5fsimilar_5fpairs_140',['init_similar_pairs',['../structSTS.html#aedfbc021e3b8eb0e670c2f7c192d6485',1,'STS']]]
 ];

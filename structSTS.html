@@ -103,15 +103,15 @@ Related Functions</h2></td></tr>
 <tr class="memitem:a5fb18150e6a2b84ca6329b593a93eeb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSTS.html#a5fb18150e6a2b84ca6329b593a93eeb0">print_sts_dot</a> (FILE *file, <a class="el" href="structSTS.html">STS</a> *sts, bool verbose)</td></tr>
 <tr class="memdesc:a5fb18150e6a2b84ca6329b593a93eeb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to print the dot structure.  <a href="structSTS.html#a5fb18150e6a2b84ca6329b593a93eeb0">More...</a><br /></td></tr>
 <tr class="separator:a5fb18150e6a2b84ca6329b593a93eeb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb754b8830591b176a50af0e16c48a75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSTS.html#aeb754b8830591b176a50af0e16c48a75">init_similar_matches</a> (FILE *file, <a class="el" href="structSTS.html">STS</a> *sts, <a class="el" href="structmatch.html">Match</a> **matches, int *chunks, int *counter)</td></tr>
-<tr class="memdesc:aeb754b8830591b176a50af0e16c48a75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the the similar pairs.  <a href="structSTS.html#aeb754b8830591b176a50af0e16c48a75">More...</a><br /></td></tr>
-<tr class="separator:aeb754b8830591b176a50af0e16c48a75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedfbc021e3b8eb0e670c2f7c192d6485"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSTS.html#aedfbc021e3b8eb0e670c2f7c192d6485">init_similar_pairs</a> (FILE *file, <a class="el" href="structSTS.html">STS</a> *sts, <a class="el" href="structpair.html">Pair</a> **pairs, int *chunks, int *counter)</td></tr>
+<tr class="memdesc:aedfbc021e3b8eb0e670c2f7c192d6485"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the the similar pairs.  <a href="structSTS.html#aedfbc021e3b8eb0e670c2f7c192d6485">More...</a><br /></td></tr>
+<tr class="separator:aedfbc021e3b8eb0e670c2f7c192d6485"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Data structure that relates a spec to other specs that refer to the same item. </p>
 </div><h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a id="aeb754b8830591b176a50af0e16c48a75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb754b8830591b176a50af0e16c48a75">&#9670;&nbsp;</a></span>init_similar_matches()</h2>
+<a id="aedfbc021e3b8eb0e670c2f7c192d6485"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedfbc021e3b8eb0e670c2f7c192d6485">&#9670;&nbsp;</a></span>init_similar_pairs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -120,7 +120,7 @@ Related Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void init_similar_matches </td>
+          <td class="memname">void init_similar_pairs </td>
           <td>(</td>
           <td class="paramtype">FILE *&#160;</td>
           <td class="paramname"><em>file</em>, </td>
@@ -134,8 +134,8 @@ Related Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structmatch.html">Match</a> **&#160;</td>
-          <td class="paramname"><em>matches</em>, </td>
+          <td class="paramtype"><a class="el" href="structpair.html">Pair</a> **&#160;</td>
+          <td class="paramname"><em>pairs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

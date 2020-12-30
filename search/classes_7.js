@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['tokenizer_5fs_117',['tokenizer_s',['../structtokenizer__s.html',1,'']]]
+  ['specentry_5fs_115',['SpecEntry_s',['../structSpecEntry__s.html',1,'']]],
+  ['sts_116',['STS',['../structSTS.html',1,'']]]
 ];
