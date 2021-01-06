@@ -65,36 +65,23 @@ $(function() {
 <div class="title">K23a Project Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a></p><h1 align="center">ΑΝΑΠΤΥΞΗ ΛΟΓΙΣΜΙΚΟΥ ΓΙΑ ΠΛΗΡΟΦΟΡΙΑΚΑ ΣΥΣΤΗΜΑΤΑ</h1>
+<div class="textblock"><p><a class="anchor" id="md_README"></a> </p><h1 align="center">ΑΝΑΠΤΥΞΗ ΛΟΓΙΣΜΙΚΟΥ ΓΙΑ ΠΛΗΡΟΦΟΡΙΑΚΑ ΣΥΣΤΗΜΑΤΑ</h1>
+<p align="center"></p>
+<p align="center"></p>
+<p><br  />
+</p>
+<p><b>Entity resolution</b></p>
 <p><br  />
 </p>
 <p align="center"></p>
-<p><br  />
- <br  />
- <br  />
- <b>Entity resolution</b> <br  />
- <br  />
- <br  />
- </p>
+<p align="center"></p>
+<p><a href="https://k23a-prj-auth.herokuapp.com" target="_blank"><b>Documentation</b></a></p>
 <p><br  />
 </p>
 <p align="center"></p>
-<p><br  />
- <a href="https://k23a-prj-auth.herokuapp.com" target="_blank"><b>Documentation</b></a> <br  />
- <br  />
- <br  />
- </p>
-<p><br  />
-</p>
 <p align="center"></p>
-<p><br  />
- <a href="https://discord.gg/nSGmntAX"><img src="https://img.shields.io/discord/765286458243153950?color=7389d8&amp;label=Discord&amp;logo=Discord&amp;logoColor=fff" alt="Discord" class="inline"/>  </a> <br  />
- </p>
-<p><br  />
-</p>
+<p><a href="https://discord.gg/nSGmntAX"><img src="https://img.shields.io/discord/765286458243153950?color=7389d8&amp;label=Discord&amp;logo=Discord&amp;logoColor=fff" alt="Discord" class="inline"/> </a></p>
 <hr  />
-<p> <br  />
-</p>
 <h1><a class="anchor" id="autotoc_md8"></a>
 Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών</h1>
 <h3><a class="anchor" id="autotoc_md9"></a>
@@ -126,91 +113,99 @@ $(function() {
 </ol>
 <p><a class="anchor" id="part2"></a></p>
 <h2><a class="anchor" id="autotoc_md13"></a>
-Κλήση Προγράμματος</h2>
-<p>Για να εκτελεστεί το πρόγραμμα από τερματικό τρέχουμε το script 'build_and_run.sh'. Τα ορίσματα που δέχεται το εκτελέσιμο είναι τα εξής:</p>
+Κλήση Προγραμμάτων</h2>
+<p>Για να εκτελεστούν τα πρόγραμμα από τερματικό τρέχουμε το script 'build_and_run.sh'.</p>
+<p>Τα ορίσματα που δέχεται το εκτελέσιμο για το training είναι τα εξής:</p>
 <ul>
 <li>-dir { dataset X path }</li>
 <li>-csv { dataset W path }</li>
 <li>-sw { stopwords file path }</li>
-<li>-ds { user dataset W }</li>
 <li>-m { tfidf | bow }</li>
-<li>-jd { user dataset X }</li>
+<li>-ex {resources path }</li>
 </ul>
+<p>Τα ορίσματα που δέχεται το εκτελέσιμο για το predicting είναι τα εξής:</p>
+<ul>
+<li>-dir {user dataset X path}</li>
+<li>-csv {user dataset W path}</li>
+<li>-vocabulary {vocabulary path}</li>
+<li>-model {model path</li>
+</ul>
+<p>}</p>
 <h3><a class="anchor" id="autotoc_md14"></a>
-Ενδεικτική εκτέλεση προγράμματος</h3>
+Ενδεικτική εκτέλεση προγράμματος Training</h3>
+<p>&gt;./project \ -dir Datasets/camera_specs/2013_camera_specs \ -csv Datasets/sigmod_large_labelled_dataset.csv \ -sw resources/unwanted-words.txt \ -m bow \ -ex resources</p>
+<h3><a class="anchor" id="autotoc_md15"></a>
+Ενδεικτική εκτέλεση προγράμματος Predicting</h3>
 <blockquote class="doxtable">
-<p>./project -dir Datasets/camera_specs/2013_camera_specs -csv Datasets/sigmod_large_labelled_dataset.csv -sw resources/unwanted-words.txt -ds resources/user_dataset.csv -m tfidf -jd resouces/user_json_files </p>
+<p>./user -dir resources/user_json_files \ </p>
 </blockquote>
-<h2><a class="anchor" id="autotoc_md15"></a>
-Έξοδος προγράμματος</h2>
-<ol type="1">
-<li><b>predictions</b> και <b>f1 score</b> για το validation set και</li>
-<li><b>predicitons</b> για το dataset που δίνει ο χρήστης.</li>
-</ol>
-<p>Σημείωση: Το training όπως και τα predictions για το validation set και το dataset του χρήστη γίνονται σε μια main.</p>
-<p><a class="anchor" id="intro"></a></p>
+<p>-csv resources/user_dataset.csv \ -vocabulary resources/vocabulary.csv \ -model resources/model.csv</p>
 <h2><a class="anchor" id="autotoc_md16"></a>
+Έξοδος προγράμματος Training</h2>
+<p><b>predictions</b> και <b>f1 score</b> για το validation set</p>
+<h2><a class="anchor" id="autotoc_md17"></a>
+Έξοδος προγράμματος Training</h2>
+<p><b>predicitons</b> για το dataset που δίνει ο χρήστης.</p>
+<p><b>Σημείωση</b>: Για να περάσουμε το model και το vocabulary από το ένα πρόγραμμα στο άλλο, τα γράψαμε σε αρχεία.</p>
+<p><a class="anchor" id="intro"></a></p>
+<h2><a class="anchor" id="autotoc_md18"></a>
 Εισαγωγή</h2>
-<p>Στόχος της άσκησης είναι να δημιουργήσουμε κλίκες γράφων από αγγελίες με τα ίδια προϊόντα σε διάφορα site. Για την <br  />
- υλοποίηση χρειάστηκε να δημιουργήσουμε τις παρακάτω δομές δεδομένων:</p>
+<p>Στόχος της άσκησης είναι να δημιουργήσουμε κλίκες γράφων από αγγελίες με τα ίδια προϊόντα σε διάφορα site. Για την</p>
+<p>υλοποίηση χρειάστηκε να δημιουργήσουμε τις παρακάτω δομές δεδομένων:</p>
 <ul>
 <li><b>hash table</b>:</li>
 <li><b>list</b></li>
 </ul>
 <p>Επίσης, υλοποιήσαμε έναν json parser ώστε να συλλέξουμε τα δεδομένα των αγγελιών από τα json αρχεία.</p>
-<p>Επιπλέον, για τον έλεγχο ορθότητας του κώδικα, χρησιμοποιήσαμε τη βιβλιοθήκη <b>acutest.h</b> όπου δέχεται μια λίστα από <br  />
- κατάλληλες συναρτήσεις (tests) που γράψαμε.</p>
+<p>Επιπλέον, για τον έλεγχο ορθότητας του κώδικα, χρησιμοποιήσαμε τη βιβλιοθήκη <b>acutest.h</b> όπου δέχεται μια λίστα από</p>
+<p>κατάλληλες συναρτήσεις (tests) που γράψαμε.</p>
 <p><a class="anchor" id="hash_table"></a></p>
-<h2><a class="anchor" id="autotoc_md17"></a>
+<h2><a class="anchor" id="autotoc_md19"></a>
 Hash table</h2>
 <p><img src="https://raw.githubusercontent.com/vasilisp100/k23a-project/master/resources/hash.png?token=AMOC6IZ2FVNF77KBO6EZCBK7Z7ZWC" alt="hash table" class="inline"/></p>
 <p>Για την υλοποίηση του hash table, χρησιμοποιήσαμε generic <b>open addressing hash table</b> με <b>random probing</b>.</p>
-<p>Πιο συγκεκριμένα, δεσμεύουμε ένα κομμάτι μνήμης το οποίο χωρίζεται σε μκρότερα ίσα μέρη ώστε στα οποία αποθηκεύονται οι <br  />
- πληροφορίες του κάθε <b>spec</b>.</p>
-<p>Αφού χρησιμοποιούμε random probing το κάθε spec ανάλογα με το key του, αν δε χωράει στην πρώτη θέση που θα υπολογιστεί <br  />
- μέσω του hash function, θα ψάξει κάποια "τυχαία" θέση για να αποθηκευθεί. Το seed της random συνάρτησης είναι σταθερό, <br  />
- οπότε πάντα μπορούμε να υπολογίσουμε σε ποιο σημείο της μνήμης βρίσκονται το εκάστοτε δεδομένα.</p>
-<p>Αν η μνήμη που έχουμε δεσμεύσει αρχίσει να γεμίζει θα κάνουμε <b>Rehashing</b>. Όταν θέλουμε να εισάγουμε νέα δεδομένα αλλά <br  />
- η πληρότητα του είναι 70%, δεσμεύουμε τη διπλάσια μνήμη από πριν, ξαναμοιράζουμε τα δεδομένα στην καινούργια, μεγαλύτερη <br  />
- μνήμη και εισάγουμε τα νέα δεδομένα.</p>
+<p>Πιο συγκεκριμένα, δεσμεύουμε ένα κομμάτι μνήμης το οποίο χωρίζεται σε μκρότερα ίσα μέρη ώστε στα οποία αποθηκεύονται οι</p>
+<p>πληροφορίες του κάθε <b>spec</b>.</p>
+<p>Αφού χρησιμοποιούμε random probing το κάθε spec ανάλογα με το key του, αν δε χωράει στην πρώτη θέση που θα υπολογιστεί</p>
+<p>μέσω του hash function, θα ψάξει κάποια "τυχαία" θέση για να αποθηκευθεί. Το seed της random συνάρτησης είναι σταθερό,</p>
+<p>οπότε πάντα μπορούμε να υπολογίσουμε σε ποιο σημείο της μνήμης βρίσκονται το εκάστοτε δεδομένα.</p>
+<p>Αν η μνήμη που έχουμε δεσμεύσει αρχίσει να γεμίζει θα κάνουμε <b>Rehashing</b>. Όταν θέλουμε να εισάγουμε νέα δεδομένα αλλά</p>
+<p>η πληρότητα του είναι 70%, δεσμεύουμε τη διπλάσια μνήμη από πριν, ξαναμοιράζουμε τα δεδομένα στην καινούργια, μεγαλύτερη</p>
+<p>μνήμη και εισάγουμε τα νέα δεδομένα.</p>
 <p>Η δομή που χρησιμοποιήσαμε για το hash table είναι η παρακάτω:</p>
-<div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structhtab__s.html">htab_s</a> {   ht_hash_func <a class="code" href="structhtab__s.html#a19a6f98d448a6e3bc6140e9eda393a48">h</a>;  ht_cmp_func <a class="code" href="structhtab__s.html#a86ac020f20ab1efa23711fec3ef2f7cf">cmp</a>;  ht_key_cpy_func <a class="code" href="structhtab__s.html#a810080f8b4c5355fb15ba5cc4fb17364">keycpy</a>;  <span class="keywordtype">size_t</span> <a class="code" href="structhtab__s.html#a34ed69269093a550b7eb86c5774aa402">key_sz</a>;  <span class="keywordtype">size_t</span> <a class="code" href="structhtab__s.html#a8c2ab395e0c6aaf721a63c49a5352ece">val_sz</a>;  ulong <a class="code" href="structhtab__s.html#a472e4249f98200a928ed1c406e4aad27">buf_cap</a>;  ulong <a class="code" href="structhtab__s.html#a8365c1eca17c6a80214a3a3e17b0e9ef">buf_load</a>;  <span class="keywordtype">char</span> <a class="code" href="structhtab__s.html#a2d102a84e231caee47b0f507fef98cfa">buf</a>[]; } <a class="code" href="group__htab.html#gac0cb518811d32006d78e617452a0a602">htab_t</a>;</div>
-</div><!-- fragment --><p><a class="anchor" id="list"></a> <br  />
-</p>
-<h2><a class="anchor" id="autotoc_md18"></a>
-List</h2>
-<p>Χρησιμοποιήσαμε μία generic <b>list</b>. <br  />
-</p>
-<p><a class="anchor" id="json_parser"></a> <br  />
-</p>
-<h2><a class="anchor" id="autotoc_md19"></a>
-JSON Parser</h2>
-<p><a class="anchor" id="spec_to_specs"></a> <br  />
-</p>
+<div class="fragment"><div class="line"><span class="keyword">typedef</span>  <span class="keyword">struct </span><a class="code" href="structhtab__s.html">htab_s</a> {</div>
+<div class="line"> ht_hash_func <a class="code" href="structhtab__s.html#a19a6f98d448a6e3bc6140e9eda393a48">h</a>;  ht_cmp_func <a class="code" href="structhtab__s.html#a86ac020f20ab1efa23711fec3ef2f7cf">cmp</a>;  ht_key_cpy_func <a class="code" href="structhtab__s.html#a810080f8b4c5355fb15ba5cc4fb17364">keycpy</a>;  <span class="keywordtype">size_t</span> <a class="code" href="structhtab__s.html#a34ed69269093a550b7eb86c5774aa402">key_sz</a>;  <span class="keywordtype">size_t</span> <a class="code" href="structhtab__s.html#a8c2ab395e0c6aaf721a63c49a5352ece">val_sz</a>;  ulong <a class="code" href="structhtab__s.html#a472e4249f98200a928ed1c406e4aad27">buf_cap</a>;  ulong <a class="code" href="structhtab__s.html#a8365c1eca17c6a80214a3a3e17b0e9ef">buf_load</a>;  <span class="keywordtype">char</span> <a class="code" href="structhtab__s.html#a2d102a84e231caee47b0f507fef98cfa">buf</a>[]; } <a class="code" href="group__htab.html#gac0cb518811d32006d78e617452a0a602">htab_t</a>;</div>
+</div><!-- fragment --><p><a class="anchor" id="list"></a></p>
 <h2><a class="anchor" id="autotoc_md20"></a>
-Spec to specs</h2>
-<p>Ο τρόπος με τον οποίο συνδέουμε τα στοιχεία των κλικών μεταξύ τους, είναι μέσω μίας δενδρικής αναπαράστασης. Το πρώτο <br  />
- spec που θα μπει στην κλίκα είναι ο πατέρας, ενώ τα υπόλοιπα είναι τα παιδιά του. Αν δύο κλίκες γίνουν <b>merge</b>, τότε ο <br  />
- πατέρας της δεύτερης κλίκας πάει και αποθηκεύεται στον παππού της πρώτης. Με αυτό τον τρόπο κρατάμε το δένδρο σε χαμηλά <br  />
- επίπεδα. <br  />
-</p>
-<p>To spec to specs είναι η δομή που χρησιμοποιούμε για το ζητούμενο της άσκησης. Στην ουσία είναι ένα hash table, στο <br  />
- οποίο το κάθε στοιχείο που αποθηκεύεται είναι της μορφής: <br  />
-</p>
-<div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code" href="structSpecEntry__s.html">SpecEntry_s</a> {  </div>
-<div class="line"> <span class="keywordtype">char</span> *<a class="code" href="structSpecEntry__s.html#a38d7e29e2a029fa13700dcd2597853f7">id</a>;  <span class="keywordtype">char</span> *<a class="code" href="structSpecEntry__s.html#ace7105861cfe9a90fc7b78d24cc7101a">parent</a>;  StrList *<a class="code" href="structSpecEntry__s.html#aa475be2eddf3f4b407c98addb65a8f74">similar</a>, *similar_tail;  ulong <a class="code" href="structSpecEntry__s.html#a65d95811b88f1bfa7154d9b6535b53bf">similar_len</a>;};  </div>
-</div><!-- fragment --><p>Ο parent είναι ο πατέρας του spec (αν δεν είναι σε κλίκα είναι ο εαυτός του) . Η similar είναι μία λίστα στην οποία, αν <br  />
- το spec είναι parent κάποιας κλίκας αποθηκεύονται τα ids όλης της κλίκας αλλιώς είναι NULL, ενώ το similar_tail είναι <br  />
- δείκτης στο τελευταίο στοιχείο της similar. Το similar_len είναι το μέγεθος της similar.</p>
-<p><a class="anchor" id="flow"></a></p>
+List</h2>
+<p>Χρησιμοποιήσαμε μία generic <b>list</b>.</p>
+<p><a class="anchor" id="json_parser"></a></p>
 <h2><a class="anchor" id="autotoc_md21"></a>
+JSON Parser</h2>
+<p><a class="anchor" id="spec_to_specs"></a></p>
+<h2><a class="anchor" id="autotoc_md22"></a>
+Spec to specs</h2>
+<p>Ο τρόπος με τον οποίο συνδέουμε τα στοιχεία των κλικών μεταξύ τους, είναι μέσω μίας δενδρικής αναπαράστασης. Το πρώτο</p>
+<p>spec που θα μπει στην κλίκα είναι ο πατέρας, ενώ τα υπόλοιπα είναι τα παιδιά του. Αν δύο κλίκες γίνουν <b>merge</b>, τότε ο</p>
+<p>πατέρας της δεύτερης κλίκας πάει και αποθηκεύεται στον παππού της πρώτης. Με αυτό τον τρόπο κρατάμε το δένδρο σε χαμηλά</p>
+<p>επίπεδα.</p>
+<p>To spec to specs είναι η δομή που χρησιμοποιούμε για το ζητούμενο της άσκησης. Στην ουσία είναι ένα hash table, στο</p>
+<p>οποίο το κάθε στοιχείο που αποθηκεύεται είναι της μορφής:</p>
+<div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code" href="structSpecEntry__s.html">SpecEntry_s</a> {</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">char</span> *<a class="code" href="structSpecEntry__s.html#a38d7e29e2a029fa13700dcd2597853f7">id</a>;  <span class="keywordtype">char</span> *<a class="code" href="structSpecEntry__s.html#ace7105861cfe9a90fc7b78d24cc7101a">parent</a>;  StrList *<a class="code" href="structSpecEntry__s.html#aa475be2eddf3f4b407c98addb65a8f74">similar</a>, *similar_tail;  ulong <a class="code" href="structSpecEntry__s.html#a65d95811b88f1bfa7154d9b6535b53bf">similar_len</a>;};</div>
+</div><!-- fragment --><p>Ο parent είναι ο πατέρας του spec (αν δεν είναι σε κλίκα είναι ο εαυτός του) . Η similar είναι μία λίστα στην οποία, αν</p>
+<p>το spec είναι parent κάποιας κλίκας αποθηκεύονται τα ids όλης της κλίκας αλλιώς είναι NULL, ενώ το similar_tail είναι</p>
+<p>δείκτης στο τελευταίο στοιχείο της similar. Το similar_len είναι το μέγεθος της similar.</p>
+<p><a class="anchor" id="flow"></a></p>
+<h2><a class="anchor" id="autotoc_md23"></a>
 Ροή του προγράμματος</h2>
 <p><img src="https://raw.githubusercontent.com/vasilisp100/k23a-project/master/resources/cliques.gif?token=AMOC6I6TSAEO3RWM4E22FUK7Z7ZZS" alt="cliques" class="inline"/></p>
 <p><a class="anchor" id="unit_tests"></a></p>
-<h2><a class="anchor" id="autotoc_md22"></a>
+<h2><a class="anchor" id="autotoc_md24"></a>
 Unit tests</h2>
 <p><a class="anchor" id="conclusions"></a></p>
-<h2><a class="anchor" id="autotoc_md23"></a>
+<h2><a class="anchor" id="autotoc_md25"></a>
 Συμπεράσματα</h2>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
