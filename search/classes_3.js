@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logreg_111',['LogReg',['../structLogReg.html',1,'']]]
+  ['logreg_112',['LogReg',['../structLogReg.html',1,'']]]
 ];
