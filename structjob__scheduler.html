@@ -73,15 +73,15 @@ Data Fields</h2></td></tr>
 <tr class="memitem:a647f0bafa15d6e5863a2fac94553e56b"><td class="memItemLeft" align="right" valign="top"><a id="a647f0bafa15d6e5863a2fac94553e56b"></a>
 uint&#160;</td><td class="memItemRight" valign="bottom"><b>execution_threads</b></td></tr>
 <tr class="separator:a647f0bafa15d6e5863a2fac94553e56b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25b17677084f05b3c476eddb94c73510"><td class="memItemLeft" align="right" valign="top"><a id="a25b17677084f05b3c476eddb94c73510"></a>
-uint&#160;</td><td class="memItemRight" valign="bottom"><b>ready</b></td></tr>
-<tr class="separator:a25b17677084f05b3c476eddb94c73510"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ac7e2e2975cfd25068ef2618a3577b0"><td class="memItemLeft" align="right" valign="top"><a id="a6ac7e2e2975cfd25068ef2618a3577b0"></a>
 pthread_t *&#160;</td><td class="memItemRight" valign="bottom"><b>tids</b></td></tr>
 <tr class="separator:a6ac7e2e2975cfd25068ef2618a3577b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab16f2ac9b86cf950a00ca2dc9535c3fe"><td class="memItemLeft" align="right" valign="top"><a id="ab16f2ac9b86cf950a00ca2dc9535c3fe"></a>
-<a class="el" href="structqueue__t.html">Queue</a>&#160;</td><td class="memItemRight" valign="bottom"><b>queue</b></td></tr>
-<tr class="separator:ab16f2ac9b86cf950a00ca2dc9535c3fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80f2bdf998605907a0a38458fb67801c"><td class="memItemLeft" align="right" valign="top"><a id="a80f2bdf998605907a0a38458fb67801c"></a>
+<a class="el" href="structqueue__t.html">Queue</a>&#160;</td><td class="memItemRight" valign="bottom"><b>waiting_queue</b></td></tr>
+<tr class="separator:a80f2bdf998605907a0a38458fb67801c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32d0c6b5036a6048d4891b0d4bc2adc4"><td class="memItemLeft" align="right" valign="top"><a id="a32d0c6b5036a6048d4891b0d4bc2adc4"></a>
+<a class="el" href="structqueue__t.html">Queue</a>&#160;</td><td class="memItemRight" valign="bottom"><b>running_queue</b></td></tr>
+<tr class="separator:a32d0c6b5036a6048d4891b0d4bc2adc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af28c408a6ffa17c83f2b06e6a526e386"><td class="memItemLeft" align="right" valign="top"><a id="af28c408a6ffa17c83f2b06e6a526e386"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>running</b></td></tr>
 <tr class="separator:af28c408a6ffa17c83f2b06e6a526e386"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -97,9 +97,6 @@ pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><b>mutex</b><
 <tr class="memitem:a566bc1a19613e8aa19e60599e74a399e"><td class="memItemLeft" align="right" valign="top"><a id="a566bc1a19613e8aa19e60599e74a399e"></a>
 <a class="el" href="structsemaphore.html">sem_t_</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>sem_barrier</b></td></tr>
 <tr class="separator:a566bc1a19613e8aa19e60599e74a399e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af965c3ac8ec0f2f0e6d2a945642057ce"><td class="memItemLeft" align="right" valign="top"><a id="af965c3ac8ec0f2f0e6d2a945642057ce"></a>
-<a class="el" href="structsemaphore.html">sem_t_</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>sem_jobs</b></td></tr>
-<tr class="separator:af965c3ac8ec0f2f0e6d2a945642057ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/job_scheduler.c</li>
