@@ -65,23 +65,42 @@ $(function() {
 <div class="title">K23a Project Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a></p><h1 align="center">ΑΝΑΠΤΥΞΗ ΛΟΓΙΣΜΙΚΟΥ ΓΙΑ ΠΛΗΡΟΦΟΡΙΑΚΑ ΣΥΣΤΗΜΑΤΑ</h1>
-<p align="center"></p>
-<p align="center"></p>
-<p><br  />
-</p>
-<p><b>Entity resolution</b></p>
+<div class="textblock"><p><a class="anchor" id="md_README"></a> </p><h1 align="center">ΑΝΑΠΤΥΞΗ ΛΟΓΙΣΜΙΚΟΥ ΓΙΑ ΠΛΗΡΟΦΟΡΙΑΚΑ ΣΥΣΤΗΜΑΤΑ</h1>
 <p><br  />
 </p>
 <p align="center"></p>
-<p align="center"></p>
-<p><a href="https://k23a-prj-auth.herokuapp.com" target="_blank"><b>Documentation</b></a></p>
+<p><br  />
+</p>
+<p><br  />
+ <br  />
+</p>
+<p><b>Entity resolution</b> <br  />
+</p>
+<p><br  />
+ <br  />
+</p>
 <p><br  />
 </p>
 <p align="center"></p>
+<p><br  />
+</p>
+<p><a href="https://k23a-prj-auth.herokuapp.com" target="_blank"><b>Documentation</b></a> <br  />
+</p>
+<p><br  />
+ <br  />
+</p>
+<p><br  />
+</p>
 <p align="center"></p>
-<p><a href="https://discord.gg/nSGmntAX"><img src="https://img.shields.io/discord/765286458243153950?color=7389d8&amp;label=Discord&amp;logo=Discord&amp;logoColor=fff" alt="Discord" class="inline"/> </a></p>
+<p><br  />
+</p>
+<p><a href="https://discord.gg/nSGmntAX"><img src="https://img.shields.io/discord/765286458243153950?color=7389d8&amp;label=Discord&amp;logo=Discord&amp;logoColor=fff" alt="Discord" class="inline"/>  </a> <br  />
+</p>
+<p><br  />
+</p>
 <hr  />
+<p> <br  />
+</p>
 <h1><a class="anchor" id="autotoc_md8"></a>
 Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών</h1>
 <h3><a class="anchor" id="autotoc_md9"></a>
@@ -90,90 +109,139 @@ $(function() {
 Κ23Α - ΑΝΑΠΤΥΞΗ ΛΟΓΙΣΜΙΚΟΥ ΓΙΑ ΠΛΗΡΟΦΟΡΙΑΚΑ ΣΥΣΤΗΜΑΤΑ</h3>
 <h3><a class="anchor" id="autotoc_md11"></a>
 &lt;strong&gt;Project - Entity resolution&lt;/strong&gt;</h3>
-<p><b>Μέλη</b>:</p>
+<p><b>Μέλη</b>: <br  />
+</p>
 <ul>
-<li>Θεόδωρος Χατζηιωαννίδης - 1115201600197</li>
-<li>Βασίλειος Πουλόπουλος - 1115201600141</li>
-<li>Κωνσταντίνος Χατζόπουλος - 1115201300202</li>
+<li>Θεόδωρος Χατζηιωαννίδης - 1115201600197 <br  />
+</li>
+<li>Βασίλειος Πουλόπουλος - 1115201600141 <br  />
+</li>
+<li>Κωνσταντίνος Χατζόπουλος - 1115201300202 <br  />
+</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md12"></a>
 Περιεχόμενα</h2>
 <ol type="1">
-<li><a href="#part2">PART 2</a></li>
+<li><a href="#part2">PART 2</a> <br  />
+</li>
+<li><a href="#intro">Εισαγωγή</a> <br  />
+</li>
+<li><a href="#hash_table">Hash table</a> <br  />
+</li>
+<li><a href="#list">List</a> <br  />
+</li>
+<li><a href="#json_parser">JSON Parser</a> <br  />
+</li>
+<li><a href="#spec_to_specs">Spec to specs</a> <br  />
+</li>
+<li><a href="#machine_learning">Μηχανική Μάθηση</a></li>
+<li><a href="#flow">Ροή του προγράμματος</a> <br  />
+</li>
+<li><a href="#unit_tests">Unit tests</a> <br  />
+</li>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#conclusions">Συμπεράσματα</a> <br  />
+</li>
 </ol>
-<ol type="1">
-<li><a href="#intro">Εισαγωγή</a></li>
-<li><a href="#hash_table">Hash table</a></li>
-<li><a href="#list">List</a></li>
-<li><a href="#json_parser">JSON Parser</a></li>
-<li><a href="#spec_to_specs">Spec to specs</a></li>
-<li><a href="#flow">Ροή του προγράμματος</a></li>
-<li><a href="#unit_tests">Unit tests</a></li>
-<li><a href="#conclusions">Συμπεράσματα</a></li>
-</ol>
-<p><a class="anchor" id="part2"></a></p>
+<p><a class="anchor" id="part2"></a> <br  />
+</p>
 <h2><a class="anchor" id="autotoc_md13"></a>
 Κλήση Προγραμμάτων</h2>
-<p>Για να εκτελεστούν τα πρόγραμμα από τερματικό τρέχουμε το script 'build_and_run.sh'.</p>
-<p>Τα ορίσματα που δέχεται το εκτελέσιμο για το training είναι τα εξής:</p>
+<p>Για να εκτελεστούν τα πρόγραμμα από τερματικό τρέχουμε το script 'build_and_run.sh'. <br  />
+</p>
+<p>Τα ορίσματα που δέχεται το εκτελέσιμο για το training είναι τα εξής: <br  />
+</p>
 <ul>
-<li>-dir { dataset X path }</li>
-<li>-csv { dataset W path }</li>
-<li>-sw { stopwords file path }</li>
-<li>-m { tfidf | bow }</li>
-<li>-ex {resources path }</li>
+<li>-dir { dataset X path } <br  />
+</li>
+<li>-csv { dataset W path } <br  />
+</li>
+<li>-sw { stopwords file path } <br  />
+</li>
+<li>-m { tfidf | bow } <br  />
+</li>
+<li>-ex {resources path } <br  />
+</li>
 </ul>
-<p>Τα ορίσματα που δέχεται το εκτελέσιμο για το predicting είναι τα εξής:</p>
+<p>Τα ορίσματα που δέχεται το εκτελέσιμο για το predicting είναι τα εξής: <br  />
+</p>
 <ul>
-<li>-dir {user dataset X path}</li>
-<li>-csv {user dataset W path}</li>
-<li>-vocabulary {vocabulary path}</li>
-<li>-model {model path}</li>
+<li>-dir {user dataset X path} <br  />
+</li>
+<li>-csv {user dataset W path} <br  />
+</li>
+<li>-vocabulary {vocabulary path} <br  />
+</li>
+<li>-model {model path} <br  />
+</li>
 </ul>
 <h3><a class="anchor" id="autotoc_md14"></a>
 Ενδεικτική εκτέλεση προγράμματος Training</h3>
-<p>&gt;./project \ -dir Datasets/camera_specs/2013_camera_specs \ -csv Datasets/sigmod_large_labelled_dataset.csv \ -sw resources/unwanted-words.txt \ -m bow \ -ex resources</p>
+<p>&gt;./project \ <br  />
+ -dir Datasets/camera_specs/2013_camera_specs \ <br  />
+ -csv Datasets/sigmod_large_labelled_dataset.csv \ <br  />
+ -sw resources/unwanted-words.txt \ <br  />
+ -m bow \ <br  />
+ -ex resources <br  />
+</p>
 <h3><a class="anchor" id="autotoc_md15"></a>
 Ενδεικτική εκτέλεση προγράμματος Predicting</h3>
 <blockquote class="doxtable">
-<p>./user -dir resources/user_json_files \ </p>
+<p>./user -dir resources/user_json_files \ <br  />
+ </p>
 </blockquote>
-<p>-csv resources/user_dataset.csv \ -vocabulary resources/vocabulary.csv \ -model resources/model.csv</p>
-<h2><a class="anchor" id="autotoc_md16"></a>
-Έξοδος προγράμματος Training</h2>
-<p><b>predictions</b> και <b>f1 score</b> για το validation set</p>
-<h2><a class="anchor" id="autotoc_md17"></a>
-Έξοδος προγράμματος Training</h2>
-<p><b>predicitons</b> για το dataset που δίνει ο χρήστης.</p>
-<p><b>Σημείωση</b>: Για να περάσουμε το model και το vocabulary από το ένα πρόγραμμα στο άλλο, τα γράψαμε σε αρχεία.</p>
-<p><a class="anchor" id="intro"></a></p>
+<p>-csv resources/user_dataset.csv \ -vocabulary resources/vocabulary.csv \ -model resources/model.csv <br  />
+ </p>
+<h3><a class="anchor" id="autotoc_md16"></a>
+Έξοδος προγράμματος Training</h3>
+<p><b>predictions</b> και <b>f1 score</b> για το validation set <br  />
+</p>
+<h3><a class="anchor" id="autotoc_md17"></a>
+Έξοδος προγράμματος Testing</h3>
+<p><b>predicitons</b> για το dataset που δίνει ο χρήστης. <br  />
+</p>
+<p><b>Σημείωση</b>: Για να περάσουμε το model και το vocabulary από το ένα πρόγραμμα στο άλλο, τα γράψαμε σε αρχεία. <br  />
+</p>
+<p><a class="anchor" id="intro"></a> <br  />
+ </p>
 <h2><a class="anchor" id="autotoc_md18"></a>
 Εισαγωγή</h2>
-<p>Στόχος της άσκησης είναι να δημιουργήσουμε κλίκες γράφων από αγγελίες με τα ίδια προϊόντα σε διάφορα site. Για την</p>
-<p>υλοποίηση χρειάστηκε να δημιουργήσουμε τις παρακάτω δομές δεδομένων:</p>
+<p>Στόχος της άσκησης είναι να δημιουργήσουμε κλίκες γράφων από αγγελίες με τα ίδια προϊόντα σε διάφορα site. Για την υλοποίηση χρειάστηκε να δημιουργήσουμε τις παρακάτω δομές δεδομένων: <br  />
+</p>
 <ul>
-<li><b>hash table</b>:</li>
-<li><b>list</b></li>
+<li><b>hash table</b>: <br  />
+</li>
+<li><b>list</b> <br  />
+</li>
 </ul>
-<p>Επίσης, υλοποιήσαμε έναν json parser ώστε να συλλέξουμε τα δεδομένα των αγγελιών από τα json αρχεία.</p>
-<p>Επιπλέον, για τον έλεγχο ορθότητας του κώδικα, χρησιμοποιήσαμε τη βιβλιοθήκη <b>acutest.h</b> όπου δέχεται μια λίστα από</p>
-<p>κατάλληλες συναρτήσεις (tests) που γράψαμε.</p>
-<p><a class="anchor" id="hash_table"></a></p>
+<p>Επίσης, υλοποιήσαμε έναν <b>json parser</b> ώστε να συλλέξουμε τα δεδομένα των αγγελιών από τα json αρχεία. <br  />
+</p>
+<p>Επιπλέον, για τον έλεγχο ορθότητας του κώδικα, χρησιμοποιήσαμε τη βιβλιοθήκη <b>acutest.h</b> όπου δέχεται μια λίστα από κατάλληλες συναρτήσεις (tests) που γράψαμε. <br  />
+</p>
+<p><a class="anchor" id="hash_table"></a> <br  />
+ </p>
 <h2><a class="anchor" id="autotoc_md19"></a>
 Hash table</h2>
-<p><img src="https://raw.githubusercontent.com/vasilisp100/k23a-project/master/resources/hash.png?token=AMOC6IZ2FVNF77KBO6EZCBK7Z7ZWC" alt="hash table" class="inline"/></p>
-<p>Για την υλοποίηση του hash table, χρησιμοποιήσαμε generic <b>open addressing hash table</b> με <b>random probing</b>.</p>
-<p>Πιο συγκεκριμένα, δεσμεύουμε ένα κομμάτι μνήμης το οποίο χωρίζεται σε μκρότερα ίσα μέρη ώστε στα οποία αποθηκεύονται οι</p>
-<p>πληροφορίες του κάθε <b>spec</b>.</p>
-<p>Αφού χρησιμοποιούμε random probing το κάθε spec ανάλογα με το key του, αν δε χωράει στην πρώτη θέση που θα υπολογιστεί</p>
-<p>μέσω του hash function, θα ψάξει κάποια "τυχαία" θέση για να αποθηκευθεί. Το seed της random συνάρτησης είναι σταθερό,</p>
-<p>οπότε πάντα μπορούμε να υπολογίσουμε σε ποιο σημείο της μνήμης βρίσκονται το εκάστοτε δεδομένα.</p>
-<p>Αν η μνήμη που έχουμε δεσμεύσει αρχίσει να γεμίζει θα κάνουμε <b>Rehashing</b>. Όταν θέλουμε να εισάγουμε νέα δεδομένα αλλά</p>
-<p>η πληρότητα του είναι 70%, δεσμεύουμε τη διπλάσια μνήμη από πριν, ξαναμοιράζουμε τα δεδομένα στην καινούργια, μεγαλύτερη</p>
-<p>μνήμη και εισάγουμε τα νέα δεδομένα.</p>
-<p>Η δομή που χρησιμοποιήσαμε για το hash table είναι η παρακάτω:</p>
-<div class="fragment"><div class="line"><span class="keyword">typedef</span>  <span class="keyword">struct </span><a class="code" href="structhtab__s.html">htab_s</a> {</div>
-<div class="line"> ht_hash_func <a class="code" href="structhtab__s.html#a19a6f98d448a6e3bc6140e9eda393a48">h</a>;  ht_cmp_func <a class="code" href="structhtab__s.html#a86ac020f20ab1efa23711fec3ef2f7cf">cmp</a>;  ht_key_cpy_func <a class="code" href="structhtab__s.html#a810080f8b4c5355fb15ba5cc4fb17364">keycpy</a>;  <span class="keywordtype">size_t</span> <a class="code" href="structhtab__s.html#a34ed69269093a550b7eb86c5774aa402">key_sz</a>;  <span class="keywordtype">size_t</span> <a class="code" href="structhtab__s.html#a8c2ab395e0c6aaf721a63c49a5352ece">val_sz</a>;  ulong <a class="code" href="structhtab__s.html#a472e4249f98200a928ed1c406e4aad27">buf_cap</a>;  ulong <a class="code" href="structhtab__s.html#a8365c1eca17c6a80214a3a3e17b0e9ef">buf_load</a>;  <span class="keywordtype">char</span> <a class="code" href="structhtab__s.html#a2d102a84e231caee47b0f507fef98cfa">buf</a>[]; } <a class="code" href="group__htab.html#gac0cb518811d32006d78e617452a0a602">htab_t</a>; </div>
+<p><img src="https://raw.githubusercontent.com/vasilisp100/k23a-project/master/resources/hash.png?token=AMOC6IZ2FVNF77KBO6EZCBK7Z7ZWC" alt="hash table" class="inline"/> <br  />
+</p>
+<p>Για την υλοποίηση του hash table, χρησιμοποιήσαμε generic <b>open addressing hash table</b> με <b>random probing</b>. <br  />
+ Πιο συγκεκριμένα, δεσμεύουμε ένα κομμάτι μνήμης το οποίο χωρίζεται σε μκρότερα ίσα μέρη ώστε στα οποία αποθηκεύονται οι πληροφορίες του κάθε <b>spec</b>. <br  />
+</p>
+<p>Αφού χρησιμοποιούμε random probing το κάθε spec ανάλογα με το key του, αν δε χωράει στην πρώτη θέση που θα υπολογιστεί μέσω του hash function, θα ψάξει κάποια "τυχαία" θέση για να αποθηκευθεί. Το seed της random συνάρτησης είναι σταθερό, οπότε πάντα μπορούμε να υπολογίσουμε σε ποιο σημείο της μνήμης βρίσκονται τα εκάστοτε δεδομένα. <br  />
+</p>
+<p>Αν η μνήμη που έχουμε δεσμεύσει αρχίσει να γεμίζει θα κάνουμε <b>Rehashing</b>. Όταν θέλουμε να εισάγουμε νέα δεδομένα αλλά η πληρότητα του είναι 70%, δεσμεύουμε τη διπλάσια μνήμη από πριν, ξαναμοιράζουμε τα δεδομένα στην καινούργια, μεγαλύτερη μνήμη και εισάγουμε τα νέα δεδομένα. <br  />
+</p>
+<p>Η δομή που χρησιμοποιήσαμε για το hash table είναι η παρακάτω: <br  />
+ </p><div class="fragment"><div class="line"><span class="keyword">typedef</span>  <span class="keyword">struct </span><a class="code" href="structhtab__s.html">htab_s</a> {  </div>
+<div class="line">    ht_hash_func <a class="code" href="structhtab__s.html#a19a6f98d448a6e3bc6140e9eda393a48">h</a>;  </div>
+<div class="line">    ht_cmp_func <a class="code" href="structhtab__s.html#a86ac020f20ab1efa23711fec3ef2f7cf">cmp</a>; </div>
+<div class="line">    ht_key_cpy_func <a class="code" href="structhtab__s.html#a810080f8b4c5355fb15ba5cc4fb17364">keycpy</a>; </div>
+<div class="line">    <span class="keywordtype">size_t</span> <a class="code" href="structhtab__s.html#a34ed69269093a550b7eb86c5774aa402">key_sz</a>; </div>
+<div class="line">    <span class="keywordtype">size_t</span> <a class="code" href="structhtab__s.html#a8c2ab395e0c6aaf721a63c49a5352ece">val_sz</a>; </div>
+<div class="line">    ulong <a class="code" href="structhtab__s.html#a472e4249f98200a928ed1c406e4aad27">buf_cap</a>;  </div>
+<div class="line">    ulong <a class="code" href="structhtab__s.html#a8365c1eca17c6a80214a3a3e17b0e9ef">buf_load</a>; </div>
+<div class="line">    <span class="keywordtype">char</span> <a class="code" href="structhtab__s.html#a2d102a84e231caee47b0f507fef98cfa">buf</a>[]; </div>
+<div class="line">} <a class="code" href="group__htab.html#gac0cb518811d32006d78e617452a0a602">htab_t</a>; </div>
 <div class="ttc" id="agroup__htab_html_gac0cb518811d32006d78e617452a0a602"><div class="ttname"><a href="group__htab.html#gac0cb518811d32006d78e617452a0a602">htab_t</a></div><div class="ttdeci">struct htab_s htab_t</div><div class="ttdoc">hashtable ADT with open addressing and random probing</div></div>
 <div class="ttc" id="astructhtab__s_html"><div class="ttname"><a href="structhtab__s.html">htab_s</a></div><div class="ttdoc">hashtable ADT with open addressing and random probing</div><div class="ttdef"><b>Definition:</b> hash.h:60</div></div>
 <div class="ttc" id="astructhtab__s_html_a19a6f98d448a6e3bc6140e9eda393a48"><div class="ttname"><a href="structhtab__s.html#a19a6f98d448a6e3bc6140e9eda393a48">htab_s::h</a></div><div class="ttdeci">ht_hash_func h</div><div class="ttdoc">hash function used to hash the keys</div><div class="ttdef"><b>Definition:</b> hash.h:62</div></div>
@@ -184,42 +252,83 @@ Hash table</h2>
 <div class="ttc" id="astructhtab__s_html_a8365c1eca17c6a80214a3a3e17b0e9ef"><div class="ttname"><a href="structhtab__s.html#a8365c1eca17c6a80214a3a3e17b0e9ef">htab_s::buf_load</a></div><div class="ttdeci">ulong buf_load</div><div class="ttdoc">occupied entries of buf</div><div class="ttdef"><b>Definition:</b> hash.h:75</div></div>
 <div class="ttc" id="astructhtab__s_html_a86ac020f20ab1efa23711fec3ef2f7cf"><div class="ttname"><a href="structhtab__s.html#a86ac020f20ab1efa23711fec3ef2f7cf">htab_s::cmp</a></div><div class="ttdeci">ht_cmp_func cmp</div><div class="ttdoc">comparison function to compare 2 keys (default: memcmp)</div><div class="ttdef"><b>Definition:</b> hash.h:64</div></div>
 <div class="ttc" id="astructhtab__s_html_a8c2ab395e0c6aaf721a63c49a5352ece"><div class="ttname"><a href="structhtab__s.html#a8c2ab395e0c6aaf721a63c49a5352ece">htab_s::val_sz</a></div><div class="ttdeci">size_t val_sz</div><div class="ttdoc">size of val in the hashtable</div><div class="ttdef"><b>Definition:</b> hash.h:71</div></div>
-</div><!-- fragment --><p><a class="anchor" id="list"></a></p>
+</div><!-- fragment --><p><a class="anchor" id="list"></a> <br  />
+</p>
 <h2><a class="anchor" id="autotoc_md20"></a>
 List</h2>
-<p>Χρησιμοποιήσαμε μία generic <b>list</b>.</p>
-<p><a class="anchor" id="json_parser"></a></p>
+<p>Χρησιμοποιήσαμε μία generic <b>list</b>. <br  />
+</p>
+<p><a class="anchor" id="json_parser"></a> <br  />
+ </p>
 <h2><a class="anchor" id="autotoc_md21"></a>
 JSON Parser</h2>
-<p><a class="anchor" id="spec_to_specs"></a></p>
+<p><a class="anchor" id="spec_to_specs"></a> <br  />
+</p>
 <h2><a class="anchor" id="autotoc_md22"></a>
 Spec to specs</h2>
-<p>Ο τρόπος με τον οποίο συνδέουμε τα στοιχεία των κλικών μεταξύ τους, είναι μέσω μίας δενδρικής αναπαράστασης. Το πρώτο</p>
-<p>spec που θα μπει στην κλίκα είναι ο πατέρας, ενώ τα υπόλοιπα είναι τα παιδιά του. Αν δύο κλίκες γίνουν <b>merge</b>, τότε ο</p>
-<p>πατέρας της δεύτερης κλίκας πάει και αποθηκεύεται στον παππού της πρώτης. Με αυτό τον τρόπο κρατάμε το δένδρο σε χαμηλά</p>
-<p>επίπεδα.</p>
-<p>To spec to specs είναι η δομή που χρησιμοποιούμε για το ζητούμενο της άσκησης. Στην ουσία είναι ένα hash table, στο</p>
-<p>οποίο το κάθε στοιχείο που αποθηκεύεται είναι της μορφής:</p>
-<div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code" href="structSpecEntry__s.html">SpecEntry_s</a> {</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">char</span> *<a class="code" href="structSpecEntry__s.html#a38d7e29e2a029fa13700dcd2597853f7">id</a>;  <span class="keywordtype">char</span> *<a class="code" href="structSpecEntry__s.html#ace7105861cfe9a90fc7b78d24cc7101a">parent</a>;  StrList *<a class="code" href="structSpecEntry__s.html#aa475be2eddf3f4b407c98addb65a8f74">similar</a>, *similar_tail;  ulong <a class="code" href="structSpecEntry__s.html#a65d95811b88f1bfa7154d9b6535b53bf">similar_len</a>;};</div>
+<p>Ο τρόπος με τον οποίο συνδέουμε τα στοιχεία των κλικών μεταξύ τους, είναι μέσω μίας δενδρικής αναπαράστασης. Το πρώτο spec που θα μπει στην κλίκα είναι ο πατέρας, ενώ τα υπόλοιπα είναι τα παιδιά του. Αν δύο κλίκες γίνουν <b>merge</b>, τότε ο πατέρας της δεύτερης κλίκας αποθηκεύεται στον παππού της πρώτης. Με αυτό τον τρόπο κρατάμε το δένδρο σε χαμηλά επίπεδα. <br  />
+</p>
+<p>To spec to specs είναι η δομή που χρησιμοποιούμε για το ζητούμενο της άσκησης. Στην ουσία είναι ένα hash table, στο οποίο το κάθε στοιχείο που αποθηκεύεται είναι της μορφής: <br  />
+ </p><div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code" href="structSpecEntry__s.html">SpecEntry_s</a> {  </div>
+<div class="line">      <span class="keywordtype">char</span> *<a class="code" href="structSpecEntry__s.html#a38d7e29e2a029fa13700dcd2597853f7">id</a>;   </div>
+<div class="line">      <span class="keywordtype">char</span> *<a class="code" href="structSpecEntry__s.html#ace7105861cfe9a90fc7b78d24cc7101a">parent</a>;</div>
+<div class="line">      StrList *<a class="code" href="structSpecEntry__s.html#aa475be2eddf3f4b407c98addb65a8f74">similar</a>, *similar_tail, *different, *different_tail;   </div>
+<div class="line">      ulong <a class="code" href="structSpecEntry__s.html#a65d95811b88f1bfa7154d9b6535b53bf">similar_len</a>, different_len;  </div>
+<div class="line">      <span class="keywordtype">bool</span> printed;  </div>
+<div class="line">}; </div>
 <div class="ttc" id="astructSpecEntry__s_html"><div class="ttname"><a href="structSpecEntry__s.html">SpecEntry_s</a></div><div class="ttdoc">STS hashtable entry.</div><div class="ttdef"><b>Definition:</b> spec_to_specs.h:50</div></div>
 <div class="ttc" id="astructSpecEntry__s_html_a38d7e29e2a029fa13700dcd2597853f7"><div class="ttname"><a href="structSpecEntry__s.html#a38d7e29e2a029fa13700dcd2597853f7">SpecEntry_s::id</a></div><div class="ttdeci">char * id</div><div class="ttdoc">spec id</div><div class="ttdef"><b>Definition:</b> spec_to_specs.h:52</div></div>
 <div class="ttc" id="astructSpecEntry__s_html_a65d95811b88f1bfa7154d9b6535b53bf"><div class="ttname"><a href="structSpecEntry__s.html#a65d95811b88f1bfa7154d9b6535b53bf">SpecEntry_s::similar_len</a></div><div class="ttdeci">ulong similar_len</div><div class="ttdoc">Length of similar.</div><div class="ttdef"><b>Definition:</b> spec_to_specs.h:61</div></div>
 <div class="ttc" id="astructSpecEntry__s_html_aa475be2eddf3f4b407c98addb65a8f74"><div class="ttname"><a href="structSpecEntry__s.html#aa475be2eddf3f4b407c98addb65a8f74">SpecEntry_s::similar</a></div><div class="ttdeci">StrList * similar</div><div class="ttdoc">Contents of the set if this node is the representative of the set, this is the list of the elements; ...</div><div class="ttdef"><b>Definition:</b> spec_to_specs.h:59</div></div>
 <div class="ttc" id="astructSpecEntry__s_html_ace7105861cfe9a90fc7b78d24cc7101a"><div class="ttname"><a href="structSpecEntry__s.html#ace7105861cfe9a90fc7b78d24cc7101a">SpecEntry_s::parent</a></div><div class="ttdeci">char * parent</div><div class="ttdoc">Set of similar specs.</div><div class="ttdef"><b>Definition:</b> spec_to_specs.h:54</div></div>
-</div><!-- fragment --><p>Ο parent είναι ο πατέρας του spec (αν δεν είναι σε κλίκα είναι ο εαυτός του) . Η similar είναι μία λίστα στην οποία, αν</p>
-<p>το spec είναι parent κάποιας κλίκας αποθηκεύονται τα ids όλης της κλίκας αλλιώς είναι NULL, ενώ το similar_tail είναι</p>
-<p>δείκτης στο τελευταίο στοιχείο της similar. Το similar_len είναι το μέγεθος της similar.</p>
-<p><a class="anchor" id="flow"></a></p>
+</div><!-- fragment --><p> Ο parent είναι ο πατέρας του spec (αν δεν είναι σε κλίκα τότε έχει για πατέρα τον εαυτό του). Η similar είναι μία λίστα στην οποία, αν το spec είναι parent κάποιας κλίκας αποθηκεύονται τα ids όλης της κλίκας, σε αντίθετη περίπτωση της ανατίθεται η τιμή NULL, ενώ το similar_tail είναι δείκτης στο τελευταίο στοιχείο της similar. Το similar_len είναι το μέγεθος της similar. <br  />
+</p>
+<p>Για τον υπολογισμό των διαφορετικών κλικών (different) βάλαμε άλλη μία λίστα στην οποία βρίσκονται οι root κάθε κλίκας που είναι διαφορετική. Αν για παράδειγμα είχαμε τη συσχέτιση "Α, Β, 0", ο root του Α θα συμπεριλάμβανε το root του Β στη different λίστα του, όπως και ο root του Β θα συμπεριλάμβανε το root του Α στη δική του different λίστα.</p>
+<p><a class="anchor" id="machine_learning"></a> </p>
 <h2><a class="anchor" id="autotoc_md23"></a>
+Μηχανική Μάθηση</h2>
+<p>Αρχικά έπρεπε να δημιουργηθέι το <b>vocabulary</b> σύμφωνα με το οποίο θα φτιάχνονταν τα διανύσματα για να γίνει το <b>training</b> και το <b>testing</b>. Έτσι δημιουργήσαμε το vocabulary με όλες τις διαφορετικές λέξεις των JSON αρχείων.</p>
+<p>Για να μειωθούν οι διαστάσεις δεν συμπεριλάβαμε <b>stopwords</b>, punctuations και αριθμούς, όπως και κάποιες λέξεις που θεωρούμε πως δεν φέρουν χρήσιμη πληροφορία αφού υπάρχουν σε σχεδόν όλα τα αρχεία (πχ το "mm"). Στη συνέχεια αν ο χρήστης έχει δώσει την επιλογή <b>tfidf</b>, αφαιρούμε απο το vocabulary τις λέξεις με μεγάλο <b>idf</b>. Για να γίνει η διαδικασία επιλογής λέξεων δοκιμάσαμε τις παρακάτω μεθόδους:</p><ul>
+<li>Η πρώτη μέθοδος ήταν να χρησιμοποιήσουμε συναρτήσεις όπως η <b>strtok</b> και <b>strcat</b>.</li>
+<li>H δεύτερη ήταν να τροποποιήσουμε τον <b>tokenizer</b> που έχουμε υλοποιήσει για τον <b>json parser</b> και να υλοποιήσουμε την συνάρτηση <b>tokenizer_nlp_sw()</b> που αναλαμβάνει να επιστρέψει μόνο τις λέξεις που πληρούν τα κριτήριά αγνοώντας τις υπόλοιπες.</li>
+</ul>
+<p>Παρατηρήσαμε πως η δεύτερη μέθοδος ήταν πιο γρήγορη οπότε και την προτιμήσαμε για το τελικό μας πρόγραμμα. Παρ' όλα αυτά υπάρχουν και οι δύο υλοποιήσεις καθώς και τα test τους στο repository.</p>
+<p>Στη συνέχεια φτιάξαμε το <b>διάνυσμα</b> για το κάθε json και τα αποθηκεύσαμε σε ένα hash table για να τα έχουμε έτοιμα όταν τα χρειαστούμε.</p>
+<p>Για να δημιουργηθεί το dataset για το train, test και validation ακολουθήθηκε η εξής διαδικασία:</p>
+<p>Αρχικά δημιουργήθηκαν όλα τα similar και different ζευγάρια μέσω των κλικών. Αυτό ήταν το συνολικό dataset. Στη συνέχεια κρατήσαμε τυχαία το <b>50% των similar</b> και το <b>50% των different</b> και τα ενώσαμε σε ένα πίνακα. Αυτός ο πίνακας αποτελεί το train set. Κάναμε την ίδια διαδικασία με <b>25% για το test set</b> και τα υπόλοιπα <b>25% για το validation set</b>. Έτσι είχαμε τα τρία sets που χρειαζόμασταν.</p>
+<h3><a class="anchor" id="autotoc_md24"></a>
+Εκπαίδευση μοντέλου</h3>
+<p>Για την εκπαίδευση υλοποιήσαμε mini <b>batch gradient decent</b>. Σε κάθε <b>epoch</b> αρχικά γίνεται training για το training set και στη συνέχεια γίνεται predict για το test set ωστε να υπολογίζουμε το <b>max loss</b> σε κάθε <b>epoch</b>, με το σκεπτικό αν παρατηρήσουμε συνεχή αύξηση του max loss για 5 συνεχόμενα epochs, να κρατήσουμε το μοντέλο που είχε υπολογιστεί πριν 5 epochs και να σταματήσουμε τη διαδικασία του <b>training</b>. Παρατηρήσασμε όμως πως γινόταν <b>overfit</b> στα πρώτα epochs και έτσι σταματούσε το training στο πέμπτο epoch. Γι αυτό το λόγο κάναμε comment out το check και η εκπαίδευση γίνεται για όσα epochs έχουμε ορίσει από την αρχη με τον κίνδυνο να γίνει overfit για τα δεδομένα του training set.</p>
+<p>Στο τέλος του training κάνουμε <b>predict</b> για το validation set, τυπώνουμε τα predictions (με κόκκινο χρώμα τα λανθασμένα και με πράσινο τα σωστά) και στη συνέχεια υπολογίζουμε το <b>F1 score</b></p>
+<p>Παρατηρήσαμε ότι για <b>170 epochs</b>, <b>0,0001 learning rate</b> και <b>batch size 2000</b> παίρνουμε αρκετά καλό score της τάξης του <b>0,77</b></p>
+<h3><a class="anchor" id="autotoc_md25"></a>
+Εξαγωγή μοντέλου και λεξιλογίου σε αρχεία</h3>
+<p>Έχει υλοποιηθεί και δεύτερη main (<b>user.c</b>) η οποία κάνει μόνο predict ότι δώσει ο χρήστης σαν είσοδο. Χρησιμοποιόντας το vocabulary και το model που έχουν γίνει export από την πρώτη main. Για το λόγο αυτό το vocabulary και το τελικό model γίνονται export σε αρχεία ώστε να δοθούν ως είσοδο σε αυτήν.</p>
+<h3><a class="anchor" id="autotoc_md26"></a>
+Επαναληπτηκή εκμάθηση</h3>
+<p>Στη συνέχεια έπρεπε να γίνει η διαδικασία της επαναληπτικής μάθησης την οποία είχαμε ξεκινήσει να υλοποιούμε στο branch <b>repetitive learning</b>, όμως δεν προλάβαμε να το ολοκληρώσουμε ώστε να το κάνουμε merge στο master.</p>
+<p>Η διαδικασία που ακολουθούσαμε ήταν να χρησιμοποιήσουμε όλο το dataset για training (<b>train + test + val sets</b>) και για threshold είχαμε 0.15. Για όλα τα υπόλοιπα πιθανά ζευγάρια (δηλαδή όλα τα ζευγάρια απο specs για τα οποία δεν ξέρουμε τη σχέση τους, κάναμε predict. Aν το μοντέλο μας ήταν αρκετά "σίγουρο" προσθέταμε όλες τις συσχετίσεις που προέκυπταν από αυτό το prediction. Συνεχίζαμε τη διαδικασία για όσο το <b>threshold</b> ήταν &lt; <b>0,5</b>.</p>
+<p><a class="anchor" id="flow"></a> <br  />
+ </p>
+<h2><a class="anchor" id="autotoc_md27"></a>
 Ροή του προγράμματος</h2>
-<p><img src="https://raw.githubusercontent.com/vasilisp100/k23a-project/master/resources/cliques.gif?token=AMOC6I6TSAEO3RWM4E22FUK7Z7ZZS" alt="cliques" class="inline"/></p>
-<p><a class="anchor" id="unit_tests"></a></p>
-<h2><a class="anchor" id="autotoc_md24"></a>
+<p><img src="https://raw.githubusercontent.com/vasilisp100/k23a-project/master/resources/cliques.gif?token=AMOC6I6TSAEO3RWM4E22FUK7Z7ZZS" alt="cliques" class="inline"/> <br  />
+</p>
+<p><a class="anchor" id="unit_tests"></a> <br  />
+ </p>
+<h2><a class="anchor" id="autotoc_md28"></a>
 Unit tests</h2>
-<p><a class="anchor" id="conclusions"></a></p>
-<h2><a class="anchor" id="autotoc_md25"></a>
+<p>Κάθε module (<b>list</b>, <b>hash table</b>, <b>hset</b>, <b><a class="el" href="structjob__scheduler.html">job_scheduler</a></b>, <b>json_parser</b>, <b>ml</b>, <b>logreg</b>, <b>queue</b>, κτλ) έχει αντίστοιχα και τα δικά του unit tests τα οποία βρίσκονται σε διαφορετικά αρχεία το καθένα. Για την υλοποίησή τους, κάνουμε χρήση της βιβλιοθήκης <a href="https://github.com/mity/acutest">Acutest</a>. Όταν επιχειρούμε να κάνουμε complile (make), commit ή push εκτελούνται τα unit tests και αν τερματίσουν επιτυχώς, πραγματοποιείται με επιτυχία η αντίστοιχη διαδικασία.</p>
+<p>Επιπλέον, τα test αυτά εκτελούνται remotely μέσω των github actions (CI)</p>
+<p><a class="anchor" id="documentation"></a> <br  />
+ </p>
+<h2><a class="anchor" id="autotoc_md29"></a>
+Documentation</h2>
+<p>Στον σύνδεσμο <a href="https://k23a-prj-auth.herokuapp.com">Documentation</a> που βρίσκεται και στην πρώτη σελίδα του report βρίσκεται το documentation (man pages) των βιβλιοθηκών που έχουν υλοποιηθεί. Πρόσβαση επιτρέπεται μόνο στους contributors του project (δηλαδή την ομάδα μας και το βοηθό του τμήματός μας) και πρέπει να γίνει authentication μέσω github, ωστε να μην μπορεί κάποιος άλλος να αποκτήσει πρόσβαση.</p>
+<p>Το Documentation υλοποιήθηκε μέσω του <a href="https://www.doxygen.nl/index.html">Doxygen</a>. Τα man pages αυτά ανανεώνονται κάθε φορά που προστίθεται νέο commit στο master. Τα output αρχεία του doxygen γίνονται push στο branch "**docs**" και απο εκεί ενημερώνεται το documentation site μας.</p>
+<p><a class="anchor" id="conclusions"></a> <br  />
+ </p>
+<h2><a class="anchor" id="autotoc_md30"></a>
 Συμπεράσματα</h2>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
