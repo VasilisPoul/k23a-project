@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ml_118',['ml',['../structml.html',1,'']]]
+  ['logreg_119',['LogReg',['../structLogReg.html',1,'']]]
 ];
