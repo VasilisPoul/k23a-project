@@ -65,7 +65,8 @@ $(function() {
 <div class="title">K23a Project Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a> </p><h1 align="center">ΑΝΑΠΤΥΞΗ ΛΟΓΙΣΜΙΚΟΥ ΓΙΑ ΠΛΗΡΟΦΟΡΙΑΚΑ ΣΥΣΤΗΜΑΤΑ</h1>
+<div class="textblock"><p><a class="anchor" id="md_README"></a></p>
+<h1 align="center">ΑΝΑΠΤΥΞΗ ΛΟΓΙΣΜΙΚΟΥ ΓΙΑ ΠΛΗΡΟΦΟΡΙΑΚΑ ΣΥΣΤΗΜΑΤΑ</h1>
 <p><br  />
 </p>
 <p align="center"></p>
@@ -122,7 +123,7 @@ $(function() {
 <h2><a class="anchor" id="autotoc_md12"></a>
 Περιεχόμενα</h2>
 <ol type="1">
-<li><a href="#part2">PART 2</a> <br  />
+<li><a href="#procedure">Διαδικαστικά</a> <br  />
 </li>
 <li><a href="#intro">Εισαγωγή</a> <br  />
 </li>
@@ -135,15 +136,12 @@ $(function() {
 <li><a href="#spec_to_specs">Spec to specs</a> <br  />
 </li>
 <li><a href="#machine_learning">Μηχανική Μάθηση</a></li>
-<li><a href="#flow">Ροή του προγράμματος</a> <br  />
-</li>
+<li><a href="#parallel">Παραλληλοποίηση</a></li>
 <li><a href="#unit_tests">Unit tests</a> <br  />
 </li>
 <li><a href="#documentation">Documentation</a></li>
-<li><a href="#conclusions">Συμπεράσματα</a> <br  />
-</li>
 </ol>
-<p><a class="anchor" id="part2"></a> <br  />
+<p><a class="anchor" id="procedure"></a> <br  />
 </p>
 <h2><a class="anchor" id="autotoc_md13"></a>
 Κλήση Προγραμμάτων</h2>
@@ -222,7 +220,7 @@ $(function() {
  </p>
 <h2><a class="anchor" id="autotoc_md19"></a>
 Hash table</h2>
-<p><img src="https://raw.githubusercontent.com/vasilisp100/k23a-project/master/resources/hash.png?token=AMOC6IZ2FVNF77KBO6EZCBK7Z7ZWC" alt="hash table" class="inline"/> <br  />
+<p><img src="https://raw.githubusercontent.com/vasilisp100/k23a-project/master/resources/hash.png?token=AOECAYY7EWIICN4TZXIPN7TAC3IQ4" alt="hash table" class="inline"/> <br  />
 </p>
 <p>Για την υλοποίηση του hash table, χρησιμοποιήσαμε generic <b>open addressing hash table</b> με <b>random probing</b>. <br  />
  Πιο συγκεκριμένα, δεσμεύουμε ένα κομμάτι μνήμης το οποίο χωρίζεται σε μκρότερα ίσα μέρη ώστε στα οποία αποθηκεύονται οι πληροφορίες του κάθε <b>spec</b>. <br  />
@@ -284,6 +282,7 @@ Spec to specs</h2>
 </div><!-- fragment --><p> Ο parent είναι ο πατέρας του spec (αν δεν είναι σε κλίκα τότε έχει για πατέρα τον εαυτό του). Η similar είναι μία λίστα στην οποία, αν το spec είναι parent κάποιας κλίκας αποθηκεύονται τα ids όλης της κλίκας, σε αντίθετη περίπτωση της ανατίθεται η τιμή NULL, ενώ το similar_tail είναι δείκτης στο τελευταίο στοιχείο της similar. Το similar_len είναι το μέγεθος της similar. <br  />
 </p>
 <p>Για τον υπολογισμό των διαφορετικών κλικών (different) βάλαμε άλλη μία λίστα στην οποία βρίσκονται οι root κάθε κλίκας που είναι διαφορετική. Αν για παράδειγμα είχαμε τη συσχέτιση "Α, Β, 0", ο root του Α θα συμπεριλάμβανε το root του Β στη different λίστα του, όπως και ο root του Β θα συμπεριλάμβανε το root του Α στη δική του different λίστα.</p>
+<p><em>Αναπαράσταση εισαγωγής κλίκας:</em> <img src="https://raw.githubusercontent.com/vasilisp100/k23a-project/master/resources/cliques.gif?token=AOECAY7ODGOEUUQACONOD3LAC3IOG" alt="cliques" class="inline"/></p>
 <p><a class="anchor" id="machine_learning"></a> </p>
 <h2><a class="anchor" id="autotoc_md23"></a>
 Μηχανική Μάθηση</h2>
@@ -296,6 +295,7 @@ Spec to specs</h2>
 <p>Στη συνέχεια φτιάξαμε το <b>διάνυσμα</b> για το κάθε json και τα αποθηκεύσαμε σε ένα hash table για να τα έχουμε έτοιμα όταν τα χρειαστούμε.</p>
 <p>Για να δημιουργηθεί το dataset για το train, test και validation ακολουθήθηκε η εξής διαδικασία:</p>
 <p>Αρχικά δημιουργήθηκαν όλα τα similar και different ζευγάρια μέσω των κλικών. Αυτό ήταν το συνολικό dataset. Στη συνέχεια κρατήσαμε τυχαία το <b>50% των similar</b> και το <b>50% των different</b> και τα ενώσαμε σε ένα πίνακα. Αυτός ο πίνακας αποτελεί το train set. Κάναμε την ίδια διαδικασία με <b>25% για το test set</b> και τα υπόλοιπα <b>25% για το validation set</b>. Έτσι είχαμε τα τρία sets που χρειαζόμασταν.</p>
+<p>****Για να δημιουργήσουμε το διάνυσμα κάθε ζευγαριού, χρησημοποιούμε την απόλυτη διαφορά των διανυσμάτων json1-json2.*</p>
 <h3><a class="anchor" id="autotoc_md24"></a>
 Εκπαίδευση μοντέλου</h3>
 <p>Για την εκπαίδευση υλοποιήσαμε mini <b>batch gradient decent</b>. Σε κάθε <b>epoch</b> αρχικά γίνεται training για το training set και στη συνέχεια γίνεται predict για το test set ωστε να υπολογίζουμε το <b>max loss</b> σε κάθε <b>epoch</b>, με το σκεπτικό αν παρατηρήσουμε συνεχή αύξηση του max loss για 5 συνεχόμενα epochs, να κρατήσουμε το μοντέλο που είχε υπολογιστεί πριν 5 epochs και να σταματήσουμε τη διαδικασία του <b>training</b>. Παρατηρήσασμε όμως πως γινόταν <b>overfit</b> στα πρώτα epochs και έτσι σταματούσε το training στο πέμπτο epoch. Γι αυτό το λόγο κάναμε comment out το check και η εκπαίδευση γίνεται για όσα epochs έχουμε ορίσει από την αρχη με τον κίνδυνο να γίνει overfit για τα δεδομένα του training set.</p>
@@ -443,28 +443,23 @@ Spec to specs</h2>
 <p>Στη συνέχεια ενημερώνεται το flag <code>job-&gt;complete</code>σε true και καλείται η <code>sem_post(&amp;job-&gt;sem_complete)</code> (<code>NOTIFY_JOB_COMPLETE_</code>) με σκοπό να ενημερωθεί το master νήμα πως το job ολοκληρώθηκε. Ο λόγος που γίνεται αυτό είναι γιατί μπορεί εκείνη την στιγμή να είχε μπλοκάρει στις συναρτήσεις <code>js_wait_job</code> ή και <code>js_get_return_val</code> αντίστοιχα.</p>
 <h3><a class="anchor" id="autotoc_md32"></a>
 Χρήση του Job Scheduler</h3>
-<p><a class="anchor" id="flow"></a> <br  />
- </p>
-<h2><a class="anchor" id="autotoc_md33"></a>
-Ροή του προγράμματος</h2>
-<p><img src="https://raw.githubusercontent.com/vasilisp100/k23a-project/master/resources/cliques.gif?token=AMOC6I6TSAEO3RWM4E22FUK7Z7ZZS" alt="cliques" class="inline"/> <br  />
-</p>
+<p>Στην υλοποίηση μας για τη μηχανική μάθηση, οι συναρτήσεις train και test περιμένουν έναν buffer με όλα τα διανύσματα που θα χρησιμοποιηθούν για αυτές τις διαδικασίες. Το να γεμίσει αυτός ο buffer κάθε φορά που χρειαζόταν, έπαιρνε αρκετό χρόνο, οπότε η πρώτη διαδικασία που παραλληλίσαμε ήταν αυτή. Πιο συγκεκριμένα, κάθε job αναλάμβανε να βάλει ένα διάνυσμα στο σωστό σημείο του buffer. Με αυτό τον τρόπο επιτυγχάνουμε ταυτόχρονο γέμισμα του buffer.</p>
+<p>Άλλο ένα σημείο στο οποίο παραλληλοποιήσαμε ήταν ο υπολογισμός των Deltas στη διαδικασία του training. Κάθε job αναλαμβάνει να υπολογίσει από ένα στοιχείο του Deltas array.</p>
+<p>Τέλος, παραλληλοποιήσαμε τη διαδικασία του predict, έτσι ώστε κάθε job να αναλαμβάνει να εκτελέσει το prediction ενός ζευγαριού και να το τοποθετεί στο σωστό σημείο του πίνακα με τα συνολικά predictions.</p>
+<p>Με τις παραπάνω ενέργειες είδαμε σημαντική βελτίωση στο χρόνο εκτέλεσης του προγράμματός μας.</p>
+<p>Σκοπεύαμε αν προλαβαίναμε, για να παρατηρήσουμε αν θα υπάρξει διαφορά στο χρόνο εκτέλεσης του προγράμματος, να αλλάζαμε τη διαδικασία της παραλληλοποίησης και να δίναμε στα jobs περισσότερες απο μία επαναλήψεις ώστε να γίνονταν περισσότερες πράξεις σε κάθε job.</p>
 <p><a class="anchor" id="unit_tests"></a> <br  />
  </p>
-<h2><a class="anchor" id="autotoc_md34"></a>
+<h2><a class="anchor" id="autotoc_md33"></a>
 Unit tests</h2>
 <p>Κάθε module (<b>list</b>, <b>hash table</b>, <b>hset</b>, <b><a class="el" href="structjob__scheduler.html">job_scheduler</a></b>, <b>json_parser</b>, <b>ml</b>, <b>logreg</b>, <b>queue</b>, κτλ) έχει αντίστοιχα και τα δικά του unit tests τα οποία βρίσκονται σε διαφορετικά αρχεία το καθένα. Για την υλοποίησή τους, κάνουμε χρήση της βιβλιοθήκης <a href="https://github.com/mity/acutest">Acutest</a>. Όταν επιχειρούμε να κάνουμε complile (make), commit ή push εκτελούνται τα unit tests και αν τερματίσουν επιτυχώς, πραγματοποιείται με επιτυχία η αντίστοιχη διαδικασία.</p>
 <p>Επιπλέον, τα test αυτά εκτελούνται remotely μέσω των github actions (CI)</p>
 <p><a class="anchor" id="documentation"></a> <br  />
  </p>
-<h2><a class="anchor" id="autotoc_md35"></a>
+<h2><a class="anchor" id="autotoc_md34"></a>
 Documentation</h2>
 <p>Στον σύνδεσμο <a href="https://k23a-prj-auth.herokuapp.com">Documentation</a> που βρίσκεται και στην πρώτη σελίδα του report βρίσκεται το documentation (man pages) των βιβλιοθηκών που έχουν υλοποιηθεί. Πρόσβαση επιτρέπεται μόνο στους contributors του project (δηλαδή την ομάδα μας και το βοηθό του τμήματός μας) και πρέπει να γίνει authentication μέσω github, ωστε να μην μπορεί κάποιος άλλος να αποκτήσει πρόσβαση.</p>
-<p>Το Documentation υλοποιήθηκε μέσω του <a href="https://www.doxygen.nl/index.html">Doxygen</a>. Τα man pages αυτά ανανεώνονται κάθε φορά που προστίθεται νέο commit στο master. Τα output αρχεία του doxygen γίνονται push στο branch "**docs**" και απο εκεί ενημερώνεται το documentation site μας.</p>
-<p><a class="anchor" id="conclusions"></a> <br  />
- </p>
-<h2><a class="anchor" id="autotoc_md36"></a>
-Συμπεράσματα</h2>
+<p>Το Documentation υλοποιήθηκε μέσω του <a href="https://www.doxygen.nl/index.html">Doxygen</a>. Τα man pages αυτά ανανεώνονται κάθε φορά που προστίθεται νέο commit στο master. Τα output αρχεία του doxygen γίνονται push στο branch "**docs**" και απο εκεί ενημερώνεται το documentation site μας. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
