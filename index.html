@@ -367,15 +367,36 @@ Structs</h3>
 <li>Condition variable (<b>condition_wake_up_submitter</b>) που χρησιμοποιείται για να μπλοκάρει μέχρι να υπάρξει κάποιο διαθσιμο νήμα.</li>
 <li>Custom semaphore (<b>sem_barrier</b>) που χρησιμοποιείται για να ενημερώσει το master thread που έχει καλέσει την <b>join_threads</b> ότι όλα τα νήματα είναι έτοιμα.</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md29"></a>
-Thread pool</h3>
-<p>Ο Job scheduler αναλαμβάνει να τρέξει εργασίες (jobs) σε διαφορετικά νήματα με FIFO (First In First Out) σειρά και αυτό το επιτυγχάνει με μια ουρά αναμονής (waiting_queue). Όταν γίνεται εξαγωγή ενώς job από την waiting_queue το πρώτο διαθέσιμο νήμα που</p>
-<h3><a class="anchor" id="autotoc_md30"></a>
-Work cycle</h3>
-<p>Όταν ξεκινάει να λειτουργεί ένα νήμα, κατευθείαν μπαίνει σε ατέρμον επανάλληψη έως ότου το master thread αποφασίσει να καταστρέψει τον scheduler. Στην αρχή κάθε επαννάληψης της κεντρικής λούπας κλειδώνει</p>
-<p>ελέγχει αν ο scheduler είναι σε κατάσταση working ή exit</p>
-<p>αναμονής μέχρι να υπάρξει διαθέσιμη εργασία.</p>
-<div class="fragment"><div class="line"><span class="keywordtype">void</span> *thread(<a class="code" href="structjob__scheduler.html">JobScheduler</a> js) {</div>
+<h4><a class="anchor" id="autotoc_md29"></a>
+Αντιγραφή ορισμάτων στην ρουτίνα</h4>
+<p>Για την αντιγραφή των ορισμάτων που δίνει ο χρήστης από το master νήμα στην ρουτίνα του αντίστοιχου νήματος μέσω της συνάρτησης <code>submit_job</code> κάνουμε χρήση των <a href="https://en.cppreference.com/w/cpp/language/variadic_arguments">Variadic arguments</a> για να τα παίρνουμε με δυναμικό τρόπο χωρίς να είναι απαραίτητο να δημιουργηθεί από το χρήστη κάποια δομή από ορίσματα. Τέλος τα αντιγράφουμε σε έναν πίνακα από <code>Argument</code> το μέγεθος του οποίου, αυξάνεται δυναμικά με realloc ανάλογα με τον αριθμό των ορισμάτων που δίνει ο χρήστης.</p>
+<p>*Αναπαράσταση της διαδικασίας αντιγραφής των ορισμάτων σε πίνακα (<code>submit_job</code>):* </p><div class="fragment"><div class="line">va_start(vargs, start_routine);  </div>
+<div class="line">FOREACH_ARG(arg, vargs) {  </div>
+<div class="line">    <span class="keywordtype">size_t</span> type_sz = va_arg(vargs, <span class="keywordtype">size_t</span>);  </div>
+<div class="line">  (*job)-&gt;args = realloc((*job)-&gt;args, (i + 1) * <span class="keyword">sizeof</span>(<a class="code" href="structargument.html">Argument</a>));  </div>
+<div class="line">  (*job)-&gt;args[i].arg = malloc(type_sz);  </div>
+<div class="line">  assert((*job)-&gt;args[i].arg != NULL);  </div>
+<div class="line">  memcpy((*job)-&gt;args[i].arg, arg, type_sz);  </div>
+<div class="line">  (*job)-&gt;args[i].type_sz = type_sz;  </div>
+<div class="line">  (*job)-&gt;args_count++;  </div>
+<div class="line">};  </div>
+<div class="line">va_end(vargs);</div>
+</div><!-- fragment --><p> Για την αντίστροφη διαδικασία, όπου ο χρήστης θέλει να πάρει μέσα από τη ρουτίνα τα ορίσματα που έδωσε στην <code>submit_job</code> το μόνο που έχει να κάνει είναι να καλέσει την <code>js_get_args</code> και να δώσει σε αυτήν το job της ρουτίνας καθώς και την διέυθυνση από τις μεταβλητές που θέλει να αρχικοποίσει με τα αντίστοιχα ορίσματα. Τα ορίσματα πρέπει να τα δώσει με την ίδια σειρά που τα έγραψε και στην <code>submit_job</code>.</p>
+<p><em>Αναπαράσταση της διαδικασίας αρχικοποίησης μεταβλητών :</em> </p><div class="fragment"><div class="line">js_get_args(<a class="code" href="structjob.html">job</a>, &amp;js, &amp;sum, &amp;computations, &amp;mtx, NULL);</div>
+</div><!-- fragment --><p><em>Αναπαράσταση της διαδικασίας αντιγραφής των ορισμάτων από τον πίνακα ορισμάτων στην αντίστοιχη μεταβλητή <code>arg</code> :</em> </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> js_get_args(<a class="code" href="structjob.html">Job</a> <a class="code" href="structjob.html">job</a>, ...) {  </div>
+<div class="line">    va_list vargs;  </div>
+<div class="line">  va_start(vargs, <a class="code" href="structjob.html">job</a>);  </div>
+<div class="line">  FOREACH_ARG(arg, vargs) {  </div>
+<div class="line">        memcpy(arg, <a class="code" href="structjob.html">job</a>-&gt;args[i].arg, <a class="code" href="structjob.html">job</a>-&gt;args[i].type_sz);  </div>
+<div class="line">  };  </div>
+<div class="line">  va_end(vargs);  </div>
+<div class="line">}</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md30"></a>
+Δεξαμενή νημάτων</h3>
+<p>Ο Job scheduler αναλαμβάνει να τρέξει εργασίες (jobs) σε διαφορετικά νήματα με FIFO (First In First Out) σειρά και αυτό το επιτυγχάνει με μια ουρά αναμονής (waiting_queue).</p>
+<h4><a class="anchor" id="autotoc_md31"></a>
+Κύκλος εκτέλεσης εργασιών</h4>
+<p><em>Αναπαράσταση της συνάρτησης thread:</em> </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> *thread(<a class="code" href="structjob__scheduler.html">JobScheduler</a> js) {</div>
 <div class="line">    <span class="keywordtype">int</span> jobs_count = 0;</div>
 <div class="line">    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
 <div class="line">        LOCK_;</div>
@@ -407,27 +428,40 @@ Work cycle</h3>
 <div class="line">        UNLOCK_;</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-</div><!-- fragment --><p><a class="anchor" id="flow"></a> <br  />
+</div><!-- fragment --><p> Όταν ξεκινάει να λειτουργεί ένα νήμα, εισέρχεται σε έναν ατέρμον βρόγχο, κλειδώνει την πρόσβαση από τα υπόλοιπα νήματα με τη χρήση <code>LOCK_</code> (ή αντίστοιχα περιμένει μέχρι η πρόσβαση για αυτό να είναι εφικτή) και κάνει τους παρακάτω ελέγχους ώστε να αποφασίσει αν πρέπει να μπει σε κατάσταση <code>WAIT_</code>:</p><ul>
+<li><code>(!js-&gt;working &amp;&amp; !js-&gt;exit)</code> : Αν δεν έχει ενεργοποιηθεί ακόμα το flag <b>working</b> και <b>exit</b> τότε σημαίνει ότι δεν έχει ληφθεί ακόμα κάποιο σήμα εκίνησης ή τερματισμού.</li>
+<li><code>(!queue_size(js-&gt;waiting_queue) &amp;&amp; !js-&gt;exit)</code> : Αν η ουρά δεν έχει jobs και δεν έχει ληφθεί κάποιο σήμα τερματισμού.</li>
+</ul>
+<p>Όταν "ξυπνήσει" το νήμα λαμβάνοντας κάποιο <code>BROADCAST_WAKEUP_</code> ή <code>SIGNAL_WAKE_UP_</code> signal, θα ελέγξει εκ νέου αν ισχύουν οι δύο παραπάνω συνθήκες ή όχι (<b>busy waiting</b>) και θα πράξει αναλόγως.</p>
+<p>Στην περίπτωση που δεν ισχύει το condition στο while: <code>(!js-&gt;working &amp;&amp; !js-&gt;exit) || (!queue_size(js-&gt;waiting_queue) &amp;&amp; !js-&gt;exit)</code> τότε θα ακολουθήσει ο έλεγχος: <code>js-&gt;exit &amp;&amp; !queue_size(js-&gt;waiting_queue)</code> ο οποίος θα ελένξει αν ο λόγος που έγινε <b>wake up</b> το νήμα είναι για να τερματήσει (ή όχι) κάνοντας <code>UNLOCK_</code> και καλόντας την <code>pthread_exit</code> (<code>EXIT_</code>) .</p>
+<p>Στη συνέχεια, αν το νήμα δεν τερματήσει τότε οι λόγοι που "ξύπνησε" (<b>wake up</b>) είναι οι παρακάτω:</p><ul>
+<li>έλαβε κάποιο signal <code>BROADCAST_WAKEUP_</code> από την συνάρτηση <code>js_execute_all_jobs</code> που αναλαμβάνει να ξυπνήσει όλα τα νήματα για να ξεκινήσουν να τρέχουν τα jobs ή</li>
+<li>έλαβε κάποιο signal <code>SIGNAL_WAKEUP_</code> από την συνάρτηση <code>js_submit_job</code></li>
+</ul>
+<p>Σε επόμενη φάση αν υπάρχουν στην ουρά αναμονής διαθέσιμες προς εκτέλεση εργασίες, εξάγεται από την ουρά η πρώτη διαθέσιμη, ο μετρητής των εργασιών (<code>jobs_count</code>) που έχει αναλάβει το συγκεκριμένο νήμα αυξάνεται κατά ένα και η εργασία εισέρχεται στη running queue, ενώ αμέσως μετά καλείται η <code>queue_unblock_enqueue</code> ώστε να μπορέσει να χρησιμοποιηθεί από κάποιο άλλο νήμα. Κατόπιν γίνεται <code>UNLOCK_</code>για να μπορέσουν και άλλα νήματα να έχουν πρόσβαση στους κοινόχρηστους πόρους και εκτελείται η ρουτίνα (<code>RUN_ROUTINE_</code>) με όρισμα το ίδιο το job (<code>job-&gt;return_val = (job-&gt;start_routine)(job)</code>).</p>
+<p>Όταν επιστρέψει η συνάρτηση της ρουτίνας, αποθηκεύεται η τιμή επιστροφής (<b>return_val</b>) στη δομή του job ώστε να είναι διαθέσιμη στον client κώδικα.</p>
+<p>Στη συνέχεια ενημερώνεται το flag <code>job-&gt;complete</code>σε true και καλείται η <code>sem_post(&amp;job-&gt;sem_complete)</code> (<code>NOTIFY_JOB_COMPLETE_</code>) με σκοπό να ενημερωθεί το master νήμα πως το job ολοκληρώθηκε. Ο λόγος που γίνεται αυτό είναι γιατί μπορεί εκείνη την στιγμή να είχε μπλοκάρει στις συναρτήσεις <code>js_wait_job</code> ή και <code>js_get_return_val</code> αντίστοιχα.</p>
+<p><a class="anchor" id="flow"></a> <br  />
  </p>
-<h2><a class="anchor" id="autotoc_md31"></a>
+<h2><a class="anchor" id="autotoc_md32"></a>
 Ροή του προγράμματος</h2>
 <p><img src="https://raw.githubusercontent.com/vasilisp100/k23a-project/master/resources/cliques.gif?token=AMOC6I6TSAEO3RWM4E22FUK7Z7ZZS" alt="cliques" class="inline"/> <br  />
 </p>
 <p><a class="anchor" id="unit_tests"></a> <br  />
  </p>
-<h2><a class="anchor" id="autotoc_md32"></a>
+<h2><a class="anchor" id="autotoc_md33"></a>
 Unit tests</h2>
 <p>Κάθε module (<b>list</b>, <b>hash table</b>, <b>hset</b>, <b><a class="el" href="structjob__scheduler.html">job_scheduler</a></b>, <b>json_parser</b>, <b>ml</b>, <b>logreg</b>, <b>queue</b>, κτλ) έχει αντίστοιχα και τα δικά του unit tests τα οποία βρίσκονται σε διαφορετικά αρχεία το καθένα. Για την υλοποίησή τους, κάνουμε χρήση της βιβλιοθήκης <a href="https://github.com/mity/acutest">Acutest</a>. Όταν επιχειρούμε να κάνουμε complile (make), commit ή push εκτελούνται τα unit tests και αν τερματίσουν επιτυχώς, πραγματοποιείται με επιτυχία η αντίστοιχη διαδικασία.</p>
 <p>Επιπλέον, τα test αυτά εκτελούνται remotely μέσω των github actions (CI)</p>
 <p><a class="anchor" id="documentation"></a> <br  />
  </p>
-<h2><a class="anchor" id="autotoc_md33"></a>
+<h2><a class="anchor" id="autotoc_md34"></a>
 Documentation</h2>
 <p>Στον σύνδεσμο <a href="https://k23a-prj-auth.herokuapp.com">Documentation</a> που βρίσκεται και στην πρώτη σελίδα του report βρίσκεται το documentation (man pages) των βιβλιοθηκών που έχουν υλοποιηθεί. Πρόσβαση επιτρέπεται μόνο στους contributors του project (δηλαδή την ομάδα μας και το βοηθό του τμήματός μας) και πρέπει να γίνει authentication μέσω github, ωστε να μην μπορεί κάποιος άλλος να αποκτήσει πρόσβαση.</p>
 <p>Το Documentation υλοποιήθηκε μέσω του <a href="https://www.doxygen.nl/index.html">Doxygen</a>. Τα man pages αυτά ανανεώνονται κάθε φορά που προστίθεται νέο commit στο master. Τα output αρχεία του doxygen γίνονται push στο branch "**docs**" και απο εκεί ενημερώνεται το documentation site μας.</p>
 <p><a class="anchor" id="conclusions"></a> <br  />
  </p>
-<h2><a class="anchor" id="autotoc_md34"></a>
+<h2><a class="anchor" id="autotoc_md35"></a>
 Συμπεράσματα</h2>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
