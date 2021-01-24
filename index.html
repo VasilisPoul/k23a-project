@@ -282,7 +282,30 @@ Generic List</h2>
  </p>
 <h2><a class="anchor" id="autotoc_md22"></a>
 JSON Parser</h2>
-<p><a class="anchor" id="spec_to_specs"></a> <br  />
+<p>O json parser ακολουθεί τη γραμματική του <a href="https://www.json.org/">json.org</a> .</p>
+<p>Πιο συγκεκριμένα, κάθε οντότητα του json περιγράφεται από την παρακάτω δομή:</p>
+<div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line">    <span class="keyword">const</span> <a class="code" href="group__json__parser.html#gac75c61993722a9b8aaa44704072ec06c">json_type</a> type;</div>
+<div class="line">    <span class="keywordtype">char</span> data[];</div>
+<div class="line">} <a class="code" href="structJSON__ENTITY.html">JSON_ENTITY</a>;</div>
+<div class="ttc" id="agroup__json__parser_html_gac75c61993722a9b8aaa44704072ec06c"><div class="ttname"><a href="group__json__parser.html#gac75c61993722a9b8aaa44704072ec06c">json_type</a></div><div class="ttdeci">json_type</div><div class="ttdoc">The possible types of a json value.</div><div class="ttdef"><b>Definition:</b> json_parser.h:47</div></div>
+<div class="ttc" id="astructJSON__ENTITY_html"><div class="ttname"><a href="structJSON__ENTITY.html">JSON_ENTITY</a></div><div class="ttdoc">The representation used for json values.</div><div class="ttdef"><b>Definition:</b> json_parser.h:68</div></div>
+</div><!-- fragment --><p> ώπου το data[] περιέχει την ίδια την οντότητα, ενώ το type, περιγράφει τον τύπο της οντότητας, και μπορεί να λάβει οποιαδήποτε από τις τιμές του παρακάτω enum:</p>
+<div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line">    <a class="code" href="group__json__parser.html#ggac75c61993722a9b8aaa44704072ec06ca9dc70cc7977798040165b727be04e79b">JSON_OBJ</a>,</div>
+<div class="line">    <a class="code" href="group__json__parser.html#ggac75c61993722a9b8aaa44704072ec06ca97462341a4eba4320d62d49597eabb6a">JSON_ARRAY</a>,</div>
+<div class="line">    <a class="code" href="group__json__parser.html#ggac75c61993722a9b8aaa44704072ec06ca19402a672c69b64246e4e290926a9a43">JSON_NUM</a>,</div>
+<div class="line">    <a class="code" href="group__json__parser.html#ggac75c61993722a9b8aaa44704072ec06cafc3a60886010e5b0f57d7aa30d0277b0">JSON_BOOL</a>,</div>
+<div class="line">    <a class="code" href="group__json__parser.html#ggac75c61993722a9b8aaa44704072ec06ca02bfd03b07e5b9ecd6ee0d257dc37daf">JSON_STRING</a>,</div>
+<div class="line">    <a class="code" href="group__json__parser.html#ggac75c61993722a9b8aaa44704072ec06ca03ddcc4e2eef955020a01e10c11bfe48">JSON_NULL</a></div>
+<div class="line">} <a class="code" href="group__json__parser.html#gac75c61993722a9b8aaa44704072ec06c">json_type</a>;</div>
+<div class="ttc" id="agroup__json__parser_html_ggac75c61993722a9b8aaa44704072ec06ca02bfd03b07e5b9ecd6ee0d257dc37daf"><div class="ttname"><a href="group__json__parser.html#ggac75c61993722a9b8aaa44704072ec06ca02bfd03b07e5b9ecd6ee0d257dc37daf">JSON_STRING</a></div><div class="ttdeci">@ JSON_STRING</div><div class="ttdef"><b>Definition:</b> json_parser.h:57</div></div>
+<div class="ttc" id="agroup__json__parser_html_ggac75c61993722a9b8aaa44704072ec06ca03ddcc4e2eef955020a01e10c11bfe48"><div class="ttname"><a href="group__json__parser.html#ggac75c61993722a9b8aaa44704072ec06ca03ddcc4e2eef955020a01e10c11bfe48">JSON_NULL</a></div><div class="ttdeci">@ JSON_NULL</div><div class="ttdef"><b>Definition:</b> json_parser.h:59</div></div>
+<div class="ttc" id="agroup__json__parser_html_ggac75c61993722a9b8aaa44704072ec06ca19402a672c69b64246e4e290926a9a43"><div class="ttname"><a href="group__json__parser.html#ggac75c61993722a9b8aaa44704072ec06ca19402a672c69b64246e4e290926a9a43">JSON_NUM</a></div><div class="ttdeci">@ JSON_NUM</div><div class="ttdef"><b>Definition:</b> json_parser.h:53</div></div>
+<div class="ttc" id="agroup__json__parser_html_ggac75c61993722a9b8aaa44704072ec06ca97462341a4eba4320d62d49597eabb6a"><div class="ttname"><a href="group__json__parser.html#ggac75c61993722a9b8aaa44704072ec06ca97462341a4eba4320d62d49597eabb6a">JSON_ARRAY</a></div><div class="ttdeci">@ JSON_ARRAY</div><div class="ttdef"><b>Definition:</b> json_parser.h:51</div></div>
+<div class="ttc" id="agroup__json__parser_html_ggac75c61993722a9b8aaa44704072ec06ca9dc70cc7977798040165b727be04e79b"><div class="ttname"><a href="group__json__parser.html#ggac75c61993722a9b8aaa44704072ec06ca9dc70cc7977798040165b727be04e79b">JSON_OBJ</a></div><div class="ttdeci">@ JSON_OBJ</div><div class="ttdef"><b>Definition:</b> json_parser.h:49</div></div>
+<div class="ttc" id="agroup__json__parser_html_ggac75c61993722a9b8aaa44704072ec06cafc3a60886010e5b0f57d7aa30d0277b0"><div class="ttname"><a href="group__json__parser.html#ggac75c61993722a9b8aaa44704072ec06cafc3a60886010e5b0f57d7aa30d0277b0">JSON_BOOL</a></div><div class="ttdeci">@ JSON_BOOL</div><div class="ttdef"><b>Definition:</b> json_parser.h:55</div></div>
+</div><!-- fragment --><p><a class="anchor" id="spec_to_specs"></a> <br  />
 </p>
 <h2><a class="anchor" id="autotoc_md23"></a>
 Spec to specs</h2>
