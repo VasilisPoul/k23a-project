@@ -260,7 +260,7 @@ Hash table</h2>
 <div class="ttc" id="astructhtab__s_html_a86ac020f20ab1efa23711fec3ef2f7cf"><div class="ttname"><a href="structhtab__s.html#a86ac020f20ab1efa23711fec3ef2f7cf">htab_s::cmp</a></div><div class="ttdeci">ht_cmp_func cmp</div><div class="ttdoc">comparison function to compare 2 keys (default: memcmp)</div><div class="ttdef"><b>Definition:</b> hash.h:64</div></div>
 <div class="ttc" id="astructhtab__s_html_a8c2ab395e0c6aaf721a63c49a5352ece"><div class="ttname"><a href="structhtab__s.html#a8c2ab395e0c6aaf721a63c49a5352ece">htab_s::val_sz</a></div><div class="ttdeci">size_t val_sz</div><div class="ttdoc">size of val in the hashtable</div><div class="ttdef"><b>Definition:</b> hash.h:71</div></div>
 </div><!-- fragment --><p> Για την υλοποίηση του hash table, χρησιμοποιήσαμε generic <b>open addressing hash table</b> με <a href="http://luc.devroye.org/1997notes/topic13/">random probing</a>. <br  />
- Πιο συγκεκριμένα, δεσμεύουμε ένα κομμάτι μνήμης το οποίο χωρίζεται σε μκρότερα ίσα μέρη στα οποία αποθηκεύονται οι πληροφορίες του κάθε <b>spec</b>. <br  />
+ Πιο συγκεκριμένα, δεσμεύουμε ένα κομμάτι μνήμης το οποίο χωρίζεται σε μικροτέρα ίσα μέρη στα οποία αποθηκεύονται οι πληροφορίες του κάθε <b>spec</b>. <br  />
 </p>
 <p>Αφού χρησιμοποιούμε random probing το κάθε spec ανάλογα με το key του, αν δε χωράει στην πρώτη θέση που θα υπολογιστεί μέσω του hash function, θα ψάξει κάποια "τυχαία" θέση για να αποθηκευθεί. Το seed της random συνάρτησης είναι σταθερό, οπότε πάντα μπορούμε να υπολογίσουμε σε ποιο σημείο της μνήμης βρίσκονται τα εκάστοτε δεδομένα. <br  />
 </p>
@@ -276,7 +276,7 @@ Generic List</h2>
 <div class="line"><span class="preprocessor">    void *next;         \</span></div>
 <div class="line"><span class="preprocessor">    TYPE data;          \</span></div>
 <div class="line"><span class="preprocessor">}</span></div>
-</div><!-- fragment --><p>Η λίστα αποτελείται από απλούς κόμβους δεδομένων <code>TYPE data;</code> οι οποίοι περιέχουν τα ίδια τα δεδομένα καθώς και έναν δείκτη στον επόμενο κόμβο. Είναι στην ουσία ένας <b>wrapper</b> ο οπόιος επικαλύπτει τα δεδομένα, προσθέτοντάς τους έναν δείκτη <code>void *next;</code> για τα επόμενα δεδομένα.</p>
+</div><!-- fragment --><p>Η λίστα αποτελείται από απλούς κόμβους δεδομένων <code>TYPE data;</code> οι οποίοι περιέχουν τα ίδια τα δεδομένα καθώς και έναν δείκτη στον επόμενο κόμβο. Είναι στην ουσία ένας <b>wrapper</b> ο οποίος επικαλύπτει τα δεδομένα, προσθέτοντάς τους έναν δείκτη <code>void *next;</code> για τα επόμενα δεδομένα.</p>
 <p>Λόγω της σειράς που ορίζεται το πεδίο του επόμενου κόμβου (<code>void *next;</code>) στον wrapper, είναι εύκολο να αποκτηθεί πρόσβαση στον επόμενο κόμβο με τη χρήση του παρακάτω macro: </p><div class="fragment"><div class="line"><span class="preprocessor">#define  NEXT(x) (*((void **)x))</span></div>
 </div><!-- fragment --><p> όπου επιστρέφει έναν δείκτη στον επόμενο κόμβο πιο άμεσα.</p>
 <p><a class="anchor" id="json_parser"></a> <br  />
@@ -291,7 +291,7 @@ JSON Parser</h2>
 <div class="line">} <a class="code" href="structJSON__ENTITY.html">JSON_ENTITY</a>;</div>
 <div class="ttc" id="agroup__json__parser_html_gac75c61993722a9b8aaa44704072ec06c"><div class="ttname"><a href="group__json__parser.html#gac75c61993722a9b8aaa44704072ec06c">json_type</a></div><div class="ttdeci">json_type</div><div class="ttdoc">The possible types of a json value.</div><div class="ttdef"><b>Definition:</b> json_parser.h:47</div></div>
 <div class="ttc" id="astructJSON__ENTITY_html"><div class="ttname"><a href="structJSON__ENTITY.html">JSON_ENTITY</a></div><div class="ttdoc">The representation used for json values.</div><div class="ttdef"><b>Definition:</b> json_parser.h:68</div></div>
-</div><!-- fragment --><p> ώπου το data[] περιέχει την ίδια την οντότητα, ενώ το type, περιγράφει τον τύπο της οντότητας, και μπορεί να λάβει οποιαδήποτε από τις τιμές του παρακάτω enum:</p>
+</div><!-- fragment --><p> όπου το data[] περιέχει την ίδια την οντότητα, ενώ το type, περιγράφει τον τύπο της οντότητας, και μπορεί να λάβει οποιαδήποτε από τις τιμές του παρακάτω enum:</p>
 <div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
 <div class="line">    <a class="code" href="group__json__parser.html#ggac75c61993722a9b8aaa44704072ec06ca9dc70cc7977798040165b727be04e79b">JSON_OBJ</a>,</div>
 <div class="line">    <a class="code" href="group__json__parser.html#ggac75c61993722a9b8aaa44704072ec06ca97462341a4eba4320d62d49597eabb6a">JSON_ARRAY</a>,</div>
@@ -333,7 +333,7 @@ Spec to specs</h2>
  </p>
 <h2><a class="anchor" id="autotoc_md24"></a>
 Unique rand</h2>
-<p>Για την επιλογή τυχαίων και ταυτόχρονα μοναδικών ακερεων τιμών στα σύνολα (<b>train</b>, <b>test</b>, <b>validation</b>) υπήρξε η ανάγκη να υλοποιηθεί ένα module (<code>urand</code>) που θα μας επιστρέφει τυχαίες τιμές καλόντας την <code>ur_get</code> εξασφαλίζοντας έτσι, ότι τις ίδιες αυτές τιμές που πήραμε δεν θα τις ξαναπάρουμε σε μεταγενέστερη κλήση της συνάρτησης.</p>
+<p>Για την επιλογή τυχαίων και ταυτόχρονα μοναδικών ακέραιων τιμών στα σύνολα (<b>train</b>, <b>test</b>, <b>validation</b>) υπήρξε η ανάγκη να υλοποιηθεί ένα module (<code>urand</code>) που θα μας επιστρέφει τυχαίες τιμές καλώντας την <code>ur_get</code> εξασφαλίζοντας έτσι, ότι τις ίδιες αυτές τιμές που πήραμε δε θα τις ξαναπάρουμε σε μεταγενέστερη κλήση της συνάρτησης.</p>
 <p><em>Αναπαράσταση της δομής <a class="el" href="structunique__rand.html">unique_rand</a>:</em> </p><div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code" href="structunique__rand.html">unique_rand</a> {  </div>
 <div class="line">    <span class="keywordtype">int</span> min;  </div>
 <div class="line">    <span class="keywordtype">int</span> max;  </div>
@@ -343,40 +343,40 @@ Unique rand</h2>
 <div class="ttc" id="astructunique__rand_html"><div class="ttname"><a href="structunique__rand.html">unique_rand</a></div><div class="ttdef"><b>Definition:</b> unique_rand.c:8</div></div>
 </div><!-- fragment --><h3><a class="anchor" id="autotoc_md25"></a>
 Δημιουργία</h3>
-<p>Κατά την δημιουργία αυτού του module καλόντας την συνάρτηση <code>ur_create</code>, είναι απαραίτητο να δωθεί σε αυτήν μια ελάχιστη (min) και μια μέγιστη (max) τιμή ώστε να καθοριστεί το εύρος των τυχαίων τιμών που θα επιστρέφει η <code>ur_get</code>. Επομένως, με το εύρος τιμών γίνεται υπολογισμός του πλήθους αυτών, δεσμέυεται δυναμικά ένας πίνακας ακερέων μεγέθους <code>max - min + 1</code> και αμέσως μετά αρχικοποιείται με τιμές που ξεκινούν από <code>min</code>.</p>
+<p>Κατά την δημιουργία αυτού του module καλώντας τη συνάρτηση <code>ur_create</code>, είναι απαραίτητο να δοθεί σε αυτήν μια ελάχιστη (min) και μια μέγιστη (max) τιμή ώστε να καθοριστεί το εύρος των τυχαίων τιμών που θα επιστρέφει η <code>ur_get</code>. Επομένως, με το εύρος τιμών γίνεται υπολογισμός του πλήθους αυτών, δεσμεύεται δυναμικά ένας πίνακας ακέραιων μεγέθους <code>max - min + 1</code> και αμέσως μετά αρχικοποιείται με τιμές που ξεκινούν από <code>min</code>.</p>
 <h3><a class="anchor" id="autotoc_md26"></a>
 Λειτουργικότητα</h3>
-<p>Αφού έχει δημιουργηθεί με επιτυχία το <code>URand *ur</code> αντικείμενο τότε κάθε φορά που καλείται η <code>ur_get</code>, επιλέγεται τυχαία μια θέση από τον πίνακα <code>values</code> για να επιστραφεί το περιεχόμενό της στον χρήστη, η θέση αυτή γίνεται <b>swap</b> με την αντίστοιχη θέση που δείχνει εκέινη τη στιγμή η τιμή <code>ur-&gt;length</code>, δηλαδή προς το τέλος. Αυτό έχει ως αποτέλεσμα, οι τιμές εκέινες που έχει πάρει ο χρήστης να μετακινούνται προς το τέλος του πίνακα <code>values</code> καθώς μειωνεται η μεταβλητή <code>ur-&gt;length</code>.</p>
+<p>Αφού έχει δημιουργηθεί με επιτυχία το <code>URand *ur</code> αντικείμενο τότε κάθε φορά που καλείται η <code>ur_get</code> επιλέγεται τυχαία μια θέση από τον πίνακα <code>values</code> για να επιστραφεί το περιεχόμενό της στον χρήστη, η θέση αυτή γίνεται <b>swap</b> με την αντίστοιχη θέση που δείχνει εκείνη τη στιγμή η τιμή <code>ur-&gt;length</code> δηλαδή προς το τέλος. Αυτό έχει ως αποτέλεσμα, οι τιμές εκείνες που έχει πάρει ο χρήστης να μετακινούνται προς το τέλος του πίνακα <code>values</code> καθώς μειώνεται η μεταβλητή <code>ur-&gt;length</code>.</p>
 <p><a class="anchor" id="machine_learning"></a> </p>
 <h2><a class="anchor" id="autotoc_md27"></a>
 Μηχανική Μάθηση</h2>
-<p>Αρχικά έπρεπε να δημιουργηθέι το <b>vocabulary</b> σύμφωνα με το οποίο θα φτιάχνονταν τα διανύσματα για να γίνει το <b>training</b> και το <b>testing</b>. Έτσι δημιουργήσαμε το vocabulary με όλες τις διαφορετικές λέξεις των JSON αρχείων.</p>
-<p>Για να μειωθούν οι διαστάσεις δεν συμπεριλάβαμε <b>stopwords</b>, <b>punctuations</b> και <b>αριθμούς</b>, όπως και κάποιες λέξεις που θεωρούμε πως δεν φέρουν χρήσιμη πληροφορία αφού υπάρχουν σε σχεδόν όλα τα αρχεία (πχ το "mm"). Στη συνέχεια αν ο χρήστης έχει δώσει την επιλογή <b>tfidf</b>, αφαιρούμε απο το vocabulary τις λέξεις με μεγάλο <b>idf</b>. Για να γίνει η διαδικασία επιλογής λέξεων δοκιμάσαμε τις παρακάτω μεθόδους:</p><ul>
+<p>Αρχικά έπρεπε να δημιουργηθεί το <b>vocabulary</b> σύμφωνα με το οποίο θα φτιάχνονταν τα διανύσματα για να γίνει το <b>training</b> και το <b>testing</b>. Έτσι δημιουργήσαμε το vocabulary με όλες τις διαφορετικές λέξεις των JSON αρχείων.</p>
+<p>Για να μειωθούν οι διαστάσεις δε συμπεριλάβαμε <b>stopwords</b>, <b>punctuations</b> και <b>αριθμούς</b>, όπως και κάποιες λέξεις που θεωρούμε πως δε φέρουν χρήσιμη πληροφορία αφού υπάρχουν σε σχεδόν όλα τα αρχεία (πχ το "mm"). Στη συνέχεια αν ο χρήστης έχει δώσει την επιλογή <b>tfidf</b>, αφαιρούμε από το vocabulary τις λέξεις με μεγάλο <b>idf</b>. Για να γίνει η διαδικασία επιλογής λέξεων δοκιμάσαμε τις παρακάτω μεθόδους:</p><ul>
 <li>Η πρώτη μέθοδος ήταν να χρησιμοποιήσουμε συναρτήσεις όπως η <b>strtok</b> και <b>strcat</b>.</li>
 <li>H δεύτερη ήταν να τροποποιήσουμε τον <b>tokenizer</b> που έχουμε υλοποιήσει για τον <b>json parser</b> και να υλοποιήσουμε την συνάρτηση <b>tokenizer_nlp_sw()</b> που αναλαμβάνει να επιστρέψει μόνο τις λέξεις που πληρούν τα κριτήριά αγνοώντας τις υπόλοιπες.</li>
 </ul>
 <p>Παρατηρήσαμε πως η δεύτερη μέθοδος ήταν πιο γρήγορη οπότε και την προτιμήσαμε για το τελικό μας πρόγραμμα. Παρ' όλα αυτά υπάρχουν και οι δύο υλοποιήσεις καθώς και τα test τους στο repository.</p>
-<p>Στη συνέχεια φτιάξαμε το <b>διάνυσμα</b> για το κάθε json και τα αποθηκεύσαμε σε ένα hash table για να τα έχουμε έτοιμα όταν τα χρειαστούμε.</p>
+<p>Στη συνέχεια φτιάξαμε το <b>διάνυσμα</b> για το κάθε JSON και τα αποθηκεύσαμε σε ένα hash table για να τα έχουμε έτοιμα όταν τα χρειαστούμε.</p>
 <p>Για να δημιουργηθεί το <b>dataset</b> για το <b>train</b>, <b>test</b> και <b>validation</b> ακολουθήθηκε η εξής διαδικασία:</p>
 <p>Αρχικά δημιουργήθηκαν όλα τα similar και different ζευγάρια μέσω των κλικών. Αυτό ήταν το συνολικό dataset. Στη συνέχεια κρατήσαμε τυχαία το <b>50% των similar</b> και το <b>50% των different</b> και τα ενώσαμε σε ένα πίνακα. Αυτός ο πίνακας αποτελεί το train set. Κάναμε την ίδια διαδικασία με <b>25% για το test set</b> και τα υπόλοιπα <b>25% για το validation set</b>. Έτσι είχαμε τα τρία sets που χρειαζόμασταν.</p>
-<p>****Για να δημιουργήσουμε το διάνυσμα κάθε ζευγαριού, χρησημοποιούμε την απόλυτη διαφορά των διανυσμάτων json1-json2.*</p>
+<p>****Για να δημιουργήσουμε το διάνυσμα κάθε ζευγαριού, χρησιμοποιούμε την απόλυτη διαφορά των διανυσμάτων json1-json2.*</p>
 <h3><a class="anchor" id="autotoc_md28"></a>
 Εκπαίδευση μοντέλου</h3>
-<p>Για την εκπαίδευση υλοποιήσαμε <b>mini batch gradient decent</b>. Σε κάθε <b>epoch</b> αρχικά γίνεται training για το training set και στη συνέχεια γίνεται predict για το test set ωστε να υπολογίζουμε το <b>max loss</b> σε κάθε <b>epoch</b>, με το σκεπτικό αν παρατηρήσουμε συνεχή αύξηση του max loss για 5 συνεχόμενα epochs, να κρατήσουμε το μοντέλο που είχε υπολογιστεί πριν 5 epochs και να σταματήσουμε τη διαδικασία του <b>training</b>. Παρατηρήσασμε όμως πως γινόταν <b>overfit</b> στα πρώτα epochs και έτσι σταματούσε το training στο πέμπτο epoch. Γι αυτό το λόγο κάναμε comment out το <b>check</b> και η εκπαίδευση γίνεται για όσα epochs έχουμε ορίσει από την αρχη με τον κίνδυνο να γίνει overfit για τα δεδομένα του training set.</p>
+<p>Για την εκπαίδευση υλοποιήσαμε <b>mini batch gradient decent</b>. Σε κάθε <b>epoch</b> αρχικά γίνεται training για το training set και στη συνέχεια γίνεται predict για το test set ώστε να υπολογίζουμε το <b>max loss</b> σε κάθε <b>epoch</b>, με το σκεπτικό αν παρατηρήσουμε συνεχή αύξηση του max loss για 5 συνεχόμενα epochs, να κρατήσουμε το μοντέλο που είχε υπολογιστεί πριν 5 epochs και να σταματήσουμε τη διαδικασία του <b>training</b>. Παρατηρήσαμε όμως πως γινόταν <b>overfit</b> στα πρώτα epochs και έτσι σταματούσε το training στο πέμπτο epoch. Γι αυτό το λόγο κάναμε comment out το <b>check</b> και η εκπαίδευση γίνεται για όσα epochs έχουμε ορίσει από την αρχή με τον κίνδυνο να γίνει overfit για τα δεδομένα του training set.</p>
 <p>Στο τέλος του training κάνουμε <b>predict</b> για το validation set, τυπώνουμε τα predictions (με κόκκινο χρώμα τα λανθασμένα και με πράσινο τα σωστά) και στη συνέχεια υπολογίζουμε το <b>F1 score</b></p>
 <p>Παρατηρήσαμε ότι για <b>170 epochs</b>, <b>0,0001 learning rate</b> και <b>batch size 2000</b> παίρνουμε αρκετά καλό score της τάξης του <b>0,77</b></p>
 <h3><a class="anchor" id="autotoc_md29"></a>
 Εξαγωγή μοντέλου και λεξιλογίου σε αρχεία</h3>
-<p>Έχει υλοποιηθεί και δεύτερη main (<b>user.c</b>) η οποία κάνει μόνο <b>predict</b> ότι δώσει ο χρήστης σαν είσοδο. Χρησιμοποιόντας το <b>vocabulary</b> και το <b>model</b> που έχουν γίνει export από την πρώτη main. Για το λόγο αυτό το vocabulary και το τελικό model γίνονται export σε αρχεία ώστε να δοθούν ως είσοδο σε αυτήν.</p>
+<p>Έχει υλοποιηθεί και δεύτερη main (<b>user.c</b>) η οποία κάνει μόνο <b>predict</b> ότι δώσει ο χρήστης σαν είσοδο. Χρησιμοποιώντας το <b>vocabulary</b> και το <b>model</b> που έχουν γίνει export από την πρώτη main. Για το λόγο αυτό το vocabulary και το τελικό model γίνονται export σε αρχεία ώστε να δοθούν ως είσοδο σε αυτήν.</p>
 <h3><a class="anchor" id="autotoc_md30"></a>
 Επαναληπτική εκμάθηση</h3>
 <p>Στη συνέχεια έπρεπε να γίνει η διαδικασία της επαναληπτικής μάθησης την οποία είχαμε ξεκινήσει να υλοποιούμε στο branch <b>repetitive_learning</b>, όμως δεν προλάβαμε να το ολοκληρώσουμε ώστε να το κάνουμε merge στο master.</p>
-<p>Η διαδικασία που ακολουθούσαμε ήταν να χρησιμοποιήσουμε όλο το dataset για αρχικό training set (<b>train + test + val sets</b>) , για threshold είχαμε αρχικά <b>0.15</b> και σε κάθε επανάληψη αυξανόταν κατα <b>0.15</b>. Για όλα τα υπόλοιπα πιθανά ζευγάρια (δηλαδή όλα τα ζευγάρια απο specs για τα οποία δεν ξέρουμε τη σχέση τους, κάναμε <b>predict</b>. Aν το μοντέλο μας ήταν αρκετά "σίγουρο" προσθέταμε όλες τις συσχετίσεις που προέκυπταν από αυτό το prediction στο <b>training set</b> ωστε στην επόμενη επανάληψη να ληφθούν και αυτά στο train. Συνεχίζαμε τη διαδικασία για όσο το <b>threshold</b> ήταν &lt; <b>0,5</b>.</p>
+<p>Η διαδικασία που ακολουθούσαμε ήταν να χρησιμοποιήσουμε όλο το dataset για αρχικό training set (<b>train + test + val sets</b>) , για threshold είχαμε αρχικά <b>0.15</b> και σε κάθε επανάληψη αυξανόταν κατά <b>0.15</b>. Για όλα τα υπόλοιπα πιθανά ζευγάρια (δηλαδή όλα τα ζευγάρια απο specs για τα οποία δεν ξέρουμε τη σχέση τους, κάναμε <b>predict</b>. Αν το μοντέλο μας ήταν αρκετά "σίγουρο" προσθέταμε όλες τις συσχετίσεις που προέκυπταν από αυτό το prediction στο <b>training set</b> ώστε στην επόμενη επανάληψη να ληφθούν και αυτά στο train. Συνεχίζαμε τη διαδικασία για όσο το <b>threshold</b> ήταν &lt; <b>0,5</b>.</p>
 <p><a class="anchor" id="parallel"></a> <br  />
  </p>
 <h2><a class="anchor" id="autotoc_md31"></a>
 Παραλληλοποίηση</h2>
-<p>Για την γρήγορότερη εκπαίδευση του μοντέλου υλοποιήθηκε ένας <b>Job Scheduler</b> που αναλαμβάνει να δημιουργήσει νέα νήματα (<b>workers</b>). Κάθε worker τρέχει πολαπλά Jobs σεριακά τα οποία εξαγάγονται από μια κοινόχρηστη ουρά το ένα μετά το άλλο προσθέτοντας ετσι παραλληλία. </p>
+<p>Για τη γρηγορότερη εκπαίδευση του μοντέλου υλοποιήθηκε ένας <b>Job Scheduler</b> που αναλαμβάνει να δημιουργήσει νέα νήματα (<b>workers</b>). Κάθε worker τρέχει πολλαπλά Jobs σειριακά τα οποία εξάγονται από μια κοινόχρηστη ουρά το ένα μετά το άλλο προσθέτοντας έτσι παραλληλία. </p>
 <h3><a class="anchor" id="autotoc_md32"></a>
 Βασικές δομές</h3>
 <p><em>Αναπαράσταση της δομής job:</em> </p><div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code" href="structjob.html">job</a> {</div>
@@ -391,13 +391,13 @@ Unique rand</h2>
 <div class="line">};</div>
 <div class="ttc" id="astructargument_html"><div class="ttname"><a href="structargument.html">argument</a></div><div class="ttdef"><b>Definition:</b> job_scheduler.c:33</div></div>
 <div class="ttc" id="astructjob_html"><div class="ttname"><a href="structjob.html">job</a></div><div class="ttdef"><b>Definition:</b> job_scheduler.c:38</div></div>
-</div><!-- fragment --><p> Κάθε νέο <b>job</b> που δημιουργείται μέσω της συνάρησης <b>js_create_job()</b> έχει τα παρακάτω χαρακτηριστικά:</p><ul>
+</div><!-- fragment --><p> Κάθε νέο <b>job</b> που δημιουργείται μέσω της συνάρτησής <b>js_create_job()</b> έχει τα παρακάτω χαρακτηριστικά:</p><ul>
 <li>μοναδικό id (<b>job_id</b>)</li>
-<li>δείκτη σε συνάρτηση (<b>start_routine</b>) για την ρουτίνα εκτέλεσης</li>
+<li>δείκτη σε συνάρτηση (<b>start_routine</b>) για τη ρουτίνα εκτέλεσης</li>
 <li>πίνακα με τα ορίσματα της ρουτίνας (<b>args</b>)</li>
 <li>τιμή επιστροφής της ρουτίνας (<b>return_val</b>)</li>
 <li>flag (<b>complete</b>) που υποδηλώνει αν το job ολοκληρώθηκε ή όχι</li>
-<li>semaphore (<b>sem_complete</b>) ώστε αν κάποιο νήμα ζητήσει να δει την τιμή επιστροφής του, να είναι εφικτό να μπλοκάρει μέχρι αυτο να ολοκληρωθεί.</li>
+<li>semaphore (<b>sem_complete</b>) ώστε αν κάποιο νήμα ζητήσει να δει την τιμή επιστροφής του, να είναι εφικτό να μπλοκάρει μέχρι αυτό να ολοκληρωθεί.</li>
 </ul>
 <p><em>Αναπαράσταση της δομής <a class="el" href="structjob__scheduler.html">job_scheduler</a>:</em> </p><div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code" href="structjob__scheduler.html">job_scheduler</a> {  </div>
 <div class="line">     uint execution_threads;  </div>
@@ -419,21 +419,23 @@ Unique rand</h2>
 <div class="ttc" id="astructsemaphore_html"><div class="ttname"><a href="structsemaphore.html">semaphore</a></div><div class="ttdef"><b>Definition:</b> semaphore.c:12</div></div>
 </div><!-- fragment --><p> Η δομή του Job Scheduler έχει τα παρακάτω χαρακτηριστικά:</p><ul>
 <li>Αριθμός διαθέσιμων νημάτων (<b>execution_threads</b>) για εκτέλεση εργασιών.</li>
-<li>Πίνακας με τα αναγνωριστικά των νημάτων (<b>tids</b>) που χρησιμοποιείται για την ευρεσή τους με σκοπό την ένωσή τους με το αρχικό νήμα κανωντας κλήση της σηνάρτησης <b>pthread_join</b>.</li>
+<li>Πίνακας με τα αναγνωριστικά των νημάτων (<b>tids</b>) που χρησιμοποιείται για την εύρεσή τους με σκοπό την ένωσή τους με το αρχικό νήμα κάνοντάς κλήση της συνάρτησής <b>pthread_join</b>.</li>
 <li>Ουρά αναμονής (<b>waiting_queue</b>) προς εκτέλεση εργασιών.</li>
 <li>Ουρά εργασιών που ξεκίνησαν να τρέχουν (<b>running_queue</b>) η οποία χρησιμοποιείται για να τα συλλέξει με τη σωστή σειρά το master thread όταν θα έχουν ολοκληρωθεί όλα.</li>
 <li>Flag (<b>working</b>) που χρησιμοποιείται για να υποδηλώσει ένα ενεργό <b>work cycle</b> όταν έχει την τιμή true και <b>barrier ready</b> όταν έχει την τιμή false.</li>
-<li>Flag (<b>exit</b>) που υποδηλώνει ότι το master thread αποφάσισε να μην χρησιμοποιήσει άλλο τον scheduler. Αν λάβει την τιμή true, τοτε όταν το κάθε νήμα "ξυπνήσει" θα καλέσει την <b>pthread_exit</b>.</li>
-<li>Μετρητής έτοιμων νημάτων (<b>ready</b>) που δεν τρέχουν κάποια εργασία αυτή τη στιγμή. ενώ για τον συνχρωνισμό:</li>
+<li>Flag (<b>exit</b>) που υποδηλώνει ότι το master thread αποφάσισε να μη χρησιμοποιήσει άλλο τον scheduler. Αν λάβει την τιμή true, τότε όταν το κάθε νήμα "ξυπνήσει" θα καλέσει την <b>pthread_exit</b>.</li>
+<li>Μετρητής έτοιμων νημάτων (<b>ready</b>) που δεν τρέχουν κάποια εργασία αυτή τη στιγμή.</li>
+</ul>
+<p>Ενώ για τον συγχρονισμό:</p><ul>
 <li>Mutex (<b>mutex</b>) που χρησιμοποιείται για τον αμοιβαίο αποκλεισμό των άλλων νημάτων στις περιπτώσεις που χρειάζεται.</li>
 <li>Condition variable (<b>condition_wake_up</b>) που χρησιμοποιείται για να μπλοκάρουν τα νήματα που είναι έτοιμα και δεν υπάρχει ακόμα διαθέσιμο job.</li>
 <li>Mutex αποστολέα (<b>mutex_submitter</b>) για τον αμοιβαίο αποκλεισμό των υπόλοιπων νημάτων που προσπαθούν εκείνη τη στιγμή ταυτόχρονα να βάλουν μία νέα εργασία στην ουρά.</li>
-<li>Condition variable (<b>condition_wake_up_submitter</b>) που χρησιμοποιείται για να μπλοκάρει μέχρι να υπάρξει κάποιο διαθσιμο νήμα.</li>
-<li>Custom semaphore (<b>sem_barrier</b>) που χρησιμοποιείται για να ενημερώσει το master thread που έχει καλέσει την <b>join_threads</b> ότι όλα τα νήματα είναι έτοιμα.</li>
+<li>Condition variable (<b>condition_wake_up_submitter</b>) που χρησιμοποιείται για να μπλοκάρει μέχρι να υπάρξει κάποιο διαθέσιμο νήμα.</li>
+<li>Custom semaphore (<b>sem_barrier</b>) που χρησιμοποιείται για να ενημερώσει το master thread που έχει καλέσει τη <b>join_threads</b> ότι όλα τα νήματα είναι έτοιμα.</li>
 </ul>
 <h4><a class="anchor" id="autotoc_md33"></a>
 Αντιγραφή ορισμάτων στην ρουτίνα</h4>
-<p>Για την αντιγραφή των ορισμάτων που δίνει ο χρήστης από το master νήμα στην ρουτίνα του αντίστοιχου νήματος μέσω της συνάρτησης <code>submit_job</code> κάνουμε χρήση των <a href="https://en.cppreference.com/w/cpp/language/variadic_arguments">Variadic arguments</a> για να τα παίρνουμε με δυναμικό τρόπο χωρίς να είναι απαραίτητο να δημιουργηθεί από το χρήστη κάποια δομή από ορίσματα. Τέλος τα αντιγράφουμε σε έναν πίνακα από <code>Argument</code> το μέγεθος του οποίου, αυξάνεται δυναμικά με realloc ανάλογα με τον αριθμό των ορισμάτων που δίνει ο χρήστης.</p>
+<p>Για την αντιγραφή των ορισμάτων που δίνει ο χρήστης από το master νήμα στη ρουτίνα του αντίστοιχου νήματος μέσω της συνάρτησης <code>submit_job</code> κάνουμε χρήση των <a href="https://en.cppreference.com/w/cpp/language/variadic_arguments">Variadic arguments</a> για να τα παίρνουμε με δυναμικό τρόπο χωρίς να είναι απαραίτητο να δημιουργηθεί από το χρήστη κάποια δομή από ορίσματα. Τέλος, τα αντιγράφουμε σε έναν πίνακα από <code>Argument</code> το μέγεθος του οποίου, αυξάνεται δυναμικά με realloc ανάλογα με τον αριθμό των ορισμάτων που δίνει ο χρήστης.</p>
 <p>*Αναπαράσταση της διαδικασίας αντιγραφής των ορισμάτων σε πίνακα (<code>submit_job</code>):* </p><div class="fragment"><div class="line">va_start(vargs, start_routine);  </div>
 <div class="line">FOREACH_ARG(arg, vargs) {  </div>
 <div class="line">    <span class="keywordtype">size_t</span> type_sz = va_arg(vargs, <span class="keywordtype">size_t</span>);  </div>
@@ -445,7 +447,7 @@ Unique rand</h2>
 <div class="line">  (*job)-&gt;args_count++;  </div>
 <div class="line">};  </div>
 <div class="line">va_end(vargs);</div>
-</div><!-- fragment --><p> Για την αντίστροφη διαδικασία, όπου ο χρήστης θέλει να πάρει μέσα από τη ρουτίνα τα ορίσματα που έδωσε στην <code>submit_job</code> το μόνο που έχει να κάνει είναι να καλέσει την <code>js_get_args</code> και να δώσει σε αυτήν το job της ρουτίνας καθώς και την διέυθυνση από τις μεταβλητές που θέλει να αρχικοποίσει με τα αντίστοιχα ορίσματα. Τα ορίσματα πρέπει να τα δώσει με την ίδια σειρά που τα έγραψε και στην <code>submit_job</code>.</p>
+</div><!-- fragment --><p> Για την αντίστροφη διαδικασία, όπου ο χρήστης θέλει να πάρει μέσα από τη ρουτίνα τα ορίσματα που έδωσε στην <code>submit_job</code> το μόνο που έχει να κάνει είναι να καλέσει την <code>js_get_args</code> και να δώσει σε αυτήν το job της ρουτίνας καθώς και τη διεύθυνση από τις μεταβλητές που θέλει να αρχικοποιήσει με τα αντίστοιχα ορίσματα. Τα ορίσματα πρέπει να τα δώσει με την ίδια σειρά που τα έγραψε και στη <code>submit_job</code>.</p>
 <p><em>Αναπαράσταση της διαδικασίας αρχικοποίησης μεταβλητών :</em> </p><div class="fragment"><div class="line">js_get_args(<a class="code" href="structjob.html">job</a>, &amp;js, &amp;sum, &amp;computations, &amp;mtx, NULL);</div>
 </div><!-- fragment --><p><em>Αναπαράσταση της διαδικασίας αντιγραφής των ορισμάτων από τον πίνακα ορισμάτων στην αντίστοιχη μεταβλητή <code>arg</code> :</em> </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> js_get_args(<a class="code" href="structjob.html">Job</a> <a class="code" href="structjob.html">job</a>, ...) {  </div>
 <div class="line">    va_list vargs;  </div>
@@ -457,7 +459,7 @@ Unique rand</h2>
 <div class="line">}</div>
 </div><!-- fragment --><h3><a class="anchor" id="autotoc_md34"></a>
 Δεξαμενή νημάτων</h3>
-<p>Ο Job scheduler αναλαμβάνει να τρέξει εργασίες (jobs) σε διαφορετικά νήματα με FIFO (First In First Out) σειρά και αυτό το επιτυγχάνει με μια ουρά αναμονής (waiting_queue).</p>
+<p>Ο Job scheduler αναλαμβάνει να τρέξει εργασίες (jobs) σε διαφορετικά νήματα με <b>FIFO</b> (First In First Out) σειρά και αυτό το επιτυγχάνει με μια ουρά αναμονής (waiting_queue).</p>
 <h4><a class="anchor" id="autotoc_md35"></a>
 Κύκλος εκτέλεσης εργασιών</h4>
 <p><em>Αναπαράσταση της συνάρτησης thread:</em> </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> *thread(<a class="code" href="structjob__scheduler.html">JobScheduler</a> js) {</div>
@@ -493,18 +495,18 @@ Unique rand</h2>
 <div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment --><p> Όταν ξεκινάει να λειτουργεί ένα νήμα, εισέρχεται σε έναν ατέρμον βρόγχο, κλειδώνει την πρόσβαση από τα υπόλοιπα νήματα με τη χρήση <code>LOCK_</code> (ή αντίστοιχα περιμένει μέχρι η πρόσβαση για αυτό να είναι εφικτή) και κάνει τους παρακάτω ελέγχους ώστε να αποφασίσει αν πρέπει να μπει σε κατάσταση <code>WAIT_</code>:</p><ul>
-<li><code>(!js-&gt;working &amp;&amp; !js-&gt;exit)</code> : Αν δεν έχει ενεργοποιηθεί ακόμα το flag <b>working</b> και <b>exit</b> τότε σημαίνει ότι δεν έχει ληφθεί ακόμα κάποιο σήμα εκίνησης ή τερματισμού.</li>
+<li><code>(!js-&gt;working &amp;&amp; !js-&gt;exit)</code> : Αν δεν έχει ενεργοποιηθεί ακόμα το flag <b>working</b> και <b>exit</b> τότε σημαίνει ότι δεν έχει ληφθεί ακόμα κάποιο σήμα εκκίνησης ή τερματισμού.</li>
 <li><code>(!queue_size(js-&gt;waiting_queue) &amp;&amp; !js-&gt;exit)</code> : Αν η ουρά δεν έχει jobs και δεν έχει ληφθεί κάποιο σήμα τερματισμού.</li>
 </ul>
 <p>Όταν "ξυπνήσει" το νήμα λαμβάνοντας κάποιο <code>BROADCAST_WAKEUP_</code> ή <code>SIGNAL_WAKE_UP_</code> signal, θα ελέγξει εκ νέου αν ισχύουν οι δύο παραπάνω συνθήκες ή όχι (<b>busy waiting</b>) και θα πράξει αναλόγως.</p>
-<p>Στην περίπτωση που δεν ισχύει το condition στο while: <code>(!js-&gt;working &amp;&amp; !js-&gt;exit) || (!queue_size(js-&gt;waiting_queue) &amp;&amp; !js-&gt;exit)</code> τότε θα ακολουθήσει ο έλεγχος: <code>js-&gt;exit &amp;&amp; !queue_size(js-&gt;waiting_queue)</code> ο οποίος θα ελένξει αν ο λόγος που έγινε <b>wake up</b> το νήμα είναι για να τερματήσει (ή όχι) κάνοντας <code>UNLOCK_</code> και καλόντας την <code>pthread_exit</code> (<code>EXIT_</code>) .</p>
-<p>Στη συνέχεια, αν το νήμα δεν τερματήσει τότε οι λόγοι που "ξύπνησε" (<b>wake up</b>) είναι οι παρακάτω:</p><ul>
-<li>έλαβε κάποιο signal <code>BROADCAST_WAKEUP_</code> από την συνάρτηση <code>js_execute_all_jobs</code> που αναλαμβάνει να ξυπνήσει όλα τα νήματα για να ξεκινήσουν να τρέχουν τα jobs ή</li>
-<li>έλαβε κάποιο signal <code>SIGNAL_WAKEUP_</code> από την συνάρτηση <code>js_submit_job</code></li>
+<p>Στην περίπτωση που δεν ισχύει το condition στο while: <code>(!js-&gt;working &amp;&amp; !js-&gt;exit) || (!queue_size(js-&gt;waiting_queue) &amp;&amp; !js-&gt;exit)</code> τότε θα ακολουθήσει ο έλεγχος: <code>js-&gt;exit &amp;&amp; !queue_size(js-&gt;waiting_queue)</code> ο οποίος θα ελέγξει αν ο λόγος που έγινε <b>wake up</b> το νήμα είναι για να τερματίσει (ή όχι) κάνοντας <code>UNLOCK_</code> και καλώντας τη <code>pthread_exit</code> (<code>EXIT_</code>).</p>
+<p>Στη συνέχεια, αν το νήμα δεν τερματίσει τότε οι λόγοι που "ξύπνησε" (<b>wake up</b>) είναι οι παρακάτω:</p><ul>
+<li>έλαβε κάποιο signal <code>BROADCAST_WAKEUP_</code> από τη συνάρτηση <code>js_execute_all_jobs</code> που αναλαμβάνει να ξυπνήσει όλα τα νήματα για να ξεκινήσουν να τρέχουν τα jobs ή</li>
+<li>έλαβε κάποιο signal <code>SIGNAL_WAKEUP_</code> από τη συνάρτηση <code>js_submit_job</code></li>
 </ul>
 <p>Σε επόμενη φάση αν υπάρχουν στην ουρά αναμονής διαθέσιμες προς εκτέλεση εργασίες, εξάγεται από την ουρά η πρώτη διαθέσιμη, ο μετρητής των εργασιών (<code>jobs_count</code>) που έχει αναλάβει το συγκεκριμένο νήμα αυξάνεται κατά ένα και η εργασία εισέρχεται στη running queue, ενώ αμέσως μετά καλείται η <code>queue_unblock_enqueue</code> ώστε να μπορέσει να χρησιμοποιηθεί από κάποιο άλλο νήμα. Κατόπιν γίνεται <code>UNLOCK_</code>για να μπορέσουν και άλλα νήματα να έχουν πρόσβαση στους κοινόχρηστους πόρους και εκτελείται η ρουτίνα (<code>RUN_ROUTINE_</code>) με όρισμα το ίδιο το job (<code>job-&gt;return_val = (job-&gt;start_routine)(job)</code>).</p>
 <p>Όταν επιστρέψει η συνάρτηση της ρουτίνας, αποθηκεύεται η τιμή επιστροφής (<b>return_val</b>) στη δομή του job ώστε να είναι διαθέσιμη στον client κώδικα.</p>
-<p>Στη συνέχεια ενημερώνεται το flag <code>job-&gt;complete</code>σε true και καλείται η <code>sem_post(&amp;job-&gt;sem_complete)</code> (<code>NOTIFY_JOB_COMPLETE_</code>) με σκοπό να ενημερωθεί το master νήμα πως το job ολοκληρώθηκε. Ο λόγος που γίνεται αυτό είναι γιατί μπορεί εκείνη την στιγμή να είχε μπλοκάρει στις συναρτήσεις <code>js_wait_job</code> ή και <code>js_get_return_val</code> αντίστοιχα.</p>
+<p>Στη συνέχεια ενημερώνεται το flag <code>job-&gt;complete</code>σε true και καλείται η <code>sem_post(&amp;job-&gt;sem_complete)</code> (<code>NOTIFY_JOB_COMPLETE_</code>) με σκοπό να ενημερωθεί το master νήμα πως το job ολοκληρώθηκε. Ο λόγος που γίνεται αυτό είναι γιατί μπορεί εκείνη τη στιγμή να είχε μπλοκάρει στις συναρτήσεις <code>js_wait_job</code> ή και <code>js_get_return_val</code> αντίστοιχα.</p>
 <h3><a class="anchor" id="autotoc_md36"></a>
 Χρήση του Job Scheduler</h3>
 <p>Στην υλοποίηση μας για τη μηχανική μάθηση, οι συναρτήσεις train και test περιμένουν έναν buffer με όλα τα διανύσματα που θα χρησιμοποιηθούν για αυτές τις διαδικασίες. Το να γεμίσει αυτός ο buffer κάθε φορά που χρειαζόταν, έπαιρνε αρκετό χρόνο, οπότε η πρώτη διαδικασία που παραλληλίσαμε ήταν αυτή. Πιο συγκεκριμένα, κάθε job αναλάμβανε να βάλει ένα διάνυσμα στο σωστό σημείο του buffer. Με αυτό τον τρόπο επιτυγχάνουμε ταυτόχρονο γέμισμα του buffer.</p>
@@ -522,7 +524,7 @@ Unit tests</h2>
  </p>
 <h2><a class="anchor" id="autotoc_md38"></a>
 Documentation</h2>
-<p>Στον σύνδεσμο <a href="https://k23a-prj-auth.herokuapp.com">Documentation</a> που βρίσκεται και στην πρώτη σελίδα του report βρίσκεται το documentation (man pages) των βιβλιοθηκών που έχουν υλοποιηθεί. Πρόσβαση επιτρέπεται μόνο στους contributors του project (δηλαδή την ομάδα μας και το βοηθό του τμήματός μας) και πρέπει να γίνει authentication μέσω github, ωστε να μην μπορεί κάποιος άλλος να αποκτήσει πρόσβαση.</p>
+<p>Στον σύνδεσμο <a href="https://k23a-prj-auth.herokuapp.com">Documentation</a> που βρίσκεται και στην πρώτη σελίδα του report βρίσκεται το documentation (man pages) των βιβλιοθηκών που έχουν υλοποιηθεί. Πρόσβαση επιτρέπεται μόνο στους contributors του project (δηλαδή την ομάδα μας και το βοηθό του τμήματός μας) και πρέπει να γίνει authentication μέσω github, ώστε να μην μπορεί κάποιος άλλος να αποκτήσει πρόσβαση.</p>
 <p>Το Documentation υλοποιήθηκε μέσω του <a href="https://www.doxygen.nl/index.html">Doxygen</a>. Τα man pages αυτά ανανεώνονται κάθε φορά που προστίθεται νέο commit στο master. Τα output αρχεία του doxygen γίνονται push στο branch "**docs**" και απο εκεί ενημερώνεται το documentation site μας. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
