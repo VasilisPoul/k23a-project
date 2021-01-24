@@ -312,9 +312,9 @@ Spec to specs</h2>
  </p>
 <h2><a class="anchor" id="autotoc_md27"></a>
 Παραλληλοποίηση</h2>
-<p>Για την γρήγορότερη εκπαίδευση του μοντέλου υλοποιήθηκε ένας <b>Job Scheduler</b> όπου αναλαμβάνει να τρέξει Jobs σε διαφορετικά νήματα του συστήματος, προσθέτοντας ετσι παραλληλία. </p>
+<p>Για την γρήγορότερη εκπαίδευση του μοντέλου υλοποιήθηκε ένας <b>Job Scheduler</b> που αναλαμβάνει να δημιουργήσει νέα νήματα (<b>workers</b>). Κάθε worker τρέχει πολαπλά Jobs σεριακά τα οποία εξαγάγονται από μια κοινόχρηστη ουρά το ένα μετά το άλλο προσθέτοντας ετσι παραλληλία. </p>
 <h3><a class="anchor" id="autotoc_md28"></a>
-Structs</h3>
+Βασικές δομές</h3>
 <p><em>Αναπαράσταση της δομής job:</em> </p><div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code" href="structjob.html">job</a> {</div>
 <div class="line">    <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> job_id;  </div>
 <div class="line">    <span class="keywordtype">void</span> *(*start_routine)(<span class="keywordtype">void</span> *);</div>
@@ -353,7 +353,7 @@ Structs</h3>
 <div class="ttc" id="astructjob__scheduler_html"><div class="ttname"><a href="structjob__scheduler.html">job_scheduler</a></div><div class="ttdef"><b>Definition:</b> job_scheduler.c:51</div></div>
 <div class="ttc" id="astructqueue__t_html"><div class="ttname"><a href="structqueue__t.html">queue_t</a></div><div class="ttdef"><b>Definition:</b> queue.c:17</div></div>
 <div class="ttc" id="astructsemaphore_html"><div class="ttname"><a href="structsemaphore.html">semaphore</a></div><div class="ttdef"><b>Definition:</b> semaphore.c:12</div></div>
-</div><!-- fragment --><p> Η δομή του Job Scheduler αποτελείται έχει τα παρακάτω χαρακτηριστικά:</p><ul>
+</div><!-- fragment --><p> Η δομή του Job Scheduler έχει τα παρακάτω χαρακτηριστικά:</p><ul>
 <li>Αριθμός διαθέσιμων νημάτων (<b>execution_threads</b>) για εκτέλεση εργασιών.</li>
 <li>Πίνακας με τα αναγνωριστικά των νημάτων (<b>tids</b>) που χρησιμοποιείται για την ευρεσή τους με σκοπό την ένωσή τους με το αρχικό νήμα κανωντας κλήση της σηνάρτησης <b>pthread_join</b>.</li>
 <li>Ουρά αναμονής (<b>waiting_queue</b>) προς εκτέλεση εργασιών.</li>
@@ -441,27 +441,29 @@ Structs</h3>
 <p>Σε επόμενη φάση αν υπάρχουν στην ουρά αναμονής διαθέσιμες προς εκτέλεση εργασίες, εξάγεται από την ουρά η πρώτη διαθέσιμη, ο μετρητής των εργασιών (<code>jobs_count</code>) που έχει αναλάβει το συγκεκριμένο νήμα αυξάνεται κατά ένα και η εργασία εισέρχεται στη running queue, ενώ αμέσως μετά καλείται η <code>queue_unblock_enqueue</code> ώστε να μπορέσει να χρησιμοποιηθεί από κάποιο άλλο νήμα. Κατόπιν γίνεται <code>UNLOCK_</code>για να μπορέσουν και άλλα νήματα να έχουν πρόσβαση στους κοινόχρηστους πόρους και εκτελείται η ρουτίνα (<code>RUN_ROUTINE_</code>) με όρισμα το ίδιο το job (<code>job-&gt;return_val = (job-&gt;start_routine)(job)</code>).</p>
 <p>Όταν επιστρέψει η συνάρτηση της ρουτίνας, αποθηκεύεται η τιμή επιστροφής (<b>return_val</b>) στη δομή του job ώστε να είναι διαθέσιμη στον client κώδικα.</p>
 <p>Στη συνέχεια ενημερώνεται το flag <code>job-&gt;complete</code>σε true και καλείται η <code>sem_post(&amp;job-&gt;sem_complete)</code> (<code>NOTIFY_JOB_COMPLETE_</code>) με σκοπό να ενημερωθεί το master νήμα πως το job ολοκληρώθηκε. Ο λόγος που γίνεται αυτό είναι γιατί μπορεί εκείνη την στιγμή να είχε μπλοκάρει στις συναρτήσεις <code>js_wait_job</code> ή και <code>js_get_return_val</code> αντίστοιχα.</p>
+<h3><a class="anchor" id="autotoc_md32"></a>
+Χρήση του Job Scheduler</h3>
 <p><a class="anchor" id="flow"></a> <br  />
  </p>
-<h2><a class="anchor" id="autotoc_md32"></a>
+<h2><a class="anchor" id="autotoc_md33"></a>
 Ροή του προγράμματος</h2>
 <p><img src="https://raw.githubusercontent.com/vasilisp100/k23a-project/master/resources/cliques.gif?token=AMOC6I6TSAEO3RWM4E22FUK7Z7ZZS" alt="cliques" class="inline"/> <br  />
 </p>
 <p><a class="anchor" id="unit_tests"></a> <br  />
  </p>
-<h2><a class="anchor" id="autotoc_md33"></a>
+<h2><a class="anchor" id="autotoc_md34"></a>
 Unit tests</h2>
 <p>Κάθε module (<b>list</b>, <b>hash table</b>, <b>hset</b>, <b><a class="el" href="structjob__scheduler.html">job_scheduler</a></b>, <b>json_parser</b>, <b>ml</b>, <b>logreg</b>, <b>queue</b>, κτλ) έχει αντίστοιχα και τα δικά του unit tests τα οποία βρίσκονται σε διαφορετικά αρχεία το καθένα. Για την υλοποίησή τους, κάνουμε χρήση της βιβλιοθήκης <a href="https://github.com/mity/acutest">Acutest</a>. Όταν επιχειρούμε να κάνουμε complile (make), commit ή push εκτελούνται τα unit tests και αν τερματίσουν επιτυχώς, πραγματοποιείται με επιτυχία η αντίστοιχη διαδικασία.</p>
 <p>Επιπλέον, τα test αυτά εκτελούνται remotely μέσω των github actions (CI)</p>
 <p><a class="anchor" id="documentation"></a> <br  />
  </p>
-<h2><a class="anchor" id="autotoc_md34"></a>
+<h2><a class="anchor" id="autotoc_md35"></a>
 Documentation</h2>
 <p>Στον σύνδεσμο <a href="https://k23a-prj-auth.herokuapp.com">Documentation</a> που βρίσκεται και στην πρώτη σελίδα του report βρίσκεται το documentation (man pages) των βιβλιοθηκών που έχουν υλοποιηθεί. Πρόσβαση επιτρέπεται μόνο στους contributors του project (δηλαδή την ομάδα μας και το βοηθό του τμήματός μας) και πρέπει να γίνει authentication μέσω github, ωστε να μην μπορεί κάποιος άλλος να αποκτήσει πρόσβαση.</p>
 <p>Το Documentation υλοποιήθηκε μέσω του <a href="https://www.doxygen.nl/index.html">Doxygen</a>. Τα man pages αυτά ανανεώνονται κάθε φορά που προστίθεται νέο commit στο master. Τα output αρχεία του doxygen γίνονται push στο branch "**docs**" και απο εκεί ενημερώνεται το documentation site μας.</p>
 <p><a class="anchor" id="conclusions"></a> <br  />
  </p>
-<h2><a class="anchor" id="autotoc_md35"></a>
+<h2><a class="anchor" id="autotoc_md36"></a>
 Συμπεράσματα</h2>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
