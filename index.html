@@ -156,26 +156,18 @@ $(function() {
 </ul>
 <h3><a class="anchor" id="autotoc_md15"></a>
 Ενδεικτική εκτέλεση προγράμματος Training</h3>
-<p>&gt;./project \ <br  />
- -dir Datasets/camera_specs/2013_camera_specs \ <br  />
- -csv Datasets/sigmod_large_labelled_dataset.csv \ <br  />
- -sw resources/unwanted-words.txt \ <br  />
- -m bow \ <br  />
- -ex resources <br  />
-</p>
+<p>&gt;./project -dir Datasets/camera_specs/2013_camera_specs \ &gt;-csv Datasets/sigmod_large_labelled_dataset.csv \ &gt;-ex resources \ &gt;-m tfidf \ &gt;-sw resources/unwanted-words.txt</p>
 <h3><a class="anchor" id="autotoc_md16"></a>
 Ενδεικτική εκτέλεση προγράμματος Predicting</h3>
 <blockquote class="doxtable">
-<p>./user -dir resources/user_json_files \ <br  />
- </p>
+<p>./user -dir Datasets/camera_specs/2013_camera_specs \ -csv resources/datasets/user_dataset.csv \ -vocabulary resources/vocabulary.csv \ -model resources/models/best_model.csv</p>
+<p></p>
 </blockquote>
-<p>-csv resources/user_dataset.csv \ -vocabulary resources/vocabulary.csv \ -model resources/model.csv <br  />
- </p>
-<h3><a class="anchor" id="autotoc_md17"></a>
-Έξοδος προγράμματος Training</h3>
+<p>### Έξοδος προγράμματος Training <br  />
+</p>
 <p><b>predictions</b> και <b>f1 score</b> για το validation set <br  />
 </p>
-<h3><a class="anchor" id="autotoc_md18"></a>
+<h3><a class="anchor" id="autotoc_md17"></a>
 Έξοδος προγράμματος Testing</h3>
 <p><b>predicitons</b> για το dataset που δίνει ο χρήστης. <br  />
 </p>
@@ -183,7 +175,7 @@ $(function() {
 </p>
 <p><a class="anchor" id="intro"></a> <br  />
  </p>
-<h2><a class="anchor" id="autotoc_md19"></a>
+<h2><a class="anchor" id="autotoc_md18"></a>
 Εισαγωγή</h2>
 <p>Στόχος της άσκησης είναι να δημιουργήσουμε κλίκες γράφων από αγγελίες με τα ίδια προϊόντα σε διάφορα sites.</p>
 <p>Αφού δημιουργηθούν οι κλίκες, δημιουργούνται και οι αρνητικές συσχετίσεις μεταξύ των κλικών (κάθε κλίκα αναγνωρίζει ποιες κλίκες είναι διαφορετικές από αυτή).</p>
@@ -213,7 +205,7 @@ $(function() {
 <p>Επιπλέον, για τον έλεγχο ορθότητας του κώδικα, χρησιμοποιήσαμε τη βιβλιοθήκη <b>acutest.h</b> όπου δέχεται μια λίστα από κατάλληλες συναρτήσεις (<b>tests</b>) που γράψαμε. <br  />
  <a class="anchor" id="hash_table"></a> <br  />
  </p>
-<h2><a class="anchor" id="autotoc_md20"></a>
+<h2><a class="anchor" id="autotoc_md19"></a>
 Hash table</h2>
 <p><img src="https://raw.githubusercontent.com/vasilisp100/k23a-project/master/resources/hash.png?token=AOECAYY7EWIICN4TZXIPN7TAC3IQ4" alt="hash table" class="inline"/> <br  />
 </p>
@@ -247,7 +239,7 @@ Hash table</h2>
 </p>
 <p><a class="anchor" id="list"></a> <br  />
 </p>
-<h2><a class="anchor" id="autotoc_md21"></a>
+<h2><a class="anchor" id="autotoc_md20"></a>
 Generic List</h2>
 <p>Χρησιμοποιήσαμε μία <b>generic list</b> όπου δηλώνεται με τη χρήση του παρακάτω macro:</p>
 <p><em>Αναπαράσταση της δομής του κόμβου:</em> </p><div class="fragment"><div class="line"><span class="preprocessor">#define  LISTOF(TYPE)   \</span></div>
@@ -260,7 +252,7 @@ Generic List</h2>
 </div><!-- fragment --><p> όπου επιστρέφει έναν δείκτη στον επόμενο κόμβο πιο άμεσα.</p>
 <p><a class="anchor" id="json_parser"></a> <br  />
  </p>
-<h2><a class="anchor" id="autotoc_md22"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 JSON Parser</h2>
 <p>O json parser ακολουθεί τη γραμματική του <a href="https://www.json.org/">json.org</a> .</p>
 <p>Πιο συγκεκριμένα, κάθε οντότητα του json περιγράφεται από την παρακάτω δομή:</p>
@@ -287,7 +279,7 @@ JSON Parser</h2>
 <div class="ttc" id="agroup__json__parser_html_ggac75c61993722a9b8aaa44704072ec06cafc3a60886010e5b0f57d7aa30d0277b0"><div class="ttname"><a href="group__json__parser.html#ggac75c61993722a9b8aaa44704072ec06cafc3a60886010e5b0f57d7aa30d0277b0">JSON_BOOL</a></div><div class="ttdeci">@ JSON_BOOL</div><div class="ttdef"><b>Definition:</b> json_parser.h:55</div></div>
 </div><!-- fragment --><p><a class="anchor" id="spec_to_specs"></a> <br  />
  </p>
-<h2><a class="anchor" id="autotoc_md23"></a>
+<h2><a class="anchor" id="autotoc_md22"></a>
 Spec to specs</h2>
 <p>Ο τρόπος με τον οποίο συνδέουμε τα στοιχεία των κλικών μεταξύ τους, είναι μέσω μίας δενδρικής αναπαράστασης. Το πρώτο spec που θα μπει στην κλίκα είναι ο πατέρας, ενώ τα υπόλοιπα είναι τα παιδιά του. Αν δύο κλίκες γίνουν <b>merge</b>, τότε ο πατέρας της δεύτερης κλίκας αποθηκεύεται στον παππού της πρώτης. Με αυτό τον τρόπο κρατάμε το δένδρο σε χαμηλά επίπεδα. <br  />
 </p>
@@ -310,7 +302,7 @@ Spec to specs</h2>
 <p><em>Αναπαράσταση εισαγωγής κλίκας:</em> <img src="https://raw.githubusercontent.com/vasilisp100/k23a-project/master/resources/cliques.gif?token=AOECAY7ODGOEUUQACONOD3LAC3IOG" alt="cliques" class="inline"/></p>
 <p><a class="anchor" id="urand"></a> <br  />
  </p>
-<h2><a class="anchor" id="autotoc_md24"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 Unique rand</h2>
 <p>Για την επιλογή τυχαίων και ταυτόχρονα μοναδικών ακέραιων τιμών στα σύνολα (<b>train</b>, <b>test</b>, <b>validation</b>) υπήρξε η ανάγκη να υλοποιηθεί ένα module (<code>urand</code>) που θα μας επιστρέφει τυχαίες τιμές καλώντας την <code>ur_get</code> εξασφαλίζοντας έτσι, ότι τις ίδιες αυτές τιμές που πήραμε δε θα τις ξαναπάρουμε σε μεταγενέστερη κλήση της συνάρτησης.</p>
 <p><em>Αναπαράσταση της δομής <a class="el" href="structunique__rand.html">unique_rand</a>:</em> </p><div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code" href="structunique__rand.html">unique_rand</a> {  </div>
@@ -320,14 +312,14 @@ Unique rand</h2>
 <div class="line">    <span class="keywordtype">int</span> length;  </div>
 <div class="line">};</div>
 <div class="ttc" id="astructunique__rand_html"><div class="ttname"><a href="structunique__rand.html">unique_rand</a></div><div class="ttdef"><b>Definition:</b> unique_rand.c:8</div></div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md25"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md24"></a>
 Δημιουργία</h3>
 <p>Κατά την δημιουργία αυτού του module καλώντας τη συνάρτηση <code>ur_create</code>, είναι απαραίτητο να δοθεί σε αυτήν μια ελάχιστη (min) και μια μέγιστη (max) τιμή ώστε να καθοριστεί το εύρος των τυχαίων τιμών που θα επιστρέφει η <code>ur_get</code>. Επομένως, με το εύρος τιμών γίνεται υπολογισμός του πλήθους αυτών, δεσμεύεται δυναμικά ένας πίνακας ακέραιων μεγέθους <code>max - min + 1</code> και αμέσως μετά αρχικοποιείται με τιμές που ξεκινούν από <code>min</code>.</p>
-<h3><a class="anchor" id="autotoc_md26"></a>
+<h3><a class="anchor" id="autotoc_md25"></a>
 Λειτουργικότητα</h3>
 <p>Αφού έχει δημιουργηθεί με επιτυχία το <code>URand *ur</code> αντικείμενο τότε κάθε φορά που καλείται η <code>ur_get</code> επιλέγεται τυχαία μια θέση από τον πίνακα <code>values</code> για να επιστραφεί το περιεχόμενό της στον χρήστη, η θέση αυτή γίνεται <b>swap</b> με την αντίστοιχη θέση που δείχνει εκείνη τη στιγμή η τιμή <code>ur-&gt;length</code> δηλαδή προς το τέλος. Αυτό έχει ως αποτέλεσμα, οι τιμές εκείνες που έχει πάρει ο χρήστης να μετακινούνται προς το τέλος του πίνακα <code>values</code> καθώς μειώνεται η μεταβλητή <code>ur-&gt;length</code>.</p>
 <p><a class="anchor" id="machine_learning"></a> </p>
-<h2><a class="anchor" id="autotoc_md27"></a>
+<h2><a class="anchor" id="autotoc_md26"></a>
 Μηχανική Μάθηση</h2>
 <p>Αρχικά έπρεπε να δημιουργηθεί το <b>vocabulary</b> σύμφωνα με το οποίο θα φτιάχνονταν τα διανύσματα για να γίνει το <b>training</b> και το <b>testing</b>. Έτσι δημιουργήσαμε το vocabulary με όλες τις διαφορετικές λέξεις των JSON αρχείων.</p>
 <p>Για να μειωθούν οι διαστάσεις δε συμπεριλάβαμε <b>stopwords</b>, <b>punctuations</b> και <b>αριθμούς</b>, όπως και κάποιες λέξεις που θεωρούμε πως δε φέρουν χρήσιμη πληροφορία αφού υπάρχουν σε σχεδόν όλα τα αρχεία (πχ το "mm"). Στη συνέχεια αν ο χρήστης έχει δώσει την επιλογή <b>tfidf</b>, αφαιρούμε από το vocabulary τις λέξεις με μεγάλο <b>idf</b>. Για να γίνει η διαδικασία επιλογής λέξεων δοκιμάσαμε τις παρακάτω μεθόδους:</p><ul>
@@ -339,31 +331,31 @@ Unique rand</h2>
 <p>Για να δημιουργηθεί το <b>dataset</b> για το <b>train</b>, <b>test</b> και <b>validation</b> ακολουθήθηκε η εξής διαδικασία:</p>
 <p>Αρχικά, δημιουργήθηκαν όλα τα similar και different ζευγάρια μέσω των κλικών. Αυτό ήταν το συνολικό dataset. Στη συνέχεια κρατήσαμε τυχαία το <b>50% των similar</b> και το <b>50% των different</b> και τα ενώσαμε σε ένα πίνακα. Αυτός ο πίνακας αποτελεί το train set. Κάναμε την ίδια διαδικασία με <b>25% για το test set</b> και τα υπόλοιπα <b>25% για το validation set</b>. Έτσι, είχαμε τα τρία sets που χρειαζόμασταν.</p>
 <p>****Για να δημιουργήσουμε το διάνυσμα κάθε ζευγαριού, χρησιμοποιούμε την απόλυτη διαφορά των διανυσμάτων json1-json2.*</p>
-<h3><a class="anchor" id="autotoc_md28"></a>
+<h3><a class="anchor" id="autotoc_md27"></a>
 Εκπαίδευση μοντέλου</h3>
 <p>Για την εκπαίδευση υλοποιήσαμε <b>mini batch gradient decent</b>. Σε κάθε <b>epoch</b> αρχικά γίνεται training για το training set και στη συνέχεια γίνεται predict για το test set ώστε να υπολογίζουμε το μέσο**loss** σε κάθε <b>epoch</b>, με το σκεπτικό αν παρατηρήσουμε συνεχή αύξηση του μέσου loss για 5 συνεχόμενα epochs, να κρατήσουμε το μοντέλο που είχε υπολογιστεί πριν 5 epochs και να σταματήσουμε τη διαδικασία του <b>training</b>. Παρατηρήσαμε όμως πως μέχρι τα 2000 <b>epochs</b> που το τεστάραμε ακόμα δεν έγινε break.</p>
 <p>Στο τέλος του training κάνουμε <b>predict</b> για το validation set, τυπώνουμε τα predictions (με κόκκινο χρώμα τα λανθασμένα και με πράσινο τα σωστά) και στη συνέχεια υπολογίζουμε το <b>F1 score</b></p>
-<h3><a class="anchor" id="autotoc_md29"></a>
+<h3><a class="anchor" id="autotoc_md28"></a>
 Εξαγωγή μοντέλου και λεξιλογίου σε αρχεία</h3>
 <p>Έχει υλοποιηθεί και δεύτερη main (<b>user.c</b>) η οποία κάνει μόνο <b>predict</b> ότι δώσει ο χρήστης σαν είσοδο. Χρησιμοποιώντας το <b>vocabulary</b> και το <b>model</b> που έχουν γίνει export από την πρώτη main. Για το λόγο αυτό το vocabulary και το τελικό model γίνονται export σε αρχεία ώστε να δοθούν ως είσοδο σε αυτήν.</p>
-<h3><a class="anchor" id="autotoc_md30"></a>
+<h3><a class="anchor" id="autotoc_md29"></a>
 Επαναληπτική εκμάθηση</h3>
 <p>Η διαδικασία που ακολουθούσαμε ήταν να χρησιμοποιήσουμε όλο το dataset (<b>train + test + val sets</b>) για αρχικό training set. Για threshold είχαμε αρχικά <b>0.0</b> ωστε να προστεθούν στο dataset μόνο όσα ζευγάρια γίνονταν predict me <b>0</b> ή <b>1</b> και σε κάθε επανάληψη το threshold αυξανόταν κατά <b>0.01</b>. Για όλα τα υπόλοιπα πιθανά ζευγάρια (δηλαδή όλα τα ζευγάρια απο specs για τα οποία δεν ξέρουμε τη σχέση τους, κάναμε <b>predict</b>. Αν το μοντέλο μας ήταν αρκετά "σίγουρο", δηλαδή αν ίσχυε η συνθήκη "``
 if (p(x,b) &lt; threshold) or (p(x,b) &gt; 1 - threshold)``", προσθέταμε όλες τις συσχετίσεις που προέκυπταν από αυτό το prediction στο <b>training set</b> ώστε στην επόμενη επανάληψη να ληφθούν και αυτά στο train. Συνεχίζαμε τη διαδικασία για όσο το <b>threshold</b> ήταν &lt; <b>0,5</b>.</p>
 <p>Για να ξέρουμε ποια ζευγάρια βρίσκονται στο <b>training set</b> χρησιμοποιοαμε ένα hash table του οποίου τα κλειδιά είναι τα ονόματα των ζευγαριών του <b>training set</b> άλλα και τα αντίστροφά τους, δηλαδή αν το ζευγάρι <b>Α,Β</b> μπει στο training set, στο hash table μπαίνει και το Α,Β και το Β,Α ώστε να μην μπει και με τους δύο τρόπους το ίδιο ζευγάρι.</p>
 <p>Παρατηρήσαμε πως από την πρώτη επανάληψη της επαναληπτικής μάθησης, επειδή ο αριθμός των ζευγαριών που προστίθενται στο <b>training set</b> ήταν πολύ μεγάλος ο χώρος της μνήμης γέμιζε με αποτέλεσμα να τερματίζει το πρόγραμμα. Για αυτό το λόγο, δοκιμάσαμε να γράφουμε σε αρχείο το <b>training set</b> ώστε να μην γεμίζει η μνήμη. Παρόλα αυτά και πάλι γέμιζε η μνήμη λόγω του hash table.</p>
 <p>Για αυτό το λόγο ακολουθήσαμε δύο προσεγγίσεις ώστε να μην μπαίνουν τόσα πολλά ζευγάρια στο dataset. Αρχικά σταματήσαμε να δεχόμαστε τα ζευγάρια των οποίων έστω το ένα από τα 2 specs ηταν σε κλίκα. Με αυτό τον τρόπο ουσιαστικά οι ήδη υπάρχουσες κλίκες δεν μεγάλωναν, αλλά φτιάχνονταν καινούργιες. Επίσης, βάλαμε ανώτατο όριο, να δέχεται μέχρι <b>500.000</b> καινούργια ζευγάρια.</p>
-<h3><a class="anchor" id="autotoc_md31"></a>
+<h3><a class="anchor" id="autotoc_md30"></a>
 Γενικές παρατηρήσεις για την επαναληπτική μάθηση</h3>
 <p>Μέσω της διαγραφής των λέξεων με μεγάλο <b>idf</b> κρατήσαμε τις καλύτερες <b>911</b> και όχι <b>1000</b> γιατί το αμέσως μεγαλύτερο idf κρατάει άλλες <b>161</b> λέξεις που σημαίνει πως ξεπερνάμε τις <b>1000</b>.</p>
 <p>Παρατηρήσαμε ότι για <b>2000 epochs</b>, <b>0,0001 learning rate</b> και <b>batch size 2000</b> παίρνουμε αρκετά καλό <b>f1 score</b> της τάξης του <b>0,93</b>.</p>
 <p>Επίσης, την πρώτη φορά που γίνεται <b>train</b> το μοντέλο, πριν την επαναληπτική μάθηση, κάθε epoch ολοκληρώνεται σε περίπου <b>0,4</b> δευτερόλεπτα. Στην επαναληπτική μάθηση, όσο μεγαλώνει το dataset, κάθε epoch γίνεται και πιο αργό, αφού πρέπει να γίνουν train περισσότερα ζευγάρια.</p>
 <p><a class="anchor" id="parallel"></a> <br  />
  </p>
-<h2><a class="anchor" id="autotoc_md32"></a>
+<h2><a class="anchor" id="autotoc_md31"></a>
 Παραλληλοποίηση</h2>
 <p>Για τη γρηγορότερη εκπαίδευση του μοντέλου υλοποιήθηκε ένας <b>Job Scheduler</b> που αναλαμβάνει να δημιουργήσει νέα νήματα (<b>workers</b>). Κάθε worker τρέχει πολλαπλά Jobs σειριακά τα οποία εξάγονται από μια κοινόχρηστη ουρά το ένα μετά το άλλο προσθέτοντας έτσι παραλληλία. </p>
-<h3><a class="anchor" id="autotoc_md33"></a>
+<h3><a class="anchor" id="autotoc_md32"></a>
 Βασικές δομές</h3>
 <p><em>Αναπαράσταση της δομής job:</em> </p><div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code" href="structjob.html">job</a> {</div>
 <div class="line">    <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span> job_id;  </div>
@@ -419,7 +411,7 @@ if (p(x,b) &lt; threshold) or (p(x,b) &gt; 1 - threshold)``", προσθέταμ
 <li>Condition variable (<b>condition_wake_up_submitter</b>) που χρησιμοποιείται για να μπλοκάρει μέχρι να υπάρξει κάποιο διαθέσιμο νήμα.</li>
 <li>Custom semaphore (<b>sem_barrier</b>) που χρησιμοποιείται για να ενημερώσει το master thread που έχει καλέσει τη <b>join_threads</b> ότι όλα τα νήματα είναι έτοιμα.</li>
 </ul>
-<h4><a class="anchor" id="autotoc_md34"></a>
+<h4><a class="anchor" id="autotoc_md33"></a>
 Αντιγραφή ορισμάτων στην ρουτίνα</h4>
 <p>Για την αντιγραφή των ορισμάτων που δίνει ο χρήστης από το master νήμα στη ρουτίνα του αντίστοιχου νήματος μέσω της συνάρτησης <code>submit_job</code> κάνουμε χρήση των <a href="https://en.cppreference.com/w/cpp/language/variadic_arguments">Variadic arguments</a> για να τα παίρνουμε με δυναμικό τρόπο χωρίς να είναι απαραίτητο να δημιουργηθεί από το χρήστη κάποια δομή από ορίσματα. Τέλος, τα αντιγράφουμε σε έναν πίνακα από <code>Argument</code> το μέγεθος του οποίου, αυξάνεται δυναμικά με realloc ανάλογα με τον αριθμό των ορισμάτων που δίνει ο χρήστης.</p>
 <p>*Αναπαράσταση της διαδικασίας αντιγραφής των ορισμάτων σε πίνακα (<code>submit_job</code>):* </p><div class="fragment"><div class="line">va_start(vargs, start_routine);  </div>
@@ -443,10 +435,10 @@ if (p(x,b) &lt; threshold) or (p(x,b) &gt; 1 - threshold)``", προσθέταμ
 <div class="line">  };  </div>
 <div class="line">  va_end(vargs);  </div>
 <div class="line">}</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md35"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md34"></a>
 Δεξαμενή νημάτων</h3>
 <p>Ο Job scheduler αναλαμβάνει να τρέξει εργασίες (jobs) σε διαφορετικά νήματα με <b>FIFO</b> (First In First Out) σειρά και αυτό το επιτυγχάνει με μια ουρά αναμονής (waiting_queue).</p>
-<h4><a class="anchor" id="autotoc_md36"></a>
+<h4><a class="anchor" id="autotoc_md35"></a>
 Κύκλος εκτέλεσης εργασιών</h4>
 <p><em>Αναπαράσταση της συνάρτησης thread:</em> </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> *thread(<a class="code" href="structjob__scheduler.html">JobScheduler</a> js) {</div>
 <div class="line">    <span class="keywordtype">int</span> jobs_count = 0;</div>
@@ -493,7 +485,7 @@ if (p(x,b) &lt; threshold) or (p(x,b) &gt; 1 - threshold)``", προσθέταμ
 <p>Σε επόμενη φάση αν υπάρχουν στην ουρά αναμονής διαθέσιμες προς εκτέλεση εργασίες, εξάγεται από την ουρά η πρώτη διαθέσιμη, ο μετρητής των εργασιών (<code>jobs_count</code>) που έχει αναλάβει το συγκεκριμένο νήμα αυξάνεται κατά ένα και η εργασία εισέρχεται στη running queue, ενώ αμέσως μετά καλείται η <code>queue_unblock_enqueue</code> ώστε να ξεμπλοκάρει η waiting queue και να μπορέσει να χρησιμοποιηθεί από κάποιο άλλο νήμα. Κατόπιν γίνεται <code>UNLOCK_</code>για να μπορέσουν και άλλα νήματα να έχουν πρόσβαση στους κοινόχρηστους πόρους και εκτελείται η ρουτίνα (<code>RUN_ROUTINE_</code>) με όρισμα το ίδιο το job (<code>job-&gt;return_val = (job-&gt;start_routine)(job)</code>).</p>
 <p>Όταν επιστρέψει η συνάρτηση της ρουτίνας, αποθηκεύεται η τιμή επιστροφής (<b>return_val</b>) στη δομή του job ώστε να είναι διαθέσιμη στον client κώδικα.</p>
 <p>Στη συνέχεια ενημερώνεται το flag <code>job-&gt;complete</code>σε true και καλείται η <code>sem_post(&amp;job-&gt;sem_complete)</code> (<code>NOTIFY_JOB_COMPLETE_</code>) με σκοπό να ενημερωθεί το master νήμα πως το job ολοκληρώθηκε. Ο λόγος που γίνεται αυτό είναι γιατί μπορεί εκείνη τη στιγμή να είχε μπλοκάρει στις συναρτήσεις <code>js_wait_job</code> ή και <code>js_get_return_val</code> αντίστοιχα.</p>
-<h3><a class="anchor" id="autotoc_md37"></a>
+<h3><a class="anchor" id="autotoc_md36"></a>
 Χρήση του Job Scheduler</h3>
 <p>Στην υλοποίηση μας για τη μηχανική μάθηση, οι συναρτήσεις train και test περιμένουν έναν buffer με όλα τα διανύσματα που θα χρησιμοποιηθούν για αυτές τις διαδικασίες. Το να γεμίσει αυτός ο buffer κάθε φορά που χρειαζόταν, έπαιρνε αρκετό χρόνο, οπότε η πρώτη διαδικασία που παραλληλίσαμε ήταν αυτή. Πιο συγκεκριμένα, κάθε job αναλάμβανε να βάλει ένα διάνυσμα στο σωστό σημείο του buffer. Με αυτό τον τρόπο επιτυγχάνουμε ταυτόχρονο γέμισμα του buffer.</p>
 <p>Άλλο ένα σημείο στο οποίο παραλληλοποιήσαμε ήταν ο υπολογισμός των Deltas στη διαδικασία του training. Κάθε job αναλαμβάνει να υπολογίσει από ένα στοιχείο του Deltas array.</p>
@@ -501,13 +493,13 @@ if (p(x,b) &lt; threshold) or (p(x,b) &gt; 1 - threshold)``", προσθέταμ
 <p>Σκοπεύαμε αν προλαβαίναμε, για να παρατηρήσουμε αν θα υπάρξει διαφορά στο χρόνο εκτέλεσης του προγράμματος, να αλλάζαμε τη διαδικασία της παραλληλοποίησης και να δίναμε στα jobs περισσότερες απο μία επαναλήψεις ώστε να γίνονταν περισσότερες πράξεις σε κάθε job.</p>
 <p><a class="anchor" id="unit_tests"></a> <br  />
  </p>
-<h2><a class="anchor" id="autotoc_md38"></a>
+<h2><a class="anchor" id="autotoc_md37"></a>
 Unit tests</h2>
 <p>Κάθε module (<b>list</b>, <b>hash table</b>, <b>hset</b>, <b><a class="el" href="structjob__scheduler.html">job_scheduler</a></b>, <b>json_parser</b>, <b>ml</b>, <b>logreg</b>, <b>queue</b>, κτλ) έχει αντίστοιχα και τα δικά του unit tests τα οποία βρίσκονται σε διαφορετικά αρχεία το καθένα. Για την υλοποίησή τους, κάνουμε χρήση της βιβλιοθήκης <a href="https://github.com/mity/acutest">Acutest</a>. Όταν επιχειρούμε να κάνουμε complile (make), commit ή push εκτελούνται τα <b>unit tests</b> και αν τερματίσουν επιτυχώς, πραγματοποιείται με επιτυχία η αντίστοιχη διαδικασία.</p>
 <p>Επιπλέον, τα test αυτά εκτελούνται remotely μέσω των <b>github actions (CI)</b>.</p>
 <p><a class="anchor" id="documentation"></a> <br  />
  </p>
-<h2><a class="anchor" id="autotoc_md39"></a>
+<h2><a class="anchor" id="autotoc_md38"></a>
 Documentation</h2>
 <p>Στον σύνδεσμο <a href="https://k23a-prj-auth.herokuapp.com">Documentation</a> που βρίσκεται και στην πρώτη σελίδα του report βρίσκεται το <b>documentation</b> (<b>man pages</b>) των βιβλιοθηκών που έχουν υλοποιηθεί. Πρόσβαση επιτρέπεται μόνο στους <b>contributors</b> του project (δηλαδή την ομάδα μας και το βοηθό του τμήματός μας) και πρέπει να γίνει <b>authentication</b> μέσω <b>github</b>, ώστε να μην μπορεί κάποιος άλλος να αποκτήσει πρόσβαση.</p>
 <p>Το Documentation υλοποιήθηκε μέσω του <a href="https://www.doxygen.nl/index.html">Doxygen</a>. Τα man pages αυτά ανανεώνονται κάθε φορά που προστίθεται νέο commit στο master. Τα output αρχεία του <b>Doxygen</b> γίνονται push στο branch "**docs**" και απο εκεί ενημερώνεται το documentation site μας. </p>
